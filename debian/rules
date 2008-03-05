@@ -1,0 +1,57 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+CFLAGS := -Wall -g
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	INSTALL_PROGRAM += -s
+endif
+
+build: build-stamp
+build-stamp: 
+	dh_testdir
+	$(MAKE) CFLAGS="$(CFLAGS)" -i
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	$(MAKE) clean
+	-rm build-stamp
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_installdirs
+	install src/dvdbackup `pwd`/debian/dvdbackup/usr/bin/
+
+binary-indep:
+
+binary-arch: install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs debian/README
+	dh_installman debian/dvdbackup.1
+	dh_strip --dbg-package=dvdbackup-dbg
+	dh_link
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps 
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-arch binary install
