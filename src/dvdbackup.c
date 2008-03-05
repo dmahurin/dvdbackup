@@ -727,6 +727,9 @@ titles_info_t * DVDGetInfo(dvd_reader_t * _dvd) {
 				candidate = title_set_size_array[0];
 			}
 			dual = 1;
+		} else {
+			/* Can this case ever happen? */
+			candidate = title_set_size_array[0];
 		}
 	} else {
 		candidate = title_set_size_array[0];
@@ -1112,7 +1115,7 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 		    return(1);
 		  }
 
-		  // pretend we read what we padded
+		  /* pretend we read what we padded */
 		  actRead+=numBlanks;
 		}
 
@@ -2224,7 +2227,7 @@ int main(int argc, char *argv[]){
 	  STRATEGY_ABORT;
 
 
-	int return_code;
+	int return_code = 0;
 
 	/* DVD Video device */
 	char * dvd=NULL;
