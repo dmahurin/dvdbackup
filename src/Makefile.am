@@ -1,2 +1,3 @@
 bin_PROGRAMS = dvdbackup
-dvdbackup_SOURCES = dvdbackup.c
+dvdbackup_SOURCES = main.c \
+	dvdbackup.c dvdbackup.h

@@ -8,7 +8,7 @@ AC_INIT([dvdbackup], [0.1.1-svn])
 
 # Where to generate output; srcdir location.
 AC_CONFIG_HEADERS([config.h])
-AC_CONFIG_SRCDIR([src/dvdbackup.c])
+AC_CONFIG_SRCDIR([src/main.c])
 
 dnl Must come before AM_INIT_AUTOMAKE.
 AC_CONFIG_AUX_DIR([build-aux])
