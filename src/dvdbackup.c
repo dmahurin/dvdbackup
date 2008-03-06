@@ -414,10 +414,12 @@ titles_info_t * DVDGetInfo(dvd_reader_t * _dvd) {
 	}
 
 
-	/* TODO: fix malloc check */
-	titles_info = ( titles_info_t *)malloc(sizeof(titles_info_t));
+	if((titles_info = (titles_info_t *)malloc(sizeof(titles_info_t))) == NULL) {
+		fprintf(stderr, "Out of memory creating titles info structure\n");
+		return NULL;
+	}
+	
 	titles_info->titles = (titles_t *)malloc((titles)* sizeof(titles_t));
-
 	titles_info->number_of_titles = titles;
 
 
@@ -441,10 +443,24 @@ titles_info_t * DVDGetInfo(dvd_reader_t * _dvd) {
 	channels_channel_array = malloc(title_sets * sizeof(int));
 	title_set_channel_array = malloc(title_sets * sizeof(int));
 
+	/* Check mallocs */
+	if(!titles_info->titles || !chapter_chapter_array || !title_set_chapter_array ||
+			!angle_angle_array || !title_set_angle_array || !subpicture_sub_array ||
+			!title_set_sub_array || !audio_audio_array || !title_set_audio_array ||
+			!size_size_array || !title_set_size_array || !channels_channel_array ||
+			!title_set_channel_array) {
+		fprintf(stderr, "Out of memory creating arrays for titles info\n");
+		free(titles_info);
+		FreeSortArrays( chapter_chapter_array, title_set_chapter_array,
+						angle_angle_array, title_set_angle_array,
+						subpicture_sub_array, title_set_sub_array,
+						audio_audio_array, title_set_audio_array,
+						size_size_array, title_set_size_array,
+						channels_channel_array, title_set_channel_array);
+		return NULL;		
+	}
 
 	/* Interate over the titles nr_of_srpts */
-
-
 	for (counter=0; counter < titles; counter++ )  {
 		/* For titles_info */
 		titles_info->titles[counter].title = counter + 1;
@@ -1451,37 +1467,42 @@ void DVDFreeTitlesInfo(titles_info_t * titles_info) {
 
 
 
-title_set_info_t *DVDGetFileSet(dvd_reader_t * _dvd) {
+title_set_info_t* DVDGetFileSet(dvd_reader_t* _dvd) {
 
 	/* title interation */
 	int title_sets, counter, i;
 
-
 	/* DVD Video files */
-        dvd_stat_t statbuf;
+	dvd_stat_t statbuf;
 
 	/*DVD ifo handler*/
-	ifo_handle_t * 	vmg_ifo=NULL;
+	ifo_handle_t* vmg_ifo=NULL;
 
 	/* The Title Set Info struct*/
-	title_set_info_t * title_set_info;
+	title_set_info_t* title_set_info;
 
 	/*  Open main info file */
-	vmg_ifo = ifoOpen( _dvd, 0 );
-	if( !vmg_ifo ) {
-        	fprintf( stderr, "Can't open VMG info.\n" );
-        	return (0);
-    	}
-
+	vmg_ifo = ifoOpen(_dvd, 0);
+	if(vmg_ifo == NULL) {
+		fprintf( stderr, "Can't open VMG info.\n" );
+		return NULL;
+	}
 
 	title_sets = vmg_ifo->vmgi_mat->vmg_nr_of_title_sets;
 
 	/* Close the VMG ifo file we got all the info we need */
-        ifoClose(vmg_ifo);
+	ifoClose(vmg_ifo);
 
-	/* TODO: fix malloc check */
-	title_set_info = (title_set_info_t *)malloc(sizeof(title_set_info_t));
-	title_set_info->title_set = (title_set_t *)malloc((title_sets + 1)* sizeof(title_set_t));
+	if((title_set_info = (title_set_info_t*)malloc(sizeof(title_set_info_t))) == NULL) {
+		fprintf(stderr, "Out of memory creating titles set info structure\n");
+		return NULL;
+	}
+
+	title_set_info->title_set = (title_set_t*)malloc((title_sets + 1) * sizeof(title_set_t));
+	if(title_set_info->title_set == NULL) {
+		fprintf(stderr, "Out of memory creating title set array\n");
+		return NULL;
+	}
 
 	title_set_info->number_of_title_sets = title_sets;
 
@@ -1736,8 +1757,6 @@ int DVDMirrorChapters(dvd_reader_t * _dvd, char * targetdir,char * title_name, i
 	ifo_handle_t * vts_ifo_info=NULL;
 	int * cell_start_sector=NULL;
 	int * cell_end_sector=NULL;
-
-	/* TODO: free memory*/
 
 	titles_info = DVDGetInfo(_dvd);
 	if (!titles_info) {

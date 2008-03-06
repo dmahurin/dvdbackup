@@ -176,8 +176,8 @@ void usage(){
 	fprintf(stderr,"\t-r {a,b,m}\t\tselect read error handling: a=abort (default), b=skip block, m=skip multiple blocks\n");
 	fprintf(stderr,"\t-h\t\tprint a brief usage message\n");
 	fprintf(stderr,"\t-?\t\tprint a brief usage message\n\n");
-	fprintf(stderr,"\t-i is manditory\n");
-	fprintf(stderr,"\t-o is manditory except if you use -I\n");
+	fprintf(stderr,"\t-i is mandatory\n");
+	fprintf(stderr,"\t-o is mandatory except if you use -I\n");
 	fprintf(stderr,"\t-a is option to the -F switch and has no effect on other options\n");
 	fprintf(stderr,"\t-s and -e should preferably be used together with -t \n\n");
 	exit(1);
@@ -202,9 +202,7 @@ int main(int argc, char *argv[]){
 	int do_feature = 0;
 	int do_info = 0;
 
-	read_error_strategy_t errorstrat =
-	  STRATEGY_ABORT;
-
+	read_error_strategy_t errorstrat = STRATEGY_ABORT;
 
 	int return_code = 0;
 
@@ -332,7 +330,7 @@ int main(int argc, char *argv[]){
 	}
 
 	if (aspect_temp == NULL) {
-		/* Deafult to 16:9 aspect ratio */
+		/* Default to 16:9 aspect ratio */
 		aspect = 3;
 	} else {
 		aspect = atoi(aspect_temp);
