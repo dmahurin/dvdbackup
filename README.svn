@@ -1,0 +1,9 @@
+You need Autotools on your system. To build the system you have to run
+
+autoreconf --install
+
+first. Then you can run:
+
+./configure
+make
+make install
