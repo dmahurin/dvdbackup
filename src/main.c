@@ -70,7 +70,7 @@
 
 		This action creates a valid DVD-Video structure
 		that can be burned to a DVD-/+R(W) with help of
-		mkisofs version 1.11a27 or later
+		genisoimage
 
 
 	To backup the main feature of the DVD:
@@ -408,8 +408,10 @@ int main(int argc, char *argv[]){
 
 
 	_dvd = DVDOpen(dvd);
-	if(!_dvd) exit(-1);
-
+	if (!_dvd) {
+		fprintf(stderr,"Can't open specified device %s - check your DVD device\n", dvd);
+		exit(-1);
+	}
 
 	if (do_info) {
 		DVDDisplayInfo(_dvd, dvd);
