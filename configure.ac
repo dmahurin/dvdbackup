@@ -13,7 +13,10 @@ AC_CONFIG_SRCDIR([src/main.c])
 dnl Must come before AM_INIT_AUTOMAKE.
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
-AM_INIT_AUTOMAKE([dist-bzip2 -Wall])
+AM_INIT_AUTOMAKE([dist-bzip2 -Wall -Werror])
+
+AM_GNU_GETTEXT_VERSION([0.16.1])
+AM_GNU_GETTEXT([external])
 
 dnl ------------------------------------------------
 dnl Information on the package
@@ -31,8 +34,8 @@ dnl ------------------------------------------------
 dnl Set build flags based on environment
 dnl ------------------------------------------------
 
-# use -pedantic -Wall -Wextra when possible
-AX_CFLAGS_GCC_OPTION(-pedantic)
+# use -Wall -Wextra when possible
+#AX_CFLAGS_GCC_OPTION(-pedantic)
 AX_CFLAGS_GCC_OPTION(-Wall)
 AX_CFLAGS_GCC_OPTION(-Wextra)
 
@@ -81,6 +84,7 @@ dnl TODO: check if -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 is used
 
 AC_CONFIG_FILES([
 	Makefile
+	po/Makefile.in
 	src/Makefile
 ])
 AC_OUTPUT

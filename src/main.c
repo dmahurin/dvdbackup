@@ -18,8 +18,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
+#include <config.h>
 #include "dvdbackup.h"
+
+/* internationalisation */
+#include "gettext.h"
+#define _(String) gettext(String)
 
 /* C standard libraries */
 #include <limits.h>
@@ -50,65 +54,72 @@ static void print_version() {
 	 * as done here, to avoid having to retranslate the message when a new
 	 * year comes around.
 	 */
-	printf("Copyright (C) 2002 Olaf Beck <olaf_sc@yahoo.com>\n\
+	printf(_("Copyright (C) 2002 Olaf Beck <olaf_sc@yahoo.com>\n\
 Copyright (C) %s Benjamin Drung <benjamin.drung@gmail.com>\n\n\
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\
 This is free software: you are free to change and redistribute it.\n\
 There is NO WARRANTY, to the extent permitted by law.\n\
-Homepage: %s\n", "2008", "http://dvdbackup.sourceforge.net/");
+Homepage: %s\n"), "2008", "http://dvdbackup.sourceforge.net/");
 }
 
 
 static void print_help() {
 	/* TRANSLATORS: --help output 1 (synopsis) */
-	printf("Usage: %s [OPTION]...\n", program_name);
+	printf(_("Usage: %s [OPTION]...\n"), program_name);
 
 	/* TRANSLATORS: --help output 2 (brief description)
 	   no-wrap */
-/*	fputs ("\
-Print a friendly, customizable greeting.\n", stdout); */
+/*	fputs (_("\
+Print a friendly, customizable greeting.\n"), stdout); */
 	printf("\n");
 
 	/* TRANSLATORS: --help output 3: options 1/2
 	   no-wrap */
-	printf("\
+	printf(_("\
   -h, --help         display this help and exit\n\
-  -V, --version      display version information and exit\n\n");
+  -V, --version      display version information and exit\n\n"));
 
 	/* TRANSLATORS: --help output 4: options 2/2
 	   no-wrap */
-	printf("\
+	printf(_("\
   -I, --info         prints information about the DVD\n\
   -M, --mirror       backup the whole DVD\n\
   -F, --feature      backup the main feature of the DVD\n\
   -T, --titleset=X   backup title set X\n\
   -t, --title=X      backup title X\n\
   -s, --start=X      backup from chapter X\n\
-  -e, --end=X        backup to chapter X\n\n");
+  -e, --end=X        backup to chapter X\n\n"));
 
-	printf("\
+	printf(_("\
   -i, --input=DEVICE       where DEVICE is your dvd device\n\
                            if not given /dev/dvd is used\n\
   -o, --output=DIRECTORY   where directory is your backup target\n\
-                           if not given the current directory is used\n");
-	printf("\
+                           if not given the current directory is used\n"));
+	printf(_("\
   -v, --verbose=X          where X is the amount of verbosity\n\
   -n, --name=NAME          set the title (useful if autodetection fails)\n\
   -a, --aspect=0           to get aspect ratio 4:3 instead of 16:9 if both are\n\
                            present\n\
   -r, --error={a,b,m}      select read error handling: a=abort, b=skip block,\n\
-                           m=skip multiple blocks (default)\n\n");
+                           m=skip multiple blocks (default)\n\n"));
 	
-	printf("\
+	printf(_("\
   -a is option to the -F switch and has no effect on other options\n\
-  -s and -e should preferably be used together with -t\n");
+  -s and -e should preferably be used together with -t\n"));
 
 	printf("\n");
 	  /* TRANSLATORS: --help output 5 (end)
 	     TRANSLATORS: the placeholder indicates the bug-reporting address
 	     for this application.  Please add _another line_ with the
 	     address for translation bugs. */
-	printf ("Report bugs to <%s>.\n", PACKAGE_BUGREPORT);
+	printf (_("Report bugs to <%s>.\n"), PACKAGE_BUGREPORT);
+}
+
+
+void init_i18n() {
+	setlocale(LC_ALL, "");
+	bindtextdomain(PACKAGE, LOCALEDIR);
+	textdomain(PACKAGE);
 }
 
 
@@ -188,6 +199,7 @@ int main(int argc, char* argv[]) {
 	};
 	const char* shortopts = "hVIMFT:t:s:e:i:o:v:n:a:r:";
 	
+	init_i18n();
 	program_name = argv[0];
 
 	/* TODO: do isdigit check */
@@ -253,9 +265,9 @@ int main(int argc, char* argv[]) {
 	if(lose || optind < argc) {
 		/* Print error message and exit.  */
 		if (optind < argc) {
-			fprintf(stderr, "%s: extra operand: %s\n", program_name, argv[optind]);
+			fprintf(stderr, _("%s: extra operand: %s\n"), program_name, argv[optind]);
 		}
-		fprintf(stderr, "Try `%s --help' for more information.\n", program_name);
+		fprintf(stderr, _("Try `%s --help' for more information.\n"), program_name);
 		exit (EXIT_FAILURE);
 	}
 	
@@ -358,7 +370,7 @@ int main(int argc, char* argv[]) {
 
 	_dvd = DVDOpen(dvd);
 	if (!_dvd) {
-		fprintf(stderr,"Can't open specified device %s - check your DVD device\n", dvd);
+		fprintf(stderr,_("Can't open specified device %s - check your DVD device\n"), dvd);
 		exit(-1);
 	}
 
@@ -371,19 +383,19 @@ int main(int argc, char* argv[]) {
 
 	if(provided_title_name == NULL) {
 		if (DVDGetTitleName(dvd,title_name) != 0) {
-			fprintf(stderr,"You must provide a title name when you read your DVD-Video structure direct from the HD\n");
+			fprintf(stderr,_("You must provide a title name when you read your DVD-Video structure direct from the HD\n"));
 			DVDClose(_dvd);
 			exit(1);
 		}
 		if (strstr(title_name, "DVD_VIDEO") != NULL) {
-			fprintf(stderr,"The DVD-Video title on the disk is DVD_VIDEO, which is too generic; please provide a title with the -n switch\n");
+			fprintf(stderr,_("The DVD-Video title on the disk is DVD_VIDEO, which is too generic; please provide a title with the -n switch\n"));
 			DVDClose(_dvd);
 			exit(2);
 		}
 
 	} else {
 		if (strlen(provided_title_name) > 32) {
-			fprintf(stderr,"The title name specified is longer than 32 characters; truncating the title name\n");
+			fprintf(stderr,_("The title name specified is longer than 32 characters; truncating the title name\n"));
 			strncpy(title_name,provided_title_name, 32);
 			title_name[32]='\0';
 		} else {
@@ -397,11 +409,11 @@ int main(int argc, char* argv[]) {
 
 	if (stat(targetname, &fileinfo) == 0) {
 		if (! S_ISDIR(fileinfo.st_mode)) {
-			fprintf(stderr,"The target directory is not valid; it may be a ordinary file\n");
+			fprintf(stderr,_("The target directory is not valid; it may be a ordinary file\n"));
 		}
 	} else {
 		if (mkdir(targetname, 0777) != 0) {
-			fprintf(stderr,"Failed creating target directory %s\n", targetname);
+			fprintf(stderr,_("Failed creating target directory %s\n"), targetname);
 			perror("");
 			DVDClose(_dvd);
 			exit(-1);
@@ -413,11 +425,11 @@ int main(int argc, char* argv[]) {
 
 	if (stat(targetname, &fileinfo) == 0) {
 		if (! S_ISDIR(fileinfo.st_mode)) {
-			fprintf(stderr,"The title directory is not valid; it may be a ordinary file\n");
+			fprintf(stderr,_("The title directory is not valid; it may be a ordinary file\n"));
 		}
 	} else {
 		if (mkdir(targetname, 0777) != 0) {
-			fprintf(stderr,"Failed creating title directory\n");
+			fprintf(stderr,_("Failed creating title directory\n"));
 			perror("");
 			DVDClose(_dvd);
 			exit(-1);
@@ -428,11 +440,11 @@ int main(int argc, char* argv[]) {
 
 	if (stat(targetname, &fileinfo) == 0) {
 		if (! S_ISDIR(fileinfo.st_mode)) {
-			fprintf(stderr,"The VIDEO_TS directory is not valid; it may be a ordinary file\n");
+			fprintf(stderr,_("The VIDEO_TS directory is not valid; it may be a ordinary file\n"));
 		}
 	} else {
 		if (mkdir(targetname, 0777) != 0) {
-			fprintf(stderr,"Failed creating VIDEO_TS directory\n");
+			fprintf(stderr,_("Failed creating VIDEO_TS directory\n"));
 			perror("");
 			DVDClose(_dvd);
 			exit(-1);
@@ -447,7 +459,7 @@ int main(int argc, char* argv[]) {
 
 	if(do_mirror) {
 		if ( DVDMirror(_dvd, targetdir, title_name, errorstrat)  != 0 ) {
-			fprintf(stderr, "Mirror of DVD failed\n");
+			fprintf(stderr, _("Mirror of DVD failed\n"));
 			return_code = -1;
 		} else {
 			return_code = 0;
@@ -460,7 +472,7 @@ int main(int argc, char* argv[]) {
 
 	if (do_title_set) {
 		if (DVDMirrorTitleSet(_dvd, targetdir, title_name, title_set, errorstrat) != 0) {
-			fprintf(stderr, "Mirror of title set %d failed\n", title_set);
+			fprintf(stderr, _("Mirror of title set %d failed\n"), title_set);
 			return_code = -1;
 		} else {
 			return_code  = 0;
@@ -475,7 +487,7 @@ int main(int argc, char* argv[]) {
 
 	if(do_feature) {
 		if ( DVDMirrorMainFeature(_dvd, targetdir, title_name, errorstrat)  != 0 ) {
-			fprintf(stderr, "Mirror of main feature film of DVD failed\n");
+			fprintf(stderr, _("Mirror of main feature film of DVD failed\n"));
 			return_code = -1;
 		} else {
 			return_code = 0;
@@ -484,7 +496,7 @@ int main(int argc, char* argv[]) {
 
 	if(do_titles) {
 		if (DVDMirrorTitles(_dvd, targetdir, title_name, titles) != 0) {
-			fprintf(stderr, "Mirror of title  %d failed\n", titles);
+			fprintf(stderr, _("Mirror of title  %d failed\n"), titles);
 			return_code = -1;
 		} else {
 			return_code  = 0;
@@ -494,7 +506,7 @@ int main(int argc, char* argv[]) {
 
 	if(do_chapter) {
 		if (DVDMirrorChapters(_dvd, targetdir, title_name, start_chapter, end_chapter, titles) != 0) {
-			fprintf(stderr, "Mirror of chapters %d to %d in title %d failed\n", start_chapter, end_chapter, titles);
+			fprintf(stderr, _("Mirror of chapters %d to %d in title %d failed\n"), start_chapter, end_chapter, titles);
 			return_code = -1;
 		} else {
 			return_code  = 0;
