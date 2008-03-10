@@ -1,3 +1,13 @@
+2008-03-11  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r14] ChangeLog, NEWS: Updated.
+
+	* [r14] INSTALL: Replaced by generic installation instructions from
+	  autoconf
+
+	* [r14] src/dvdbackup.c, src/main.c (print_help, main): The command line
+	  option -v, --verbose has no option anymore.
+
 2008-03-10  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r13] ChangeLog, NEWS: Created ChangeLog from subversion commits and

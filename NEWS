@@ -10,11 +10,12 @@ dvdbackup 0.1.1-svn
 
 	Changes:
 		* Switched license to GPLv3 or later
-		* The command line options -i and -o are now optional. If -i is
-		  not given /dev/dvd is used. If -o is not given the current
-		  working directory is used.
+		* The command line options -i, --input and -o, --output are now
+		  optional. If -i, --input is not given /dev/dvd is used. If -o,
+		  --output is not given the current working directory is used.
 		* Added to every command line option a long version. For example
 		  you can use --mirror instead of -M.
+		* The command line option -v, --verbose has no option anymore.
 
 	Bug fixes:
 		* Output an error message when DVDOpen fails

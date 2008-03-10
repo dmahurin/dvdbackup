@@ -43,7 +43,7 @@
 #define MAXNAME 256
 
 /* Flag for verbose mode */
-int verbose;
+int verbose = 0;
 int aspect;
 
 

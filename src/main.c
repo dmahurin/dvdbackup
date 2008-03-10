@@ -96,7 +96,7 @@ Print a friendly, customizable greeting.\n"), stdout); */
   -o, --output=DIRECTORY   where directory is your backup target\n\
                            if not given the current directory is used\n"));
 	printf(_("\
-  -v, --verbose=X          where X is the amount of verbosity\n\
+  -v, --verbose            print more information about progress\n\
   -n, --name=NAME          set the title (useful if autodetection fails)\n\
   -a, --aspect=0           to get aspect ratio 4:3 instead of 16:9 if both are\n\
                            present\n\
@@ -153,7 +153,6 @@ int main(int argc, char* argv[]) {
 	char* dvd = "/dev/dvd";
 
 	/* Temp switch helpers */
-	char* verbose_temp = NULL;
 	char* aspect_temp = NULL;
 	char* start_chapter_temp = NULL;
 	char* end_chapter_temp = NULL;
@@ -191,13 +190,13 @@ int main(int argc, char* argv[]) {
 
 		{"input", required_argument, NULL, 'i'},
 		{"output", required_argument, NULL, 'o'},
-		{"verbose", required_argument, NULL, 'v'},
+		{"verbose", no_argument, NULL, 'v'},
 		{"name", required_argument, NULL, 'n'},
 		{"aspect", required_argument, NULL, 'a'},
 		{"error", required_argument, NULL, 'r'},
 		{NULL, 0, NULL, 0}
 	};
-	const char* shortopts = "hVIMFT:t:s:e:i:o:v:n:a:r:";
+	const char* shortopts = "hVIMFT:t:s:e:i:o:vn:a:r:";
 	
 	init_i18n();
 	program_name = argv[0];
@@ -244,7 +243,7 @@ int main(int argc, char* argv[]) {
 			targetdir = optarg;
 			break;
 		case 'v':
-			verbose_temp = optarg;
+			verbose = 10;
 			break;
 		case 'n':
 			provided_title_name = optarg;
@@ -282,12 +281,6 @@ int main(int argc, char* argv[]) {
 		  	print_help();
 			exit(1);
 		}
-	}
-
-	if(verbose_temp == NULL) {
-		verbose = 0;
-	} else {
-		verbose = atoi(verbose_temp);
 	}
 
 	if (aspect_temp == NULL) {
