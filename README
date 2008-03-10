@@ -5,11 +5,11 @@ dvdbackup:
 
 	Gerneral backup information:
 		If your backup directory is /my/dvd/backup/dir/
-		specified with the "-o" flag. Then dvdbackup
+		specified with the "-o" flag, then dvdbackup
 		will create a DVD-Video structure under
 		/my/dvd/backup/dir/TITLE_NAME/VIDEO_TS.
 
-		Since the title is "uniq" you can use the same dir
+		Since the title is "unique" you can use the same directory
 		for all your DVD backups. If it happens to have a
 		generic title dvdbackup will exit with a return value
 		of 2. And you will need to specify a title name with
@@ -35,7 +35,7 @@ dvdbackup:
 
 		This action creates a valid DVD-Video structure
 		that can be burned to a DVD-/+R(W) with help of
-		mkisofs version 1.11a27 or later
+		genisoimage
 
 
 	To backup the main feature of the DVD:
@@ -44,10 +44,6 @@ dvdbackup:
 
 		This action creates a valid DVD-Video structure
 		of the feature title set
-
-		Note that this will not result in an image immediately 
-		watchable - you will need another program like dvdauthor
-		to help construct the IFO files.
 
 		dvdbackup defaults to get the 16:9 version of the
 		main feature if a 4:3 is also present on the DVD.
@@ -68,10 +64,6 @@ dvdbackup:
 		This action creates a valid DVD-Video structure
 		of the specified title set
 
-		Note that this will not result in an image immediately 
-		watchable - you will need another program like dvdauthor
-		to help construct the IFO files.
-                
 
 	To backup a title:
 
@@ -90,7 +82,7 @@ dvdbackup:
 
 		This action will backup chapter 20 to 25 in title 1, as with
 		the backup of a title there can be sector gaps between one chapter
-		(cell) and on other.dvdbackup will backup all sectors that belongs
+		(cell) and an other. dvdbackup will backup all sectors that belongs
 		to the title 1 chapter 20 to 25 but will skip sectors that aren't
 		a part of the title 1 chapter 20 to 25.
 
@@ -99,27 +91,27 @@ dvdbackup:
 		To backup to chapter 20 from the first chapter use only -e 20
 
 		You can skip the -t switch and let the program guess the title although
-		it's not recomened.
+		it's not recommended.
 
 		If you specify a chapter that his higher than the last chapter of the title
-		dvdbackup will turncate to the highest chapter of the title.
+		dvdbackup will truncate to the highest chapter of the title.
 
 	Return values:
 		0 on success
 		1 on usage error
 		2 on title name error
-		-1 on failur
+		-1 on failure
 
 
 	Todo - i.e. what's on the agenda.
-		Make the main feature guessing algoritm better. Not that it doesn't do
-		it's job, but it's implementation it's that great. I would also like
+		Make the main feature guessing algorithm better. Not that it doesn't do
+		it's job, but it's implementation isn't that great. I would also like
 		to preserve more information about the main feature since that would
-		let me preform better implementations in other functions that depends
-		on the titles_info_t and title_set_info_t strcutures.
+		let me perform better implementations in other functions that depends
+		on the titles_info_t and title_set_info_t structures.
 
 		Make it possible to extract cells in a title not just chapters (very
-		easy so it will definitly be in the next version).
+		easy so it will definitely be in the next version).
 
 		Make a split mirror (-S) option that divides a DVD-9 to two valid DVD-5
 		video structures. This is not a trivial hack and it's my main goal
