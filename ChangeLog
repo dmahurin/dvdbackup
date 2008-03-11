@@ -2,6 +2,7 @@
 
 	* [r14] debian/dvdbackup.1, README: Documentation cleanup, and 
 	  removal of mentions of mandatory fields that are now guessed.
+	* [r14] debian/*: Bring up to date with Debian
 
 2008-03-11  Benjamin Drung  <benjamin.drung@gmail.com>
 

@@ -1,3 +1,27 @@
+dvdbackup (0.1.2-1) UNRELEASED; urgency=low
+
+  * New upstream version
+  * Mandatory switches are now gone (closes: #469337, #470049)
+
+ -- Stephen Gran <sgran@debian.org>  Tue, 11 Mar 2008 01:12:32 +0000
+
+dvdbackup (0.1.1-12) unstable; urgency=low
+
+  * Output an error message when DVDOpen fails (closes: #464520)
+
+ -- Stephen Gran <sgran@debian.org>  Mon, 03 Mar 2008 02:26:03 +0000
+
+dvdbackup (0.1.1-11) unstable; urgency=low
+
+  * dvdbackup-dbg Depends on dvdbackup (closes: #463179)
+  * s/mkisofs/genisoimage/g (closes: #415770)
+  * Handle short reads from DVDReadBlocks (closes: #419670)
+  * Handle broken ifo/bup files (closes: #467075)
+  * Modify Build-Depends to not use the -1 revision
+  * Update Standards Version (no changes)
+
+ -- Stephen Gran <sgran@debian.org>  Sun, 02 Mar 2008 17:44:38 +0000
+
 dvdbackup (0.1.1-10) unstable; urgency=low
 
   * Fix AUTHOR attribution in manpage (closes: #376987)

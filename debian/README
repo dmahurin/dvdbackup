@@ -11,7 +11,7 @@ with VOB files only.  Programs like dvdauthor are the answer to this problem.
 If you have access to dvd9's, or are burning an image that will fit on a
 dvd5, the simplest way is:
 dvdbackup -M -i/dvd -o /PATH/TO/BACKUP/ -nTITLE_OF_DVD
-mkisofs -dvd-video -o ISONAME.iso /PATH/TO/BACKUP/
+genisoimage -dvd-video -o ISONAME.iso /PATH/TO/BACKUP/
 dvdrecord speed=1 -dao dev=0,0,0 ISONAME.iso
 
 Happy burning!
