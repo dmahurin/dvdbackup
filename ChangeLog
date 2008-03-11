@@ -1,3 +1,8 @@
+2008-03-11  Stephen Gran  <sgran@debian.org>
+
+	* [r14] debian/dvdbackup.1, README: Documentation cleanup, and 
+	  removal of mentions of mandatory fields that are now guessed.
+
 2008-03-11  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r14] ChangeLog, NEWS: Updated.

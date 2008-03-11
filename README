@@ -3,11 +3,16 @@ dvdbackup:
 	To gather info about the dvd:
 		dvdbackup -i /dev/dvd -I
 
-	Gerneral backup information:
+                /dev/dvd is the default device tried - you only need
+                to use -i if your device name is different.
+
+	General backup information:
 		If your backup directory is /my/dvd/backup/dir/
 		specified with the "-o" flag, then dvdbackup
 		will create a DVD-Video structure under
 		/my/dvd/backup/dir/TITLE_NAME/VIDEO_TS.
+
+                If the -o flag is omitted, the current directory is used.
 
 		Since the title is "unique" you can use the same directory
 		for all your DVD backups. If it happens to have a
@@ -49,7 +54,7 @@ dvdbackup:
 		main feature if a 4:3 is also present on the DVD.
 		To get the 4:3 version use -a 0.
 
-		dvdbackup makes it best to make a inteligent guess
+		dvdbackup makes it best to make a intelligent guess
 		what is the main feature of the DVD - in case it fails
 		please send a bug report.
 

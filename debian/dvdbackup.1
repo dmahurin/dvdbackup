@@ -17,7 +17,7 @@
 .\" .sp <n>    insert n+1 empty lines
 .\" for manpage-specific macros, see man(7)
 .SH NAME
-dvdbackup \- Tool to backup dvd's
+dvdbackup \- Tool to backup dvds
 .SH SYNOPSIS
 .B dvdbackup
 .RI [ options ] " files" ...
@@ -33,7 +33,7 @@ of being small, fast, and easy to use.
 A summary of options is included below.
 .TP
 .B \-i DEVICE
-where device is your dvd device
+where device is your dvd device.  This switch only needs to be used if your dvd device node is not /dev/dvd
 .TP
 .B \-v X
 where X is the amount of verbosity
@@ -42,7 +42,7 @@ where X is the amount of verbosity
 for information about the DVD
 .TP
 .B \-o directory
-where directory is your backup target
+where directory is your backup target.  If not given, the current working directory will be used.
 .TP
 .B \-n name
 (optional) set the title \- useful if autodetection fails
@@ -74,10 +74,6 @@ print a brief usage message
 .B \-?
 print a brief usage message
 .SH Option notes
-\-i is mandatory
-.br
-\-o is mandatory except if you use \-I
-.br
 \-a is option to the \-F switch and has no effect on other options
 .br
 \-s and \-e should preferably be used together with \-t
@@ -85,9 +81,13 @@ print a brief usage message
 To gather info about the dvd:
 .br
 dvdbackup \-i /dev/dvd \-I
+.br
+/dev/dvd is the default device tried - you only need
+to use -i if your device name is different.
 .SH General backup information:
 .br
 If your backup directory is /my/dvd/backup/dir/ specified with the "\-o" flag. Then dvdbackup will create a DVD\-Video structure under /my/dvd/backup/dir/TITLE_NAME/VIDEO_TS.
+If the -o flag is omitted, the current directory is used.
 .sp 2
 Since the title is "unique" you can use the same directory for all your DVD backups. If it happens to have a generic title dvdbackup will exit with a return value of 2, and you will need to specify a title name with the \-n switch.
 .sp 2
@@ -141,5 +141,5 @@ Make the main feature guessing algorithm better. Not that it doesn't do it's job
 Make a split mirror (\-S) option that divides a DVD\-9 to two valid DVD\-5 video structures. This is not a trivial hack and it's my main goal the in next month or so. It involves writing ifoedit and vobedit libraries in order to be able to manipulate both the IFO structures and the VOB files. Out of this will most probably also come tscreate and vtscreate which will enable you to make a very simple DVD\-Video from MPEG\-1/2 source.
 .br
 .SH AUTHOR
-DVDBackup was written by Olaf Beck <olaf_sc@yahoo.com>, but now appears to be dead upstream, and is unmaintained (as far as I know) outside of Debian.
+DVDBackup was written by Olaf Beck <olaf_sc@yahoo.com>, but is now maintained by Benjamin Drung <benjamin.drung@gmail.com> and Stephen Gran <sgran@debian.org>.
 This manual page was written by Stephen Gran <sgran@debian.org>, for the Debian project (but may be used by others).
