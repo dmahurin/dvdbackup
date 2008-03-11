@@ -1,4 +1,4 @@
-SUBDIRS = po src
+SUBDIRS = man po src
 
 ACLOCAL_AMFLAGS = -I m4
 

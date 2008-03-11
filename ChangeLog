@@ -1,16 +1,19 @@
+2008-03-11  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r25] ChangeLog: Updated.
+	
+	* [r25] debian/dvdbackup.1: moved from here...
+	* [r25] man/dvdbackup.1: ...to here
+	* [r25] configure.ac, Makefile.am, man/Makefile.am:
+	  added man page to distribution
+
 2008-03-11  Stephen Gran  <sgran@debian.org>
 
 	* [r18] INSTALL: update to newest version
 
-2008-03-11  Stephen Gran  <sgran@debian.org>
-
 	* [r17] configure.ac: Use getconf to find LFS CFLAGS
 
-2008-03-11  Stephen Gran  <sgran@debian.org>
-
 	* [r16] debian/*: Bring up to date with Debian
-
-2008-03-11  Stephen Gran  <sgran@debian.org>
 
 	* [r15] debian/dvdbackup.1, README: Documentation cleanup, and 
 	  removal of mentions of mandatory fields that are now guessed.

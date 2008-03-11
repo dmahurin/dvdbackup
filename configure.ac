@@ -87,6 +87,7 @@ CFLAGS="${CFLAGS} ${LFS_CFLAGS}"
 
 AC_CONFIG_FILES([
 	Makefile
+	man/Makefile
 	po/Makefile.in
 	src/Makefile
 ])
