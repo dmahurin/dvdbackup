@@ -16,8 +16,11 @@ ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
 	INSTALL_PROGRAM += -s
 endif
 
+config.status: configure
+	./configure --prefix=/usr
+
 build: build-stamp
-build-stamp: 
+build-stamp: config.status
 	dh_testdir
 	$(MAKE) CFLAGS="$(CFLAGS)" -i
 	touch build-stamp
@@ -26,7 +29,7 @@ clean:
 	dh_testdir
 	dh_testroot
 	$(MAKE) clean
-	-rm build-stamp
+	rm -f build-stamp
 	dh_clean
 
 install: build
