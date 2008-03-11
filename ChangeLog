@@ -1,10 +1,19 @@
 2008-03-11  Stephen Gran  <sgran@debian.org>
 
-	* [r14] debian/dvdbackup.1, README: Documentation cleanup, and 
+	* [r18] INSTALL: update to newest version
+
+2008-03-11  Stephen Gran  <sgran@debian.org>
+
+	* [r17] configure.ac: Use getconf to find LFS CFLAGS
+
+2008-03-11  Stephen Gran  <sgran@debian.org>
+
+	* [r16] debian/*: Bring up to date with Debian
+
+2008-03-11  Stephen Gran  <sgran@debian.org>
+
+	* [r15] debian/dvdbackup.1, README: Documentation cleanup, and 
 	  removal of mentions of mandatory fields that are now guessed.
-	* [r14] debian/*: Bring up to date with Debian
-	* [r14] configure.ac: Use getconf to find LFS CFLAGS
-	* [r14] INSTALL: update to newest version
 
 2008-03-11  Benjamin Drung  <benjamin.drung@gmail.com>
 
