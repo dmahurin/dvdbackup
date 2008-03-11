@@ -79,8 +79,11 @@ dnl ------------------------------------------------
 dnl Checks for system services
 dnl ------------------------------------------------
 
+AM_MAINTAINER_MODE
+AC_TYPE_OFF_T
 AC_SYS_LARGEFILE
-dnl TODO: check if -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 is used
+LFS_CFLAGS=$(getconf LFS_CFLAGS)
+CFLAGS="${CFLAGS} ${LFS_CFLAGS}"
 
 AC_CONFIG_FILES([
 	Makefile
