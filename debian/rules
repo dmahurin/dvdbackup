@@ -28,7 +28,9 @@ build-stamp: config.status
 clean:
 	dh_testdir
 	dh_testroot
+ifeq (Makefile,$(wildcard Makefile))
 	$(MAKE) clean
+endif
 	rm -f build-stamp
 	dh_clean
 
