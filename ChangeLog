@@ -1,5 +1,12 @@
 2008-03-17  Benjamin Drung  <benjamin.drung@gmail.com>
 
+	* [r27] configure.ac: added checks suggested by autoscan
+
+	* [r27] Makefile.am: NEWS and README are now installed in docdir
+	* [r27] man/Makefile.am: Updated.
+
+	* [r27] NEWS: Updated.
+
 	* [r26] README: changed spaces to tabs
 
 	* [r26] man/dvdbackup.1: updated options

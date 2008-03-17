@@ -1,8 +1,8 @@
 dnl Process this file with autoconf to produce a configure script
 
-dnl ------------------------------------------------
+dnl ----------------------------------------------------------
 dnl Initialization and Versioning
-dnl ------------------------------------------------
+dnl ----------------------------------------------------------
 
 AC_INIT([dvdbackup], [0.1.1-svn], [dvdbackup-bugs@lists.sourceforge.net])
 
@@ -18,69 +18,59 @@ AM_INIT_AUTOMAKE([dist-bzip2 -Wall -Werror])
 AM_GNU_GETTEXT_VERSION([0.16.1])
 AM_GNU_GETTEXT([external])
 
-dnl ------------------------------------------------
-dnl Information on the package
-dnl ------------------------------------------------
+AM_MAINTAINER_MODE
 
-dnl none
-
-dnl ------------------------------------------------
+dnl ----------------------------------------------------------
 dnl Checks for programs
-dnl ------------------------------------------------
+dnl ----------------------------------------------------------
 
 AC_PROG_CC
+AC_PROG_LN_S
 
-dnl ------------------------------------------------
+dnl ----------------------------------------------------------
 dnl Set build flags based on environment
-dnl ------------------------------------------------
+dnl ----------------------------------------------------------
 
 # use -Wall -Wextra when possible
 #AX_CFLAGS_GCC_OPTION(-pedantic)
 AX_CFLAGS_GCC_OPTION(-Wall)
 AX_CFLAGS_GCC_OPTION(-Wextra)
 
-dnl ------------------------------------------------
+dnl ----------------------------------------------------------
 dnl Checks for libraries
-dnl ------------------------------------------------
+dnl ----------------------------------------------------------
 
 AC_CHECK_LIB(dvdread, DVDOpen, , AC_MSG_ERROR([You need libdvdread]))
 
-dnl ------------------------------------------------
+dnl ----------------------------------------------------------
 dnl Checks for header files
-dnl ------------------------------------------------
+dnl ----------------------------------------------------------
 
-AC_CHECK_HEADER(dvdread/dvd_reader.h, , AC_MSG_ERROR([You need libdvdread (dvd_reader.h)]))
+AC_CHECK_HEADERS(dvdread/dvd_reader.h, , AC_MSG_ERROR([You need libdvdread (dvd_reader.h)]))
+AC_CHECK_HEADERS([fcntl.h libintl.h limits.h locale.h])
 
-dnl ------------------------------------------------
-dnl Checks for types
-dnl ------------------------------------------------
+dnl ----------------------------------------------------------
+dnl Checks for types, structures and compilier characteristics
+dnl ----------------------------------------------------------
 
-dnl none
-
-dnl ------------------------------------------------
-dnl Checks for structures
-dnl ------------------------------------------------
-
-dnl none
-
-dnl ------------------------------------------------
-dnl Checks for compilier characteristics
-dnl ------------------------------------------------
-
-dnl none
-
-dnl ------------------------------------------------
-dnl Checks for library functions
-dnl ------------------------------------------------
-
-dnl none
-
-dnl ------------------------------------------------
-dnl Checks for system services
-dnl ------------------------------------------------
-
-AM_MAINTAINER_MODE
+AC_HEADER_STDBOOL
+AC_C_CONST
+AC_C_INLINE
 AC_TYPE_OFF_T
+AC_TYPE_SIZE_T
+
+dnl ----------------------------------------------------------
+dnl Checks for library functions
+dnl ----------------------------------------------------------
+
+AC_FUNC_MALLOC
+AC_FUNC_STAT
+AC_CHECK_FUNCS([mkdir setlocale strstr])
+
+dnl ----------------------------------------------------------
+dnl Checks for system services
+dnl ----------------------------------------------------------
+
 AC_SYS_LARGEFILE
 LFS_CFLAGS=$(getconf LFS_CFLAGS)
 CFLAGS="${CFLAGS} ${LFS_CFLAGS}"
