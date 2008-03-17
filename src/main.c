@@ -1,5 +1,5 @@
 /*
- * dvdbackup - tool to rip DVD's from the command line
+ * dvdbackup - tool to rip DVDs from the command line
  *
  * Copyright (C) 2002  Olaf Beck <olaf_sc@yahoo.com>
  * Copyright (C) 2008  Benjamin Drung <benjamin.drung@gmail.com>
@@ -91,7 +91,7 @@ Print a friendly, customizable greeting.\n"), stdout); */
   -e, --end=X        backup to chapter X\n\n"));
 
 	printf(_("\
-  -i, --input=DEVICE       where DEVICE is your dvd device\n\
+  -i, --input=DEVICE       where DEVICE is your DVD device\n\
                            if not given /dev/dvd is used\n\
   -o, --output=DIRECTORY   where directory is your backup target\n\
                            if not given the current directory is used\n"));
@@ -363,7 +363,7 @@ int main(int argc, char* argv[]) {
 
 	_dvd = DVDOpen(dvd);
 	if (!_dvd) {
-		fprintf(stderr,_("Can't open specified device %s - check your DVD device\n"), dvd);
+		fprintf(stderr,_("Cannot open specified device %s - check your DVD device\n"), dvd);
 		exit(-1);
 	}
 

@@ -3,7 +3,7 @@
 .\" First parameter, NAME, should be all caps
 .\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
 .\" other parameters are allowed: see man(7), man(1)
-.TH DVDBACKUP 1 "July  7, 2003"
+.TH dvdbackup 1 "2008-03-13" "0.2"
 .\" Please adjust this date whenever revising the manpage.
 .\"
 .\" Some roff macros, for reference:
@@ -17,68 +17,71 @@
 .\" .sp <n>    insert n+1 empty lines
 .\" for manpage-specific macros, see man(7)
 .SH NAME
-dvdbackup \- Tool to backup dvds
+dvdbackup \- Tool to backup DVDs
 .SH SYNOPSIS
 .B dvdbackup
-.RI [ options ] " files" ...
+[\fIOPTION\fR]...
 .SH DESCRIPTION
 This manual page documents briefly the
 .B dvdbackup
 command.
 This manual page was written for the Debian distribution
 because the original program does not have a manual page.
-\fBdvdbackup\fP is a tool to extract data from video dvds.  It has the advantages
+\fBdvdbackup\fP is a tool to extract data from video DVDs.  It has the advantages
 of being small, fast, and easy to use.
 .SH OPTIONS
 A summary of options is included below.
 .TP
-.B \-i DEVICE
-where device is your dvd device.  This switch only needs to be used if your dvd device node is not /dev/dvd
+.B \-h, \-\-help
+print a brief usage message
 .TP
-.B \-v X
-where X is the amount of verbosity
+.B \-V, \-\-version
+print version information
 .TP
-.B \-I
+.B \-I, \-\-info
 for information about the DVD
 .TP
-.B \-o directory
-where directory is your backup target.  If not given, the current working directory will be used.
-.TP
-.B \-n name
-(optional) set the title \- useful if autodetection fails
-.TP
-.B \-M
+.B \-M, \-\-mirror
 backup the whole DVD
 .TP
-.B \-F
+.B \-F, \-\-feature
 backup the main feature of the DVD
 .TP
-.B \-T X
+.B \-T X, \-\-titleset=X
 backup title set X
 .TP
-.B \-t X
+.B \-t X, \-\-title=X
 backup title X
 .TP
-.B \-s X
+.B \-s X, \-\-start=X
 backup from chapter X
 .TP
-.B \-e X
+.B \-e X, \-\-end=X
 backup to chapter X
 .TP
-.B \-a 0
+.B \-i DEVICE, \-\-input=DEVICE
+where DEVICE is your DVD device.  This switch only needs to be used if your DVD device node is not /dev/dvd
+.TP
+.B \-o DIRECTORY, \-\-output=DIRECTORY
+where DIRECTORY is your backup target.  If not given, the current working directory will be used.
+.TP
+.B \-v, \-\-verbose
+print more information about progress
+.TP
+.B \-n NAME, \-\-name=NAME
+(optional) set the title \- useful if autodetection fails
+.TP
+.B \-a 0, \-\-aspect=0
 to get aspect ratio 4:3 instead of 16:9 if both are present
 .TP
-.B \-h
-print a brief usage message
-.TP
-.B \-?
-print a brief usage message
+.B  \-r {a,b,m}, \-\-error={a,b,m}
+select read error handling: a=abort, b=skip block, m=skip multiple blocks (default)
 .SH Option notes
 \-a is option to the \-F switch and has no effect on other options
 .br
 \-s and \-e should preferably be used together with \-t
 .SH Usage:
-To gather info about the dvd:
+To gather info about the DVD:
 .br
 dvdbackup \-i /dev/dvd \-I
 .br
@@ -135,11 +138,6 @@ If you specify a chapter that is higher than the last chapter of the title dvdba
 2 on title name error
 .br
 \-1 on failure
-.SH Todo \- i.e. what's on the agenda.
-Make the main feature guessing algorithm better. Not that it doesn't do it's job, but it's implementation isn't that great. I would also like to preserve more information about the main feature since that would let me perform better implementations in other functions that depends on the titles_info_t and title_set_info_t structures. Make it possible to extract cells in a title not just chapters (very easy so it will definitely be in the next version).
-.sp 2
-Make a split mirror (\-S) option that divides a DVD\-9 to two valid DVD\-5 video structures. This is not a trivial hack and it's my main goal the in next month or so. It involves writing ifoedit and vobedit libraries in order to be able to manipulate both the IFO structures and the VOB files. Out of this will most probably also come tscreate and vtscreate which will enable you to make a very simple DVD\-Video from MPEG\-1/2 source.
-.br
-.SH AUTHOR
-DVDBackup was written by Olaf Beck <olaf_sc@yahoo.com>, but is now maintained by Benjamin Drung <benjamin.drung@gmail.com> and Stephen Gran <sgran@debian.org>.
+.SH AUTHORS
+dvdbackup was written by Olaf Beck <olaf_sc@yahoo.com>, but is now maintained by Benjamin Drung <benjamin.drung@gmail.com> and Stephen Gran <sgran@debian.org>.
 This manual page was written by Stephen Gran <sgran@debian.org>, for the Debian project (but may be used by others).

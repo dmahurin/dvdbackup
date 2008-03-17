@@ -1,5 +1,5 @@
 /*
- * dvdbackup - tool to rip DVD's from the command line
+ * dvdbackup - tool to rip DVDs from the command line
  *
  * Copyright (C) 2002  Olaf Beck <olaf_sc@yahoo.com>
  * Copyright (C) 2008  Benjamin Drung <benjamin.drung@gmail.com>
@@ -220,7 +220,7 @@ int DVDWriteCells(dvd_reader_t * dvd, int cell_start_sector[], int cell_end_sect
 
 	/* Create VTS_XX_X.VOB */
 	if (title_set == 0) {
-		fprintf(stderr,_("Don't try to copy chapters from the VMG domain; there aren't any\n"));
+		fprintf(stderr,_("Do not try to copy chapters from the VMG domain; there are not any\n"));
 		return(1);
 	} else {
 		sprintf(targetname,"%s/%s/VIDEO_TS/VTS_%02i_%i.VOB",targetdir, title_name, title_set, vob);
@@ -406,7 +406,7 @@ titles_info_t * DVDGetInfo(dvd_reader_t * _dvd) {
 	/*  Open main info file */
 	vmg_ifo = ifoOpen( _dvd, 0 );
 	if( !vmg_ifo ) {
-        	fprintf( stderr, _("Can't open VMG info.\n"));
+        	fprintf( stderr, _("Cannot open VMG info.\n"));
         	return (0);
     	}
 
@@ -846,7 +846,7 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 	} else {
 		size = title_set_info->title_set[title_set].size_vob[vob - 1]/2048;
 		if (title_set_info->title_set[title_set].size_vob[vob - 1]%2048 != 0) {
-			fprintf(stderr, _("The Title VOB number %d of title set %d doesn't have a valid DVD size\n"), vob, title_set);
+			fprintf(stderr, _("The Title VOB number %d of title set %d does not have a valid DVD size\n"), vob, title_set);
 			return(1);
 		}
 	}
@@ -856,7 +856,7 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 
 	/* Create VTS_XX_X.VOB */
 	if (title_set == 0) {
-		fprintf(stderr,_("Don't try to copy a Title VOB from the VMG domain; there aren't any\n"));
+		fprintf(stderr,_("Do not try to copy a Title VOB from the VMG domain; there are not any\n"));
 		return(1);
 	} else {
 		sprintf(targetname,"%s/%s/VIDEO_TS/VTS_%02i_%i.VOB",targetdir, title_name, title_set, vob);
@@ -868,7 +868,7 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 	for ( i = 0; i < vob - 1; i++ ) {
 		tsize = title_set_info->title_set[title_set].size_vob[i];
 		if (tsize%2048 != 0) {
-			fprintf(stderr, _("The Title VOB number %d of title set %d doesn't have a valid DVD size\n"), i + 1, title_set);
+			fprintf(stderr, _("The Title VOB number %d of title set %d does not have a valid DVD size\n"), i + 1, title_set);
 			return(1);
 		} else {
 			offset = offset + tsize/2048;
@@ -1034,7 +1034,7 @@ int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, int title
 	} else {
 		size = title_set_info->title_set[title_set].size_menu/2048;
 		if (title_set_info->title_set[title_set].size_menu%2048 != 0) {
-			fprintf(stderr, _("The Menu VOB of title set %d doesn't have a valid DVD size\n"), title_set);
+			fprintf(stderr, _("The Menu VOB of title set %d does not have a valid DVD size\n"), title_set);
 			return(1);
 		}
 	}
@@ -1144,7 +1144,7 @@ int DVDCopyIfoBup (dvd_reader_t * dvd, title_set_info_t * title_set_info, int ti
 		return(0);
 	} else {
 		if (title_set_info->title_set[title_set].size_ifo%2048 != 0) {
-			fprintf(stderr, _("The IFO of title set %d doesn't have a valid DVD size\n"), title_set);
+			fprintf(stderr, _("The IFO of title set %d does not have a valid DVD size\n"), title_set);
 			return(1);
 		}
 	}
@@ -1280,7 +1280,7 @@ int DVDGetTitleName(const char *device, char *title)
 	/* Open DVD device */
 
 	if ( !(filehandle = open(device, O_RDONLY)) ) {
-		fprintf(stderr, _("Can't open specified device %s - check your DVD device\n"), device);
+		fprintf(stderr, _("Cannot open specified device %s - check your DVD device\n"), device);
 		return(1);
 	}
 
@@ -1288,7 +1288,7 @@ int DVDGetTitleName(const char *device, char *title)
 
 	if ( 32808 != lseek(filehandle, 32808, SEEK_SET) ) {
 		close(filehandle);
-		fprintf(stderr, _("Can't seek DVD device %s - check your DVD device\n"), device);
+		fprintf(stderr, _("Cannot seek DVD device %s - check your DVD device\n"), device);
 		return(1);
 	}
 
@@ -1296,7 +1296,7 @@ int DVDGetTitleName(const char *device, char *title)
 
 	if ( 32 != read(filehandle, title, 32)) {
 		close(filehandle);
-		fprintf(stderr, _("Can't read title from DVD device %s\n"), device);
+		fprintf(stderr, _("Cannot read title from DVD device %s\n"), device);
 		return(1);
 	}
 
@@ -1422,7 +1422,7 @@ title_set_info_t* DVDGetFileSet(dvd_reader_t* _dvd) {
 	/*  Open main info file */
 	vmg_ifo = ifoOpen(_dvd, 0);
 	if(vmg_ifo == NULL) {
-		fprintf( stderr, _("Can't open VMG info.\n"));
+		fprintf( stderr, _("Cannot open VMG info.\n"));
 		return NULL;
 	}
 
@@ -1590,7 +1590,7 @@ int DVDMirrorTitleSet(dvd_reader_t * _dvd, char * targetdir,char * title_name, i
 	}
 
 	if ( title_set > title_set_info->number_of_title_sets ) {
-		fprintf(stderr, _("Can't copy title_set %d there is only %d title_sets present on this DVD\n"), title_set, title_set_info->number_of_title_sets);
+		fprintf(stderr, _("Cannot copy title_set %d there is only %d title_sets present on this DVD\n"), title_set, title_set_info->number_of_title_sets);
 		DVDFreeTitleSetInfo(title_set_info);
 		return(1);
 	}
@@ -1687,7 +1687,7 @@ int DVDMirrorChapters(dvd_reader_t * _dvd, char * targetdir,char * title_name, i
 
 	vts_ifo_info = ifoOpen(_dvd, titles_info->titles[titles - 1].title_set);
 	if(!vts_ifo_info) {
-		fprintf(stderr, _("Coundn't open title_set %d IFO file\n"), titles_info->titles[titles - 1].title_set);
+		fprintf(stderr, _("Could not open title_set %d IFO file\n"), titles_info->titles[titles - 1].title_set);
 		DVDFreeTitlesInfo(titles_info);
 		DVDFreeTitleSetInfo(title_set_info);
 		return(1);

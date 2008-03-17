@@ -2,7 +2,7 @@
 #define DVDBACKUP_H_
 
 /*
- * dvdbackup - tool to rip DVD's from the command line
+ * dvdbackup - tool to rip DVDs from the command line
  *
  * Copyright (C) 2002  Olaf Beck <olaf_sc@yahoo.com>
  * Copyright (C) 2008  Benjamin Drung <benjamin.drung@gmail.com>

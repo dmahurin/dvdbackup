@@ -1,3 +1,14 @@
+2008-03-17  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r26] README: changed spaces to tabs
+
+	* [r26] man/dvdbackup.1: updated options
+
+	* [r26] src/dvdbackup.c, src/dvdbackup.h, src/main.c: fixed typos
+	  - DVD instead of dvd
+	  - DVDs instead of DVD's
+	  - used cannot instead of can't, do not instead of don't
+
 2008-03-11  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r25] ChangeLog: Updated.
