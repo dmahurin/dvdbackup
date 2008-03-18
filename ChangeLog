@@ -1,3 +1,7 @@
+2008-03-18  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r28] README, man/dvdbackup.1: Synchronized.
+
 2008-03-17  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r27] configure.ac: added checks suggested by autoscan

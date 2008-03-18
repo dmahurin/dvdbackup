@@ -8,11 +8,10 @@ To gather info about the DVD:
 
 General backup information:
 
-	If your backup directory is /my/dvd/backup/dir/ specified with the "-o"
+	If your backup directory is /my/dvd/backup/dir/ specified with the -o
 	flag, then dvdbackup will create a DVD-Video structure under
-	/my/dvd/backup/dir/TITLE_NAME/VIDEO_TS.
-
-	If the -o flag is omitted, the current directory is used.
+	/my/dvd/backup/dir/TITLE_NAME/VIDEO_TS.	If the -o flag is omitted, the
+	current directory is used.
 
 	Since the title is "unique" you can use the same directory for all your
 	DVD backups. If it happens to have a generic title dvdbackup will exit
@@ -27,7 +26,7 @@ General backup information:
 	However the -t and (-t -s/-e) switch is a bit different the titles
 	sectors will be written to the original file but not at the same offset
 	as the original one since they may be gaps in the cell structure that we
-	don't fill.
+	do not fill.
 
 
 To backup the whole DVD
@@ -43,7 +42,9 @@ To backup the main feature of the DVD:
 	dvdbackup -F
 
 	This action creates a valid DVD-Video structure of the feature title
-	set.
+	set.  Note that this will not result in an image immediately watchable -
+	you will need another program like dvdauthor to help construct the IFO
+	files.
 
 	dvdbackup defaults to get the 16:9 version of the main feature if a 4:3
 	is also present on the DVD. To get the 4:3 version use -a 0.
@@ -60,7 +61,9 @@ To backup a title set
 	VTS_02_X.XXX files.
 
 	This action creates a valid DVD-Video structure	of the specified title
-	set.
+	set.  Note that this will not result in an image immediately watchable -
+	you will need another program like dvdauthor to help construct the IFO
+	files.
 
 
 To backup a title:
@@ -70,7 +73,7 @@ To backup a title:
 	This action backups all cells that forms the specified title. Note that
 	there can be sector gaps in between one cell and an other. dvdbackup
 	will backup all sectors that belongs to the title but will skip sectors
-	that aren't a part of the title.
+	that are not a part of the title.
 
 
 To backup a specific chapter or chapters from a title:
@@ -88,7 +91,7 @@ To backup a specific chapter or chapters from a title:
 	To backup to chapter 20 from the first chapter use only -e 20.
 
 	You can skip the -t switch and let the program guess the title although
-	it's not recommended.
+	it is not recommended.
 
 	If you specify a chapter that his higher than the last chapter of the
 	title dvdbackup will truncate to the highest chapter of the title.
