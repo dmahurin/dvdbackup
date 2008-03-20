@@ -1,3 +1,7 @@
+2008-03-11  Stephen Gran  <sgran@debian.org>
+	* [r29] Rename debian/README to debian/README.Debian
+	* [r30] Change footer on manpage - now part of main tarball
+
 2008-03-18  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r28] README, man/dvdbackup.1: Synchronized.
