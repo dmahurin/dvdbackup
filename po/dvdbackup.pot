@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
-"POT-Creation-Date: 2008-03-09 22:09+0100\n"
+"POT-Creation-Date: 2008-03-18 18:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: src/dvdbackup.c:223
 #, c-format
-msgid "Don't try to copy chapters from the VMG domain; there aren't any\n"
+msgid "Do not try to copy chapters from the VMG domain; there are not any\n"
 msgstr ""
 
 #: src/dvdbackup.c:234 src/dvdbackup.c:905 src/dvdbackup.c:1073
@@ -55,7 +55,7 @@ msgstr ""
 
 #: src/dvdbackup.c:409 src/dvdbackup.c:1425
 #, c-format
-msgid "Can't open VMG info.\n"
+msgid "Cannot open VMG info.\n"
 msgstr ""
 
 #: src/dvdbackup.c:423
@@ -97,12 +97,13 @@ msgstr ""
 
 #: src/dvdbackup.c:849 src/dvdbackup.c:871
 #, c-format
-msgid "The Title VOB number %d of title set %d doesn't have a valid DVD size\n"
+msgid ""
+"The Title VOB number %d of title set %d does not have a valid DVD size\n"
 msgstr ""
 
 #: src/dvdbackup.c:859
 #, c-format
-msgid "Don't try to copy a Title VOB from the VMG domain; there aren't any\n"
+msgid "Do not try to copy a Title VOB from the VMG domain; there are not any\n"
 msgstr ""
 
 #: src/dvdbackup.c:883
@@ -157,7 +158,7 @@ msgstr ""
 
 #: src/dvdbackup.c:1037
 #, c-format
-msgid "The Menu VOB of title set %d doesn't have a valid DVD size\n"
+msgid "The Menu VOB of title set %d does not have a valid DVD size\n"
 msgstr ""
 
 #: src/dvdbackup.c:1051
@@ -187,7 +188,7 @@ msgstr ""
 
 #: src/dvdbackup.c:1147
 #, c-format
-msgid "The IFO of title set %d doesn't have a valid DVD size\n"
+msgid "The IFO of title set %d does not have a valid DVD size\n"
 msgstr ""
 
 #: src/dvdbackup.c:1163
@@ -225,19 +226,19 @@ msgstr ""
 msgid "Error writing %s\n"
 msgstr ""
 
-#: src/dvdbackup.c:1283 src/main.c:373
+#: src/dvdbackup.c:1283 src/main.c:366
 #, c-format
-msgid "Can't open specified device %s - check your DVD device\n"
+msgid "Cannot open specified device %s - check your DVD device\n"
 msgstr ""
 
 #: src/dvdbackup.c:1291
 #, c-format
-msgid "Can't seek DVD device %s - check your DVD device\n"
+msgid "Cannot seek DVD device %s - check your DVD device\n"
 msgstr ""
 
 #: src/dvdbackup.c:1299
 #, c-format
-msgid "Can't read title from DVD device %s\n"
+msgid "Cannot read title from DVD device %s\n"
 msgstr ""
 
 #: src/dvdbackup.c:1435
@@ -321,7 +322,7 @@ msgstr ""
 #: src/dvdbackup.c:1593
 #, c-format
 msgid ""
-"Can't copy title_set %d there is only %d title_sets present on this DVD\n"
+"Cannot copy title_set %d there is only %d title_sets present on this DVD\n"
 msgstr ""
 
 #: src/dvdbackup.c:1600
@@ -353,7 +354,7 @@ msgstr ""
 
 #: src/dvdbackup.c:1690
 #, c-format
-msgid "Coundn't open title_set %d IFO file\n"
+msgid "Could not open title_set %d IFO file\n"
 msgstr ""
 
 #: src/dvdbackup.c:1700 src/dvdbackup.c:1705
@@ -578,7 +579,7 @@ msgstr ""
 #: src/main.c:93
 #, c-format
 msgid ""
-"  -i, --input=DEVICE       where DEVICE is your dvd device\n"
+"  -i, --input=DEVICE       where DEVICE is your DVD device\n"
 "                           if not given /dev/dvd is used\n"
 "  -o, --output=DIRECTORY   where directory is your backup target\n"
 "                           if not given the current directory is used\n"
@@ -587,7 +588,7 @@ msgstr ""
 #: src/main.c:98
 #, c-format
 msgid ""
-"  -v, --verbose=X          where X is the amount of verbosity\n"
+"  -v, --verbose            print more information about progress\n"
 "  -n, --name=NAME          set the title (useful if autodetection fails)\n"
 "  -a, --aspect=0           to get aspect ratio 4:3 instead of 16:9 if both "
 "are\n"
@@ -614,88 +615,88 @@ msgstr ""
 msgid "Report bugs to <%s>.\n"
 msgstr ""
 
-#: src/main.c:268
+#: src/main.c:267
 #, c-format
 msgid "%s: extra operand: %s\n"
 msgstr ""
 
-#: src/main.c:270
+#: src/main.c:269
 #, c-format
 msgid "Try `%s --help' for more information.\n"
 msgstr ""
 
-#: src/main.c:386
+#: src/main.c:379
 #, c-format
 msgid ""
 "You must provide a title name when you read your DVD-Video structure direct "
 "from the HD\n"
 msgstr ""
 
-#: src/main.c:391
+#: src/main.c:384
 #, c-format
 msgid ""
 "The DVD-Video title on the disk is DVD_VIDEO, which is too generic; please "
 "provide a title with the -n switch\n"
 msgstr ""
 
-#: src/main.c:398
+#: src/main.c:391
 #, c-format
 msgid ""
 "The title name specified is longer than 32 characters; truncating the title "
 "name\n"
 msgstr ""
 
-#: src/main.c:412
+#: src/main.c:405
 #, c-format
 msgid "The target directory is not valid; it may be a ordinary file\n"
 msgstr ""
 
-#: src/main.c:416
+#: src/main.c:409
 #, c-format
 msgid "Failed creating target directory %s\n"
 msgstr ""
 
-#: src/main.c:428
+#: src/main.c:421
 #, c-format
 msgid "The title directory is not valid; it may be a ordinary file\n"
 msgstr ""
 
-#: src/main.c:432
+#: src/main.c:425
 #, c-format
 msgid "Failed creating title directory\n"
 msgstr ""
 
-#: src/main.c:443
+#: src/main.c:436
 #, c-format
 msgid "The VIDEO_TS directory is not valid; it may be a ordinary file\n"
 msgstr ""
 
-#: src/main.c:447
+#: src/main.c:440
 #, c-format
 msgid "Failed creating VIDEO_TS directory\n"
 msgstr ""
 
-#: src/main.c:462
+#: src/main.c:455
 #, c-format
 msgid "Mirror of DVD failed\n"
 msgstr ""
 
-#: src/main.c:475
+#: src/main.c:468
 #, c-format
 msgid "Mirror of title set %d failed\n"
 msgstr ""
 
-#: src/main.c:490
+#: src/main.c:483
 #, c-format
 msgid "Mirror of main feature film of DVD failed\n"
 msgstr ""
 
-#: src/main.c:499
+#: src/main.c:492
 #, c-format
 msgid "Mirror of title  %d failed\n"
 msgstr ""
 
-#: src/main.c:509
+#: src/main.c:502
 #, c-format
 msgid "Mirror of chapters %d to %d in title %d failed\n"
 msgstr ""
