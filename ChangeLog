@@ -2,6 +2,8 @@
 	* [r29] Rename debian/README to debian/README.Debian
 	* [r30] Change footer on manpage - now part of main tarball
 	* [r31] debian/rules build changes for new autoconf system
+	* [r32] debian/rules: switch to running make install with DESTDIR set,
+           and then install from there.
 
 2008-03-18  Benjamin Drung  <benjamin.drung@gmail.com>
 

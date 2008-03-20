@@ -56,8 +56,9 @@ binary-arch: install
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs
-	dh_installdocs debian/README
-	dh_installman debian/dvdbackup.1
+	dh_installdocs 
+	dh_installman
+	dh_install --autodest --sourcedir=debian/tmp
 	dh_strip --dbg-package=dvdbackup-dbg
 	dh_link
 	dh_compress
