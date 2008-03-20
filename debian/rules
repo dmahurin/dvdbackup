@@ -16,8 +16,17 @@ ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
 	INSTALL_PROGRAM += -s
 endif
 
+export DEB_HOST_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+export DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+ifeq ($(DEB_BUILD_GNU_TYPE), $(DEB_HOST_GNU_TYPE))
+	confflags += --build $(DEB_HOST_GNU_TYPE)
+else
+	confflags += --build $(DEB_BUILD_GNU_TYPE) --host $(DEB_HOST_GNU_TYPE)
+endif
+
 config.status: configure
-	./configure --prefix=/usr
+	./configure $(confflags) --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info
 
 build: build-stamp
 build-stamp: config.status
@@ -29,16 +38,17 @@ clean:
 	dh_testdir
 	dh_testroot
 ifeq (Makefile,$(wildcard Makefile))
-	$(MAKE) clean
+	$(MAKE) distclean
 endif
 	rm -f build-stamp
+	rm -f po/stamp-po
 	dh_clean
 
 install: build
 	dh_testdir
 	dh_testroot
 	dh_installdirs
-	install src/dvdbackup `pwd`/debian/dvdbackup/usr/bin/
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp/
 
 binary-indep:
 
