@@ -1003,6 +1003,7 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, int title_set, char * targetdir,char * title_name) {
 
 	/* Temp filename,dirname */
+	char filename[PATH_MAX] = "VIDEO_TS.VOB";
 	char targetname[PATH_MAX];
 	struct stat fileinfo;
 
@@ -1021,6 +1022,10 @@ int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, int title
 	int buff = 512;
 	int offset = 0;
 
+	/* create filename VIDEO_TS.VOB or VTS_XX_0.VOB */
+	if(title_set > 0) {
+		sprintf(filename, "VTS_%02i_0.VOB", title_set);
+	}
 
 	/* DVD handler */
 	dvd_file_t   *	dvd_file=NULL;
@@ -1034,18 +1039,13 @@ int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, int title
 	} else {
 		size = title_set_info->title_set[title_set].size_menu/2048;
 		if (title_set_info->title_set[title_set].size_menu%2048 != 0) {
-			fprintf(stderr, _("The Menu VOB of title set %d does not have a valid DVD size\n"), title_set);
+			fprintf(stderr, _("The Menu VOB of title set %d (%s) does not have a valid DVD size\n"), title_set, filename);
 			return(1);
 		}
 	}
 
 	/* Create VIDEO_TS.VOB or VTS_XX_0.VOB */
-	if (title_set == 0) {
-		sprintf(targetname,"%s/%s/VIDEO_TS/VIDEO_TS.VOB",targetdir, title_name);
-	} else {
-		sprintf(targetname,"%s/%s/VIDEO_TS/VTS_%02i_0.VOB",targetdir, title_name, title_set);
-	}
-
+	sprintf(targetname,"%s/%s/VIDEO_TS/%s",targetdir, title_name, filename);
 
 	if (stat(targetname, &fileinfo) == 0) {
 		fprintf(stderr, _("The Menu file %s exists will try to over write it.\n"), targetname);
@@ -1077,7 +1077,7 @@ int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, int title
 
 
 	if ((dvd_file = DVDOpenFile(dvd, title_set, DVD_READ_MENU_VOBS))== 0) {
-		fprintf(stderr, _("Failed opening MENU VOB\n"));
+		fprintf(stderr, _("Failed opening %s\n"), filename);
 		free(buffer);
 		close(streamout);
 		return(1);
@@ -1089,7 +1089,7 @@ int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, int title
 			buff = left;
 		}
 		if ( DVDReadBlocks(dvd_file,offset,buff, buffer) != buff) {
-			fprintf(stderr, _("Error reading MENU VOB\n"));
+			fprintf(stderr, _("Error reading %s\n"), filename);
 			free(buffer);
 			DVDCloseFile(dvd_file);
 			close(streamout);
@@ -1098,7 +1098,7 @@ int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, int title
 
 
 		if (write(streamout,buffer,buff *  2048) != buff * 2048) {
-			fprintf(stderr, _("Error writing MENU VOB\n"));
+			fprintf(stderr, _("Error writing %s\n"), filename);
 			free(buffer);
 			close(streamout);
 			return(1);

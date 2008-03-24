@@ -1,3 +1,7 @@
+2008-03-24  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r37] src/dvdbackup.c (DVDCopyMenu): Error messages prints filename.
+
 2008-03-20  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r33] configure.ac, NEWS, po/dvdbackup.pot: Released version 0.2
