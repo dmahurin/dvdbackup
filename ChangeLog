@@ -1,5 +1,7 @@
 2008-03-24  Benjamin Drung  <benjamin.drung@gmail.com>
 
+	* [r40] src/dvdbackup.c: Changed type of file sizes from int to off_t 
+
 	* [r39] src/dvdbackup.c (DVDCopyMenu): changed invalid DVD size error to
 	  warning
 
