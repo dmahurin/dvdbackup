@@ -1043,8 +1043,7 @@ int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, int title
 	} else {
 		size = title_set_info->title_set[title_set].size_menu/DVD_VIDEO_LB_LEN;
 		if (title_set_info->title_set[title_set].size_menu%DVD_VIDEO_LB_LEN != 0) {
-			fprintf(stderr, _("The Menu VOB of title set %d (%s) does not have a valid DVD size\n"), title_set, filename);
-			return(1);
+			fprintf(stderr, _("Warning: The Menu VOB of title set %d (%s) does not have a valid DVD size.\n"), title_set, filename);
 		}
 	}
 

@@ -1,5 +1,8 @@
 2008-03-24  Benjamin Drung  <benjamin.drung@gmail.com>
 
+	* [r39] src/dvdbackup.c (DVDCopyMenu): changed invalid DVD size error to
+	  warning
+
 	* [r38] src/dvdbackup.c:
 	  - (DVDGetFileSet): Cleanup.
 	  - Replaced 2048 with DVD_VIDEO_LB_LEN (defined in dvdread/dvd_reader.h)
