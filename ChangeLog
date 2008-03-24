@@ -1,5 +1,11 @@
 2008-03-24  Benjamin Drung  <benjamin.drung@gmail.com>
 
+	* [r38] src/dvdbackup.c:
+	  - (DVDGetFileSet): Cleanup.
+	  - Replaced 2048 with DVD_VIDEO_LB_LEN (defined in dvdread/dvd_reader.h)
+	  - created constant BUFFER_SIZE
+	  - replaced vobsize with MAX_VOB_SIZE
+
 	* [r37] src/dvdbackup.c (DVDCopyMenu): Error messages prints filename.
 
 2008-03-20  Benjamin Drung  <benjamin.drung@gmail.com>

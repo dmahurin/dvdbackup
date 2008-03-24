@@ -42,6 +42,18 @@
 
 #define MAXNAME 256
 
+/**
+ * Buffer size in DVD logical blocks (2 KiB).
+ * Currently set to 1 MiB.
+ */
+#define BUFFER_SIZE 512
+
+/**
+ * The maximum size of a VOB file is 1 GiB or 524288 in Video DVD logical block
+ * respectively.
+ */
+#define MAX_VOB_SIZE 524288
+
 /* Flag for verbose mode */
 int verbose = 0;
 int aspect;
@@ -172,11 +184,8 @@ int DVDWriteCells(dvd_reader_t * dvd, int cell_start_sector[], int cell_end_sect
 
 	int size;
 	int left;
-	int vobsize = 524288;
 
-	/* Buffer size in DVD sectors */
-	/* Currently set to 1MB */
-	int buff = 512;
+	int to_read = BUFFER_SIZE; 
 	int rbuff;
 
 	/* Offsets */
@@ -230,7 +239,7 @@ int DVDWriteCells(dvd_reader_t * dvd, int cell_start_sector[], int cell_end_sect
 	fprintf(stderr,"DVDWriteCells: 1\n");
 #endif
 
-	if ((buffer = (unsigned char *)malloc(buff * 2048 * sizeof(unsigned char))) == NULL) {
+	if ((buffer = (unsigned char *)malloc(BUFFER_SIZE * DVD_VIDEO_LB_LEN * sizeof(unsigned char))) == NULL) {
 		fprintf(stderr, _("Out of memory copying %s\n"), targetname);
 		return(1);
 	}
@@ -268,20 +277,20 @@ int DVDWriteCells(dvd_reader_t * dvd, int cell_start_sector[], int cell_end_sect
 
 	while( left > 0 ) {
 
-		if (buff > left) {
-			buff = left;
+		if (to_read > left) {
+			to_read = left;
 		}
-		if ((rbuff = DVDReadBlocks(dvd_file,soffset,buff, buffer)) < 0) {
-			fprintf(stderr, _("Error reading MENU VOB %d != %d\n"), rbuff, buff);
+		if ((rbuff = DVDReadBlocks(dvd_file,soffset, to_read, buffer)) < 0) {
+			fprintf(stderr, _("Error reading MENU VOB %d != %d\n"), rbuff, to_read);
 			free(buffer);
 			DVDCloseFile(dvd_file);
 			close(streamout);
 			return(1);
 		}
-		if (rbuff < buff) {
-			fprintf(stderr, _("DVDReadBlocks read %d blocks of %d blocks\n"), rbuff, buff);
+		if (rbuff < to_read) {
+			fprintf(stderr, _("DVDReadBlocks read %d blocks of %d blocks\n"), rbuff, to_read);
 		}
-		if (write(streamout,buffer,rbuff *  2048) != rbuff * 2048) {
+		if (write(streamout,buffer,rbuff *  DVD_VIDEO_LB_LEN) != rbuff * DVD_VIDEO_LB_LEN) {
 			fprintf(stderr, _("Error writing TITLE VOB\n"));
 			free(buffer);
 			close(streamout);
@@ -290,12 +299,12 @@ int DVDWriteCells(dvd_reader_t * dvd, int cell_start_sector[], int cell_end_sect
 #ifdef DEBUG
 		fprintf(stderr,"Current soffset changed from %i to ",soffset);
 #endif
-		soffset = soffset + buff;
+		soffset = soffset + to_read;
 		left = left - rbuff;
 		size = size + rbuff;
-		if ((size >= vobsize) && (left > 0)) {
+		if ((size >= MAX_VOB_SIZE) && (left > 0)) {
 #ifdef DEBUG
-		    fprintf(stderr,"size: %i, vobsize: %i\n ",size, vobsize);
+		    fprintf(stderr,"size: %i, MAX_VOB_SIZE: %i\n ",size, MAX_VOB_SIZE);
 #endif
 		    close(streamout);
 		    vob = vob + 1;
@@ -816,12 +825,9 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 	int size;
 	int left;
 
-	/* Buffer size in DVD sectors */
-	/* Currently set to 1MB */
-	int buff = 512;
 	int offset = 0;
 	int tsize;
-	int toRead = buff;
+	int to_read = BUFFER_SIZE;
 	int actRead; /* number of buffers actually read */
 
 	/* DVD handler */
@@ -844,8 +850,8 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 		fprintf(stderr,_("Failed vob %d test\n"), vob);
 		return(0);
 	} else {
-		size = title_set_info->title_set[title_set].size_vob[vob - 1]/2048;
-		if (title_set_info->title_set[title_set].size_vob[vob - 1]%2048 != 0) {
+		size = title_set_info->title_set[title_set].size_vob[vob - 1]/DVD_VIDEO_LB_LEN;
+		if (title_set_info->title_set[title_set].size_vob[vob - 1]%DVD_VIDEO_LB_LEN != 0) {
 			fprintf(stderr, _("The Title VOB number %d of title set %d does not have a valid DVD size\n"), vob, title_set);
 			return(1);
 		}
@@ -867,11 +873,11 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 	/* Now figure out the offset we will start at also check that the previus files are of valid DVD size */
 	for ( i = 0; i < vob - 1; i++ ) {
 		tsize = title_set_info->title_set[title_set].size_vob[i];
-		if (tsize%2048 != 0) {
+		if (tsize%DVD_VIDEO_LB_LEN != 0) {
 			fprintf(stderr, _("The Title VOB number %d of title set %d does not have a valid DVD size\n"), i + 1, title_set);
 			return(1);
 		} else {
-			offset = offset + tsize/2048;
+			offset = offset + tsize/DVD_VIDEO_LB_LEN;
 		}
 	}
 #ifdef DEBUG
@@ -901,13 +907,13 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 
 	left = size;
 
-	if ((buffer = (unsigned char *)malloc(buff * 2048 * sizeof(unsigned char))) == NULL) {
+	if ((buffer = (unsigned char *)malloc(BUFFER_SIZE * DVD_VIDEO_LB_LEN * sizeof(unsigned char))) == NULL) {
 		fprintf(stderr, _("Out of memory copying %s\n"), targetname);
 		close(streamout);
 		return(1);
 	}
 
-	if ((bufferZero = (unsigned char *)calloc(buff * 2048, sizeof(unsigned char))) == NULL) {
+	if ((bufferZero = (unsigned char *)calloc(BUFFER_SIZE * DVD_VIDEO_LB_LEN, sizeof(unsigned char))) == NULL) {
 		fprintf(stderr, _("Out of memory (2) copying %s\n"), targetname);
 		free(buffer);
 		close(streamout);
@@ -924,10 +930,10 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 
 	while( left > 0 ) {
 
-		if (toRead > left) {
-			toRead = left;
+		if (to_read > left) {
+			to_read = left;
 		}
-		if ( (actRead = DVDReadBlocks(dvd_file,offset,toRead, buffer)) != toRead) {
+		if ( (actRead = DVDReadBlocks(dvd_file,offset,to_read, buffer)) != to_read) {
 		  if (actRead>=0)
 		    fprintf(stderr, _("Error reading TITLE VOB at block %d\n"), offset+actRead);
 		  else
@@ -936,7 +942,7 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 
 
 		if (actRead>0) {
-		  if (write(streamout,buffer,actRead *  2048) != actRead * 2048) {
+		  if (write(streamout,buffer,actRead *  DVD_VIDEO_LB_LEN) != actRead * DVD_VIDEO_LB_LEN) {
 		    fprintf(stderr, _("Error writing TITLE VOB\n"));
 		    DVDCloseFile(dvd_file);
 		    free(buffer);
@@ -946,7 +952,7 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 		  }
 		}
 
-		if (actRead!=toRead) {
+		if (actRead!=to_read) {
 		  int numBlanks=0;
 
 		  if (actRead<0) {
@@ -967,12 +973,12 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 		      fprintf(stderr, _("padding single block\n"));
 		      break;
 		    case STRATEGY_SKIP_MULTIBLOCK:
-		      numBlanks=(toRead-actRead);
+		      numBlanks=(to_read-actRead);
 		      fprintf(stderr, _("padding %d blocks\n"), numBlanks);
 		      break;
 		  }
 
-		  if (write(streamout,bufferZero,numBlanks*2048) != numBlanks*2048) {
+		  if (write(streamout,bufferZero,numBlanks*DVD_VIDEO_LB_LEN) != numBlanks*DVD_VIDEO_LB_LEN) {
 		    fprintf(stderr, _("Error writing TITLE VOB (padding)\n"));
 		    DVDCloseFile(dvd_file);
 		    free(buffer);
@@ -1017,9 +1023,7 @@ int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, int title
 	int size;
 	int left;
 
-	/* Buffer size in DVD sectors */
-	/* Currently set to 1MB */
-	int buff = 512;
+	int to_read = BUFFER_SIZE;
 	int offset = 0;
 
 	/* create filename VIDEO_TS.VOB or VTS_XX_0.VOB */
@@ -1037,8 +1041,8 @@ int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, int title
 	if (title_set_info->title_set[title_set].size_menu == 0 ) {
 		return(0);
 	} else {
-		size = title_set_info->title_set[title_set].size_menu/2048;
-		if (title_set_info->title_set[title_set].size_menu%2048 != 0) {
+		size = title_set_info->title_set[title_set].size_menu/DVD_VIDEO_LB_LEN;
+		if (title_set_info->title_set[title_set].size_menu%DVD_VIDEO_LB_LEN != 0) {
 			fprintf(stderr, _("The Menu VOB of title set %d (%s) does not have a valid DVD size\n"), title_set, filename);
 			return(1);
 		}
@@ -1069,7 +1073,7 @@ int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, int title
 
 	left = size;
 
-	if ((buffer = (unsigned char *)malloc(buff * 2048 * sizeof(unsigned char))) == NULL) {
+	if ((buffer = (unsigned char *)malloc(BUFFER_SIZE * DVD_VIDEO_LB_LEN * sizeof(unsigned char))) == NULL) {
 		fprintf(stderr, _("Out of memory copying %s\n"), targetname);
 		close(streamout);
 		return(1);
@@ -1085,10 +1089,10 @@ int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, int title
 
 	while( left > 0 ) {
 
-		if (buff > left) {
-			buff = left;
+		if (to_read > left) {
+			to_read = left;
 		}
-		if ( DVDReadBlocks(dvd_file,offset,buff, buffer) != buff) {
+		if ( DVDReadBlocks(dvd_file,offset, to_read, buffer) != to_read) {
 			fprintf(stderr, _("Error reading %s\n"), filename);
 			free(buffer);
 			DVDCloseFile(dvd_file);
@@ -1097,15 +1101,15 @@ int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, int title
 		}
 
 
-		if (write(streamout,buffer,buff *  2048) != buff * 2048) {
+		if (write(streamout, buffer, to_read * DVD_VIDEO_LB_LEN) != to_read * DVD_VIDEO_LB_LEN) {
 			fprintf(stderr, _("Error writing %s\n"), filename);
 			free(buffer);
 			close(streamout);
 			return(1);
 		}
 
-		offset = offset + buff;
-		left = left - buff;
+		offset = offset + to_read;
+		left = left - to_read;
 
 	}
 
@@ -1143,7 +1147,7 @@ int DVDCopyIfoBup (dvd_reader_t * dvd, title_set_info_t * title_set_info, int ti
 	if (title_set_info->title_set[title_set].size_ifo == 0 ) {
 		return(0);
 	} else {
-		if (title_set_info->title_set[title_set].size_ifo%2048 != 0) {
+		if (title_set_info->title_set[title_set].size_ifo%DVD_VIDEO_LB_LEN != 0) {
 			fprintf(stderr, _("The IFO of title set %d does not have a valid DVD size\n"), title_set);
 			return(1);
 		}
@@ -1405,7 +1409,7 @@ void DVDFreeTitlesInfo(titles_info_t * titles_info) {
 
 
 
-title_set_info_t* DVDGetFileSet(dvd_reader_t* _dvd) {
+title_set_info_t* DVDGetFileSet(dvd_reader_t* dvd) {
 
 	/* title interation */
 	int title_sets, counter, i;
@@ -1413,22 +1417,22 @@ title_set_info_t* DVDGetFileSet(dvd_reader_t* _dvd) {
 	/* DVD Video files */
 	dvd_stat_t statbuf;
 
-	/*DVD ifo handler*/
+	/* DVD IFO handler */
 	ifo_handle_t* vmg_ifo=NULL;
 
-	/* The Title Set Info struct*/
+	/* The Title Set Info struct */
 	title_set_info_t* title_set_info;
 
 	/*  Open main info file */
-	vmg_ifo = ifoOpen(_dvd, 0);
+	vmg_ifo = ifoOpen(dvd, 0);
 	if(vmg_ifo == NULL) {
-		fprintf( stderr, _("Cannot open VMG info.\n"));
+		fprintf( stderr, _("Cannot open Video Manager (VMG) info.\n"));
 		return NULL;
 	}
 
 	title_sets = vmg_ifo->vmgi_mat->vmg_nr_of_title_sets;
 
-	/* Close the VMG ifo file we got all the info we need */
+	/* Close the VMG IFO file we got all the info we need */
 	ifoClose(vmg_ifo);
 
 	if((title_set_info = (title_set_info_t*)malloc(sizeof(title_set_info_t))) == NULL) {
@@ -1445,21 +1449,19 @@ title_set_info_t* DVDGetFileSet(dvd_reader_t* _dvd) {
 	title_set_info->number_of_title_sets = title_sets;
 
 
-	/* Find VIDEO_TS.IFO is present - must be present since we did a ifo open 0*/
+	/* Find VIDEO_TS.IFO is present - must be present since we did a ifo open 0 */
 
-       if ( DVDFileStat(_dvd, 0, DVD_READ_INFO_FILE, &statbuf) != -1 ) {
-               title_set_info->title_set[0].size_ifo = statbuf.size;
+	if (DVDFileStat(dvd, 0, DVD_READ_INFO_FILE, &statbuf) != -1) {
+		title_set_info->title_set[0].size_ifo = statbuf.size;
 	} else {
 		DVDFreeTitleSetInfo(title_set_info);
-		return(0);
+		return NULL;
 	}
-
-
 
 	/* Find VIDEO_TS.VOB if present*/
 
-       if ( DVDFileStat(_dvd, 0, DVD_READ_MENU_VOBS, &statbuf) != -1 ) {
-               title_set_info->title_set[0].size_menu = statbuf.size;
+	if(DVDFileStat(dvd, 0, DVD_READ_MENU_VOBS, &statbuf) != -1) {
+		title_set_info->title_set[0].size_menu = statbuf.size;
 	} else {
 		title_set_info->title_set[0].size_menu = 0 ;
 	}
@@ -1469,82 +1471,72 @@ title_set_info_t* DVDGetFileSet(dvd_reader_t* _dvd) {
 	title_set_info->title_set[0].number_of_vob_files = 0;
 	title_set_info->title_set[0].size_vob[0] = 0;
 
-
 	if ( verbose > 0 ){
 		fprintf(stderr,_("\n\n\nFile sizes for Title set 0 VIDEO_TS.XXX\n"));
 		fprintf(stderr,_("IFO = %d, MENU_VOB = %d\n"),title_set_info->title_set[0].size_ifo, title_set_info->title_set[0].size_menu);
 	}
 
+	for(counter = 0; counter < title_sets; counter++) {
 
-	if ( title_sets >= 1 ) {
- 		for (counter=0; counter < title_sets; counter++ ){
+		if(verbose > 1) {
+			fprintf(stderr,_("At top of loop\n"));
+		}
 
-			if ( verbose > 1 ){
-				fprintf(stderr,_("At top of loop\n"));
+
+		if(DVDFileStat(dvd, counter + 1, DVD_READ_INFO_FILE, &statbuf) != -1) {
+			title_set_info->title_set[counter+1].size_ifo = statbuf.size;
+		} else {
+			DVDFreeTitleSetInfo(title_set_info);
+			return NULL;
+		}
+
+		if(verbose > 1) {
+			fprintf(stderr,_("After opening files\n"));
+		}
+
+		/* Find VTS_XX_0.VOB if present*/
+
+		if(DVDFileStat(dvd, counter + 1, DVD_READ_MENU_VOBS, &statbuf) != -1) {
+			title_set_info->title_set[counter + 1].size_menu = statbuf.size;
+		} else {
+			title_set_info->title_set[counter + 1].size_menu = 0 ;
+		}
+
+		if(verbose > 1) {
+			fprintf(stderr,_("After Menu VOB check\n"));
+		}
+
+		/* Find all VTS_XX_[1 to 9].VOB files if they are present*/
+
+		i = 0;
+		if(DVDFileStat(dvd, counter + 1, DVD_READ_TITLE_VOBS, &statbuf) != -1) {
+			for(i = 0; i < statbuf.nr_parts; ++i) {
+				title_set_info->title_set[counter + 1].size_vob[i] = statbuf.parts_size[i];
 			}
+		}
+		title_set_info->title_set[counter + 1].number_of_vob_files = i;
 
+		if(verbose > 1) {
+			fprintf(stderr,_("After Menu Title VOB check\n"));
+		}
 
-                       if ( DVDFileStat(_dvd, counter + 1, DVD_READ_INFO_FILE, &statbuf) != -1) {
-                               title_set_info->title_set[counter+1].size_ifo = statbuf.size;
-			} else {
-				DVDFreeTitleSetInfo(title_set_info);
-				return(0);
-			}
-
-			if ( verbose > 1 ){
-				fprintf(stderr,_("After opening files\n"));
-			}
-
-
-			/* Find VTS_XX_0.VOB if present*/
-
-                       if ( DVDFileStat(_dvd, counter + 1, DVD_READ_MENU_VOBS, &statbuf) != -1) {
-                               title_set_info->title_set[counter + 1].size_menu = statbuf.size;
-			} else {
-				title_set_info->title_set[counter + 1].size_menu = 0 ;
-			}
-
-
-			if ( verbose > 1 ){
-				fprintf(stderr,_("After Menu VOB check\n"));
-			}
-
-
-			/* Find all VTS_XX_[1 to 9].VOB files if they are present*/
-
-                       i = 0;
-                       if ( DVDFileStat(_dvd, counter + 1, DVD_READ_TITLE_VOBS, &statbuf) != -1) {
-                               for ( i = 0; i < statbuf.nr_parts; ++i) {
-                                       title_set_info->title_set[counter + 1].size_vob[i] = statbuf.parts_size[i];
-				}
-
-			}
-			title_set_info->title_set[counter + 1].number_of_vob_files = i;
-
-			if ( verbose > 1 ){
-				fprintf(stderr,_("After Menu Title VOB check\n"));
-			}
-
-			if ( verbose > 0 ) {
-				fprintf(stderr,_("\n\n\nFile sizes for Title set %d i.e.VTS_%02d_X.XXX\n"), counter + 1, counter + 1);
-				fprintf(stderr,_("IFO: %d, MENU: %d\n"), title_set_info->title_set[counter +1].size_ifo, title_set_info->title_set[counter +1].size_menu);
-				for (i = 0; i < title_set_info->title_set[counter + 1].number_of_vob_files ; i++) {
-					fprintf(stderr, _("VOB %d is %d\n"), i + 1, title_set_info->title_set[counter + 1].size_vob[i]);
-				}
-			}
-
-			if ( verbose > 1 ){
-				fprintf(stderr,_("Bottom of loop\n"));
+		if(verbose > 0) {
+			fprintf(stderr,_("\n\n\nFile sizes for Title set %d i.e.VTS_%02d_X.XXX\n"), counter + 1, counter + 1);
+			fprintf(stderr,_("IFO: %d, MENU: %d\n"), title_set_info->title_set[counter +1].size_ifo, title_set_info->title_set[counter +1].size_menu);
+			for (i = 0; i < title_set_info->title_set[counter + 1].number_of_vob_files ; i++) {
+				fprintf(stderr, _("VOB %d is %d\n"), i + 1, title_set_info->title_set[counter + 1].size_vob[i]);
 			}
 		}
 
-        }
+		if(verbose > 1) {
+			fprintf(stderr,_("Bottom of loop\n"));
+		}
+	}
 
 	/* Return the info */
-	return(title_set_info);
-
-
+	return title_set_info;
 }
+
 
 int DVDMirror(dvd_reader_t * _dvd, char * targetdir,char * title_name, read_error_strategy_t errorstrat) {
 
