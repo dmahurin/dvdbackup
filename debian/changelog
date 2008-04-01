@@ -1,4 +1,10 @@
-dvdbackup (0.1.2-1) UNRELEASED; urgency=low
+dvdbackup (0.3-1) UNRELEASED; urgency=low
+
+  * New upstream version
+
+ -- Stephen Gran <sgran@debian.org>  Tue, 01 Apr 2008 01:30:29 +0100
+
+dvdbackup (0.2-1) unstable; urgency=low
 
   * New upstream version
   * Mandatory switches are now gone (closes: #469337, #470049)
