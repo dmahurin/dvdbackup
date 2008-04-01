@@ -1430,6 +1430,9 @@ title_set_info_t* DVDGetFileSet(dvd_reader_t* dvd) {
 	}
 
 	title_sets = vmg_ifo->vmgi_mat->vmg_nr_of_title_sets;
+	if(verbose) {
+		fprintf(stderr, _("title_sets = %i\n"), title_sets);
+	}
 
 	/* Close the VMG IFO file we got all the info we need */
 	ifoClose(vmg_ifo);
@@ -1493,7 +1496,7 @@ title_set_info_t* DVDGetFileSet(dvd_reader_t* dvd) {
 			fprintf(stderr,_("After opening files\n"));
 		}
 
-		/* Find VTS_XX_0.VOB if present*/
+		/* Find VTS_XX_0.VOB if present */
 
 		if(DVDFileStat(dvd, counter + 1, DVD_READ_MENU_VOBS, &statbuf) != -1) {
 			title_set_info->title_set[counter + 1].size_menu = statbuf.size;
@@ -1505,7 +1508,7 @@ title_set_info_t* DVDGetFileSet(dvd_reader_t* dvd) {
 			fprintf(stderr,_("After Menu VOB check\n"));
 		}
 
-		/* Find all VTS_XX_[1 to 9].VOB files if they are present*/
+		/* Find all VTS_XX_[1 to 9].VOB files if they are present */
 
 		i = 0;
 		if(DVDFileStat(dvd, counter + 1, DVD_READ_TITLE_VOBS, &statbuf) != -1) {
@@ -1520,7 +1523,7 @@ title_set_info_t* DVDGetFileSet(dvd_reader_t* dvd) {
 		}
 
 		if(verbose > 0) {
-			fprintf(stderr,_("\n\n\nFile sizes for Title set %d i.e.VTS_%02d_X.XXX\n"), counter + 1, counter + 1);
+			fprintf(stderr,_("\n\n\nFile sizes for Title set %d i.e. VTS_%02d_X.XXX\n"), counter + 1, counter + 1);
 			fprintf(stderr,_("IFO: %jd, MENU: %jd\n"), (intmax_t)title_set_info->title_set[counter +1].size_ifo, (intmax_t)title_set_info->title_set[counter +1].size_menu);
 			for (i = 0; i < title_set_info->title_set[counter + 1].number_of_vob_files ; i++) {
 				fprintf(stderr, _("VOB %d is %jd\n"), i + 1, (intmax_t)title_set_info->title_set[counter + 1].size_vob[i]);
