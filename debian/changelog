@@ -1,8 +1,8 @@
-dvdbackup (0.3-1) UNRELEASED; urgency=low
+dvdbackup (0.2-2) UNRELEASED; urgency=low
 
-  * New upstream version
+  * Pass CFLAGS to build system, don't override them
 
- -- Stephen Gran <sgran@debian.org>  Tue, 01 Apr 2008 01:30:29 +0100
+ -- Stephen Gran <sgran@debian.org>  Tue, 01 Apr 2008 23:19:25 +0100
 
 dvdbackup (0.2-1) unstable; urgency=low
 
