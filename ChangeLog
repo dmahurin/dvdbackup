@@ -1,6 +1,6 @@
 2008-04-02  Benjamin Drung  <benjamin.drung@gmail.com>
 
-	* [r42] src/dvdbackup.c (DVDGetFileSet):
+	* [r43] src/dvdbackup.c (DVDGetFileSet):
 	  - fixed typo
 	  - added more verbose output
 
