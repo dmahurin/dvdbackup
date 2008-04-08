@@ -29,9 +29,9 @@ extern int verbose;
 extern int aspect;
 
 typedef enum {
-  STRATEGY_ABORT,
-  STRATEGY_SKIP_BLOCK,
-  STRATEGY_SKIP_MULTIBLOCK
+	STRATEGY_ABORT,
+	STRATEGY_SKIP_BLOCK,
+	STRATEGY_SKIP_MULTIBLOCK
 } read_error_strategy_t;
 
 int DVDDisplayInfo(dvd_reader_t * _dvd, char * dvd);

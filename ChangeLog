@@ -1,3 +1,10 @@
+2008-04-08  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r45] src/dvdbackup.c:
+	  - Removed DVDMirrorVMG. Use DVDMirrorTitleX with title set 0 instead.
+	  - Renamed DVDCopyTileVobX to DVDCopyTitleVobX.
+	  - Added DVDCopyBlocks for DVDCopyTitleVobX and DVDCopyMenu.
+
 2008-04-02  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r43] src/dvdbackup.c (DVDGetFileSet):
