@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Stephen Gran <sgran@debian.org>
 Build-Depends: debhelper (>= 5.0), libdvdread-dev (>=0.9.6)
 Standards-Version: 3.7.3
+Homepage: http://dvdbackup.sourceforge.net
 
 Package: dvdbackup
 Architecture: any
