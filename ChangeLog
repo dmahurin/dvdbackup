@@ -1,3 +1,13 @@
+2008-04-09  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r47] src/dvdbackup.c:
+	  - (DVDCopyIfoBup) removed gotos
+	  - (uniq) removed
+	  - (DVDDisplayInfo) Added human readable output of file sizes.
+
+	* [r47] src/dvdbackup.c, src/dvdbackup.h, src/main.c: converted spaces to
+	  tabs
+
 2008-04-08  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r45] src/dvdbackup.c:
