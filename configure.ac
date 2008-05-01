@@ -25,14 +25,15 @@ dnl Checks for programs
 dnl ----------------------------------------------------------
 
 AC_PROG_CC
+AC_PROG_CC_C99
 AC_PROG_LN_S
 
 dnl ----------------------------------------------------------
 dnl Set build flags based on environment
 dnl ----------------------------------------------------------
 
-# use -Wall -Wextra when possible
-#AX_CFLAGS_GCC_OPTION(-pedantic)
+# use -pedantic -Wall -Wextra when possible
+AX_CFLAGS_GCC_OPTION(-pedantic)
 AX_CFLAGS_GCC_OPTION(-Wall)
 AX_CFLAGS_GCC_OPTION(-Wextra)
 

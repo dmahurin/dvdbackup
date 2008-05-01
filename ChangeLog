@@ -1,3 +1,7 @@
+2008-05-01  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r49] configure.ac: Add AC_PROG_CC_C99 and set -pedantic compiler flag.
+
 2008-04-09  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r47] src/dvdbackup.c:
