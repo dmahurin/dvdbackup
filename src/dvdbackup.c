@@ -39,6 +39,9 @@
 #include <dvdread/dvd_reader.h>
 #include <dvdread/ifo_read.h>
 
+#ifdef FIND_UNUSED
+#include "find-sector.h"
+#endif
 
 #define MAXNAME 256
 
@@ -827,6 +830,13 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 	/* DVD handler */
 	dvd_file_t   *	dvd_file=NULL;
 
+#ifdef FIND_UNUSED
+	GSList *range_list = NULL;
+
+	if(errorstrat == STRATEGY_SKIP_UNUSED)
+		create_titleset_range_list(dvd, title_set, &range_list);
+#endif
+
 	if (title_set_info->number_of_title_sets + 1 < title_set) {
 		fprintf(stderr,_("Failed num title test\n"));
 		return(1);
@@ -923,11 +933,59 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 	}
 
 	while( left > 0 ) {
+		toRead = buff;
 
 		if (toRead > left) {
 			toRead = left;
 		}
+
+#ifdef FIND_UNUSED
+		/* skip or blank out unused blocks */
+		if(errorstrat == STRATEGY_SKIP_UNUSED)
+		{
+			int next_sectors = find_next_sectors(range_list, offset);
+//			fprintf(stderr, "offset %d next_sectors %d\n", offset, next_sectors);
+			if(next_sectors > 0)
+			{
+				if(next_sectors < toRead)
+					toRead = next_sectors;
+			}
+			else if(next_sectors < 0)
+			{
+				int missing = -next_sectors;
+				static char StuffingPackHead[20] = {0x00,0x00,0x01,0xBA,0x44,0x00,0x04,0x00,0x04,0x01,0x01,0x89,0xC3,0xF8,0x00,0x00,0x01,0xBE,0x07,0xEC};
+				int i;
+				if(missing > toRead)
+					missing = toRead;
+				memset(buffer, 0, missing * 2048);
+				for(i = 0; i < missing ; i++)
+				{
+					memcpy(buffer + i*2048, StuffingPackHead, 20);
+				}
+#ifdef PAD_SKIPPED_BLOCK
+				if(write(streamout,buffer,missing *  2048) != missing * 2048)
+				fprintf(stderr, "writing %d padded blocks\n", missing);
+#else
+				fprintf(stderr, "seeking over %d unreferenced blocks\n", missing);
+				if(lseek(streamout, missing *2048, SEEK_CUR) < 0)
+#endif
+				{
+					fprintf(stderr, "Error writing TITLE VOB\n");
+					DVDCloseFile(dvd_file);
+					free(buffer);
+					free(bufferZero);
+					close(streamout);
+					return(1);
+				}
+
+				left -= missing;
+				offset += missing;
+				continue;
+			}
+		}
+#endif
 		if ( (actRead = DVDReadBlocks(dvd_file,offset,toRead, buffer)) != toRead) {
+                  fprintf(stderr, "In Title Set %d: ", title_set);
 		  if (actRead>=0)
 		    fprintf(stderr, _("Error reading TITLE VOB at block %d\n"), offset+actRead);
 		  else
@@ -966,6 +1024,12 @@ int DVDCopyTileVobX(dvd_reader_t * dvd, title_set_info_t * title_set_info, int t
 		      numBlanks=1;
 		      fprintf(stderr, _("padding single block\n"));
 		      break;
+
+#ifdef FIND_UNUSED
+		    case STRATEGY_SKIP_UNUSED:
+		      fprintf(stderr, "bad block, even when skipping unused. Falling back to skip multiblock.\n");
+#endif
+
 		    case STRATEGY_SKIP_MULTIBLOCK:
 		      numBlanks=(toRead-actRead);
 		      fprintf(stderr, _("padding %d blocks\n"), numBlanks);

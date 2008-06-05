@@ -27,6 +27,8 @@ dnl ----------------------------------------------------------
 AC_PROG_CC
 AC_PROG_LN_S
 
+AM_PROG_CC_C_O
+
 dnl ----------------------------------------------------------
 dnl Set build flags based on environment
 dnl ----------------------------------------------------------
@@ -41,6 +43,10 @@ dnl Checks for libraries
 dnl ----------------------------------------------------------
 
 AC_CHECK_LIB(dvdread, DVDOpen, , AC_MSG_ERROR([You need libdvdread]))
+
+PKG_CHECK_MODULES(DEPS, glib-2.0)
+AC_SUBST(DEPS_CFLAGS)
+AC_SUBST(DEPS_LIBS)
 
 dnl ----------------------------------------------------------
 dnl Checks for header files

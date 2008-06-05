@@ -1,0 +1,35 @@
+diff -ru libdvdnav-4.1.3/src/vm/vm.c libdvdnav-4.1.3-vm/src/vm/vm.c
+--- libdvdnav-4.1.3/src/vm/vm.c	2008-09-06 14:55:51.000000000 -0700
++++ libdvdnav-4.1.3-vm/src/vm/vm.c	2009-01-03 18:33:43.000000000 -0800
+@@ -197,6 +197,12 @@
+     return 1; /*  We alread have it */
+   }
+ 
++  /* for the case of external use of the vm, dvd may be controlled externally */
++  if(dvd == NULL) {
++    (vm->state).vtsN = vtsN;
++    return;
++  }
++
+   if(vm->vtsi != NULL)
+     ifoClose(vm->vtsi);
+ 
+@@ -1003,6 +1009,9 @@
+   fprintf(MSG_OUT, "libdvdnav: play_PGC_post:\n");
+ #endif
+ 
++  /* Set pgn to allow external detection of end of program chain */
++  (vm->state).pgN = (vm->state).pgc->nr_of_programs + 1;
++
+   /* eval -> updates the state and returns either
+      - some kind of jump (Jump(TT/SS/VTS_TTN/CallSS/link C/PG/PGC/PTTN)
+      - just go to next PGC
+@@ -1568,6 +1577,8 @@
+     fprintf(MSG_OUT, "libdvdnav: After printout ends.\n");
+ #endif
+ 
++    if(vm->dvd == NULL) break; /* Only process one command if vm is used stand-alone */
++    
+   }
+   (vm->state).blockN = link_values.data1 | (link_values.data2 << 16);
+   return 1;

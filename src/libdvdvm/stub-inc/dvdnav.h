@@ -1,0 +1,1 @@
+/* stub for libdvdvm compile from unmodified dvdnav sources. */
