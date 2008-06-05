@@ -32,7 +32,10 @@ extern int progress;
 typedef enum {
 	STRATEGY_ABORT,
 	STRATEGY_SKIP_BLOCK,
-	STRATEGY_SKIP_MULTIBLOCK
+	STRATEGY_SKIP_MULTIBLOCK,
+#ifdef FIND_UNUSED
+	STRATEGY_SKIP_UNUSED
+#endif
 } read_error_strategy_t;
 
 int DVDDisplayInfo(dvd_reader_t*, char*);

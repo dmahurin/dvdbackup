@@ -101,8 +101,8 @@ Print a friendly, customizable greeting.\n"), stdout); */
   -n, --name=NAME          set the title (useful if autodetection fails)\n\
   -a, --aspect=0           to get aspect ratio 4:3 instead of 16:9 if both are\n\
                            present\n\
-  -r, --error={a,b,m}      select read error handling: a=abort, b=skip block,\n\
-                           m=skip multiple blocks (default)\n\
+  -r, --error={a,b,m,u}    select read error handling: a=abort, b=skip block,\n\
+                           m=skip multiple blocks (default), u=skip unused blocks\n\
   -p, --progress           print progress information while copying VOBs\n\n"));
 
 	printf(_("\
@@ -284,6 +284,12 @@ int main(int argc, char* argv[]) {
 			errorstrat=STRATEGY_SKIP_BLOCK;
 		} else if(errorstrat_temp[0]=='m') {
 			errorstrat=STRATEGY_SKIP_MULTIBLOCK;
+		} else if(errorstrat_temp[0]=='u') {
+#ifdef FIND_UNUSED
+			errorstrat=STRATEGY_SKIP_UNUSED;
+#else
+			fprintf(stderr, "unused skip not enabled in this version\n");
+#endif
 		} else {
 			print_help();
 			exit(1);
