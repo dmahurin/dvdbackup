@@ -1,0 +1,32 @@
+
+dvdbackupx modification by Don Mahurin.
+
+dvdbackupx-0.2 is based on dvdbackup-0.2
+
+Description:
+
+dvdbackupx is a version of dvdbackup modified to find unused blocks and
+seek past them, potentially avoiding bad sectors. Unused blocks are found
+by using the libdvdnav vm (called libdvdvm here, but not really an independent
+library ) to simulate the execution of pre,post and cell commands to follow
+each title in the title set.
+
+The intended use of this is to avoid potentially bad sectors that are perhaps
+created by disc manufacturers attempting to prevent consumer fair use or
+otherwise subverting the "limited time" copyright condition of the US
+constitution.
+
+Usage:
+
+dvdbackup -r u -M -i /dev/dvd -o /outdir
+
+Notes:
+
+Currently some vm instructions are detected ahead of time as breaking
+instructions. Other instructions are skipped, as lead to program fault when
+attempting to execute jump instructions (when opening the same or another
+IFO). The jump detection is not ideal, as there may be some logic there
+that could only be seen by a full vm.
+The instruction detection could be avoided if libdvdvm could provided functions
+that execute a command and end with a state that describes a jump, but does not
+execute it.

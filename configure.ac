@@ -27,6 +27,8 @@ dnl ----------------------------------------------------------
 AC_PROG_CC_C99
 AC_PROG_LN_S
 
+AM_PROG_CC_C_O
+
 dnl ----------------------------------------------------------
 dnl Set build flags based on environment
 dnl ----------------------------------------------------------
@@ -48,6 +50,10 @@ if test -n "$GCC"; then
 	*) CFLAGS="$CFLAGS -Wextra" ;;
 	esac
 fi
+
+PKG_CHECK_MODULES(DEPS, glib-2.0)
+AC_SUBST(DEPS_CFLAGS)
+AC_SUBST(DEPS_LIBS)
 
 dnl ----------------------------------------------------------
 dnl Checks for libraries
@@ -73,6 +79,12 @@ AC_C_CONST
 AC_C_INLINE
 AC_TYPE_OFF_T
 AC_TYPE_SIZE_T
+
+dnl check for dvdnav/dvd_types.h DVDDomain_t type in dvdnav/dvd_types.h
+AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
+[[#include <dvdnav/dvd_types.h>
+DVDDomain_t t = DVD_DOMAIN_FirstPlay;]]
+)], AC_DEFINE(HAVE_DVDNAV_DVDDOMAIN_TYPE, [1], [have dvdnav DVDDomain_t]))
 
 dnl ----------------------------------------------------------
 dnl Checks for library functions
