@@ -1,4 +1,13 @@
-dvdbackup (0.2-2) UNRELEASED; urgency=low
+dvdbackup (0.2-3) UNRELEASED; urgency=low
+
+  * debian/control:
+    - Update Debian Standards-Version to 3.8.0
+    - Add homepage field
+    - Add myself to Uploaders
+
+ -- Benjamin Drung <benjamin.drung@gmail.com>  Fri, 07 Nov 2008 23:51:36 +0100
+
+dvdbackup (0.2-2) unstable; urgency=low
 
   * Pass CFLAGS to build system, don't override them
 
