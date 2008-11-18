@@ -131,9 +131,9 @@ int main(int argc, char* argv[]) {
 
 	/* Switches */
 	int title_set = 0;
-	int titles;
-	int start_chapter;
-	int end_chapter;
+	int titles = 0;
+	int start_chapter = 0;
+	int end_chapter = 0;
 
 	int do_mirror = 0;
 	int do_title_set = 0;
