@@ -1,3 +1,13 @@
+2009-02-19  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r54] src/main.c: Added include <locale.h> for LC_ALL constant.
+
+	* [r54] ChangeLog, NEWS: Updated.
+
+2008-11-19  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r52] src/main.c: Removed compile warnings.
+
 2008-05-01  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r49] configure.ac: Add AC_PROG_CC_C99 and set -pedantic compiler flag.

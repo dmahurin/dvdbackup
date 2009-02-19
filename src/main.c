@@ -27,6 +27,7 @@
 
 /* C standard libraries */
 #include <limits.h>
+#include <locale.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>

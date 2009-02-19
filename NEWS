@@ -1,3 +1,14 @@
+dvdbackup 0.2.1 (UNRELEASED)
+
+	Changes:
+		* Use C99 standard and compile with -pedantic flag.
+		* Code cleanup
+
+	Bug fixes:
+		* Fixed typos
+		* Fixed compiler warnings
+		* Added missing header file
+
 dvdbackup 0.2 (2008-03-20)
 
 	New Features:
