@@ -7,3 +7,8 @@ first. Then you can run:
 ./configure
 make
 make install
+
+or if you want to create an source package:
+
+./configure
+make dist

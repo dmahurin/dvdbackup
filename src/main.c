@@ -2,7 +2,7 @@
  * dvdbackup - tool to rip DVDs from the command line
  *
  * Copyright (C) 2002  Olaf Beck <olaf_sc@yahoo.com>
- * Copyright (C) 2008  Benjamin Drung <benjamin.drung@gmail.com>
+ * Copyright (C) 2008-2009  Benjamin Drung <benjamin.drung@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,7 +60,7 @@ Copyright (C) %s Benjamin Drung <benjamin.drung@gmail.com>\n\n\
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\
 This is free software: you are free to change and redistribute it.\n\
 There is NO WARRANTY, to the extent permitted by law.\n\
-Homepage: %s\n"), "2008", "http://dvdbackup.sourceforge.net/");
+Homepage: %s\n"), "2008-2009", "http://dvdbackup.sourceforge.net/");
 }
 
 
