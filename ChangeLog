@@ -1,5 +1,10 @@
 2009-02-19  Benjamin Drung  <benjamin.drung@gmail.com>
 
+	* [r56] configure.ac:
+	  - Updated gettext to version 0.17
+	  - Added more header checks
+	* [r56] Removed all files which are copied by gettext.
+
 	* [r55] INSTALL: Updated to newest version from autoconf.
 
 	* [r55] src/dvdbackup.c, src/dvdbackup.h, src/main.c: Updated year in

@@ -1,4 +1,4 @@
-dnl Process this file with autoconf to produce a configure script
+dnl Process this file with autoconf to produce a configure script.
 
 dnl ----------------------------------------------------------
 dnl Initialization and Versioning
@@ -15,7 +15,7 @@ AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE([dist-bzip2 -Wall -Werror])
 
-AM_GNU_GETTEXT_VERSION([0.16.1])
+AM_GNU_GETTEXT_VERSION([0.17])
 AM_GNU_GETTEXT([external])
 
 AM_MAINTAINER_MODE
@@ -24,7 +24,6 @@ dnl ----------------------------------------------------------
 dnl Checks for programs
 dnl ----------------------------------------------------------
 
-AC_PROG_CC
 AC_PROG_CC_C99
 AC_PROG_LN_S
 
@@ -32,10 +31,10 @@ dnl ----------------------------------------------------------
 dnl Set build flags based on environment
 dnl ----------------------------------------------------------
 
-# use -pedantic -Wall -Wextra when possible
-AX_CFLAGS_GCC_OPTION(-pedantic)
-AX_CFLAGS_GCC_OPTION(-Wall)
-AX_CFLAGS_GCC_OPTION(-Wextra)
+# enable extra warnings for gcc
+if test -n "$GCC"; then
+	CFLAGS="$CFLAGS -pedantic -Wall -Wextra"
+fi
 
 dnl ----------------------------------------------------------
 dnl Checks for libraries
@@ -48,7 +47,7 @@ dnl Checks for header files
 dnl ----------------------------------------------------------
 
 AC_CHECK_HEADERS(dvdread/dvd_reader.h, , AC_MSG_ERROR([You need libdvdread (dvd_reader.h)]))
-AC_CHECK_HEADERS([fcntl.h libintl.h limits.h locale.h])
+AC_CHECK_HEADERS([fcntl.h libintl.h limits.h locale.h stdint.h stdlib.h string.h unistd.h])
 
 dnl ----------------------------------------------------------
 dnl Checks for types, structures and compilier characteristics
