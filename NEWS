@@ -1,5 +1,9 @@
 dvdbackup 0.2.1 (UNRELEASED)
 
+	New Features:
+		* Added new translations from Launchpad: French (fr), Galician (gl),
+		  Italian (it), Norwegian Bokmål (nb), Russian (ru) and Spanish (es)
+
 	Changes:
 		* Use C99 standard and compile with -pedantic flag.
 		* Code cleanup

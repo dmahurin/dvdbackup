@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Benjamin Drung
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Spanish translation for dvdbackup
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the dvdbackup package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: dvdbackup 0.2-svn\n"
+"Project-Id-Version: dvdbackup\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
 "POT-Creation-Date: 2009-02-20 01:04+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2009-02-16 12:42+0000\n"
+"Last-Translator: Feder Sáiz <federsaiz@googlemail.com>\n"
+"Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2009-02-19 23:36+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
 
 #: src/dvdbackup.c:235
 #, c-format
@@ -31,7 +32,7 @@ msgstr ""
 #: src/dvdbackup.c:1067 src/dvdbackup.c:1140 src/dvdbackup.c:1150
 #, c-format
 msgid "Error creating %s\n"
-msgstr ""
+msgstr "Error creando %s\n"
 
 #: src/dvdbackup.c:267 src/dvdbackup.c:994
 #, c-format
@@ -56,7 +57,7 @@ msgstr ""
 #: src/dvdbackup.c:421
 #, c-format
 msgid "Cannot open VMG info.\n"
-msgstr ""
+msgstr "No se abre \"VMG info\"\n"
 
 #: src/dvdbackup.c:435
 #, c-format
@@ -88,12 +89,12 @@ msgstr ""
 #: src/dvdbackup.c:845
 #, c-format
 msgid "Error writing %s.\n"
-msgstr ""
+msgstr "Error leyendo %s\n"
 
 #: src/dvdbackup.c:862
 #, c-format
 msgid "aborting\n"
-msgstr ""
+msgstr "Cancelando\n"
 
 #: src/dvdbackup.c:867
 #, c-format
@@ -108,7 +109,7 @@ msgstr ""
 #: src/dvdbackup.c:877
 #, c-format
 msgid "Error writing %s (padding)\n"
-msgstr ""
+msgstr "Error leyendo %s (padding)\n"
 
 #: src/dvdbackup.c:922
 #, c-format
@@ -118,7 +119,7 @@ msgstr ""
 #: src/dvdbackup.c:927
 #, c-format
 msgid "Failed vob test\n"
-msgstr ""
+msgstr "Fallo la prueva vob\n"
 
 #: src/dvdbackup.c:932
 #, c-format
@@ -154,7 +155,7 @@ msgstr ""
 #: src/dvdbackup.c:980 src/dvdbackup.c:1059
 #, c-format
 msgid "Error opening %s\n"
-msgstr ""
+msgstr "Error abriendo %s\n"
 
 #: src/dvdbackup.c:1039
 #, c-format
@@ -165,7 +166,7 @@ msgstr ""
 #: src/dvdbackup.c:1044
 #, c-format
 msgid "Failed opening %s\n"
-msgstr ""
+msgstr "Fallo abriendo %s\n"
 
 #: src/dvdbackup.c:1052
 #, c-format
@@ -215,12 +216,13 @@ msgstr ""
 #: src/dvdbackup.c:1194 src/dvdbackup.c:1203
 #, c-format
 msgid "Error writing %s\n"
-msgstr ""
+msgstr "Error guardando %s\n"
 
 #: src/dvdbackup.c:1254 src/main.c:367
 #, c-format
 msgid "Cannot open specified device %s - check your DVD device\n"
 msgstr ""
+"No se puede abrir la unidad especificada %s - compruebe su unidad de DVD\n"
 
 #: src/dvdbackup.c:1262
 #, c-format
@@ -249,7 +251,7 @@ msgstr ""
 #: src/dvdbackup.c:1420
 #, c-format
 msgid "IFO = %jd, MENU_VOB = %jd\n"
-msgstr ""
+msgstr "IFO = %jd, MENU_VOB = %jd\n"
 
 #: src/dvdbackup.c:1426
 #, c-format
@@ -259,7 +261,7 @@ msgstr ""
 #: src/dvdbackup.c:1438
 #, c-format
 msgid "After opening files\n"
-msgstr ""
+msgstr "Despues de abrir los archivos\n"
 
 #: src/dvdbackup.c:1450
 #, c-format
@@ -288,7 +290,7 @@ msgstr ""
 #: src/dvdbackup.c:1471
 #, c-format
 msgid "VOB %d is %jd\n"
-msgstr ""
+msgstr "VOB %d es %jd\n"
 
 #: src/dvdbackup.c:1476
 #, c-format
@@ -358,7 +360,7 @@ msgstr ""
 #: src/dvdbackup.c:1835
 #, c-format
 msgid "File Structure DVD\n"
-msgstr ""
+msgstr "Structura del archivo DCD\n"
 
 #: src/dvdbackup.c:1860
 #, c-format
@@ -433,6 +435,9 @@ msgid ""
 "\n"
 "Title Sets:"
 msgstr ""
+"\n"
+"\n"
+"Conjunto de Titulo:"
 
 #: src/dvdbackup.c:1906
 #, c-format
@@ -492,14 +497,14 @@ msgstr[1] ""
 #: src/dvdbackup.c:1941
 #, c-format
 msgid "\t\t\tTitle %d:\n"
-msgstr ""
+msgstr "\t\t\tTitulo %d:\n"
 
 #: src/dvdbackup.c:1942
 #, c-format
 msgid "\t\t\t\tTitle %d has %d chapter\n"
 msgid_plural "\t\t\t\tTitle %d has %d chapters\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "\t\t\t\tTitulo %d tiene %d capitulo\n"
+msgstr[1] "\t\t\t\tTitulo %d tiene %d capitulo\n"
 
 #: src/dvdbackup.c:1945
 #, c-format
@@ -594,12 +599,12 @@ msgstr ""
 #: src/main.c:268
 #, c-format
 msgid "%s: extra operand: %s\n"
-msgstr ""
+msgstr "%s: operando extra: %s\n"
 
 #: src/main.c:270
 #, c-format
 msgid "Try `%s --help' for more information.\n"
-msgstr ""
+msgstr "Intente `%s --help' para más información\n"
 
 #: src/main.c:380
 #, c-format

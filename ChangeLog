@@ -1,3 +1,9 @@
+2009-02-20  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r60] po/es.po, po/fr.po, po/it.po, po/gl.po, po/LINGUAS, po/nb.po,
+	  po/ru.po: Added translations from Launchpad.
+	* [r60] po/dvdbackup.pot: Updated.
+
 2009-02-19  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r56] configure.ac:
