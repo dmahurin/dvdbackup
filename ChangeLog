@@ -1,3 +1,8 @@
+2009-03-02  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r61] configure.ac: enable extra warnings for gcc if they are not
+	  already enabled
+
 2009-02-20  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r60] po/es.po, po/fr.po, po/it.po, po/gl.po, po/LINGUAS, po/nb.po,

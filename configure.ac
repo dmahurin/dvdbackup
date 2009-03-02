@@ -31,9 +31,22 @@ dnl ----------------------------------------------------------
 dnl Set build flags based on environment
 dnl ----------------------------------------------------------
 
-# enable extra warnings for gcc
+# enable extra warnings for gcc if they are not already enabled
 if test -n "$GCC"; then
-	CFLAGS="$CFLAGS -pedantic -Wall -Wextra"
+	case "$CFLAGS" in
+	*-pedantic*) ;;
+	*) CFLAGS="$CFLAGS -pedantic" ;;
+	esac
+
+	case "$CFLAGS" in
+	*-Wall*) ;;
+	*) CFLAGS="$CFLAGS -Wall" ;;
+	esac
+
+	case "$CFLAGS" in
+	*-Wextra*) ;;
+	*) CFLAGS="$CFLAGS -Wextra" ;;
+	esac
 fi
 
 dnl ----------------------------------------------------------
