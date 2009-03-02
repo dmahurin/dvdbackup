@@ -5,8 +5,9 @@ dvdbackup (0.4-1) UNRELEASED; urgency=low
     - Update Debian Standards-Version to 3.8.0
     - Add Homepage and Vcs-{Browser,Svn} fields
     - Add myself to Uploaders
+  * Add newline to the end of debian/watch
 
- -- Benjamin Drung <benjamin.drung@gmail.com>  Mon, 02 Mar 2009 22:31:14 +0100
+ -- Benjamin Drung <benjamin.drung@gmail.com>  Mon, 02 Mar 2009 22:43:01 +0100
 
 dvdbackup (0.2-2) unstable; urgency=low
 
