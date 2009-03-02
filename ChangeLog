@@ -1,0 +1,146 @@
+2008-03-20  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r33] configure.ac, NEWS, po/dvdbackup.pot: Released version 0.2
+
+2008-03-20  Stephen Gran  <sgran@debian.org>
+
+	* [r32] debian/rules: switch to running make install with DESTDIR set,
+           and then install from there.
+
+	* [r31] debian/rules build changes for new autoconf system
+
+	* [r30] Change footer on manpage - now part of main tarball
+
+	* [r29] Rename debian/README to debian/README.Debian
+
+2008-03-18  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r28] README, man/dvdbackup.1: Synchronized.
+
+2008-03-17  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r27] configure.ac: added checks suggested by autoscan
+
+	* [r27] Makefile.am: NEWS and README are now installed in docdir
+	* [r27] man/Makefile.am: Updated.
+
+	* [r27] NEWS: Updated.
+
+	* [r26] README: changed spaces to tabs
+
+	* [r26] man/dvdbackup.1: updated options
+
+	* [r26] src/dvdbackup.c, src/dvdbackup.h, src/main.c: fixed typos
+	  - DVD instead of dvd
+	  - DVDs instead of DVD's
+	  - used cannot instead of can't, do not instead of don't
+
+2008-03-11  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r25] ChangeLog: Updated.
+	
+	* [r25] debian/dvdbackup.1: moved from here...
+	* [r25] man/dvdbackup.1: ...to here
+	* [r25] configure.ac, Makefile.am, man/Makefile.am:
+	  added man page to distribution
+
+2008-03-11  Stephen Gran  <sgran@debian.org>
+
+	* [r18] INSTALL: update to newest version
+
+	* [r17] configure.ac: Use getconf to find LFS CFLAGS
+
+	* [r16] debian/*: Bring up to date with Debian
+
+	* [r15] debian/dvdbackup.1, README: Documentation cleanup, and 
+	  removal of mentions of mandatory fields that are now guessed.
+
+2008-03-11  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r14] ChangeLog, NEWS: Updated.
+
+	* [r14] INSTALL: Replaced by generic installation instructions from
+	  autoconf
+
+	* [r14] src/dvdbackup.c, src/main.c (print_help, main): The command line
+	  option -v, --verbose has no option anymore.
+
+2008-03-10  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r13] ChangeLog, NEWS: Created ChangeLog from subversion commits and
+	  extracted useful changes to NEWS.
+
+	* [r13] po/dvdbackup.pot: Updated
+
+	* [r13] README, Usage:
+	  merged changes from Usage to README and removed Usage
+
+2008-03-09  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r12] m4, po: updated svn:ignore
+
+	* [r11] ABOUT-NLS, Makefile.am, configure.ac, m4/gettext.m4,
+	  m4/iconv.m4, m4/lib-ld.m4, m4/lib-link.m4, m4/lib-prefix.m4,
+	  m4/nls.m4, m4/po.m4, m4/progtest.m4, po, po/Makefile.in.in,
+	  po/Makevars, po/POTFILES.in, po/Rules-quot, po/boldquot.sed,
+	  po/dvdbackup.pot, po/en@boldquot.header, po/en@quot.header,
+	  po/insert-header.sin, po/quot.sed, po/remove-potcdate.sin,
+	  src/Makefile.am, src/dvdbackup.c, src/gettext.h, src/main.c:
+	  added internationalization support using gettext
+
+	* [r11] src/dvdbackup.c: fixed typo
+
+	* [r11] src/dvdbackup.c: corrected output of audio track count in
+	  DVDDisplayInfo
+
+2008-03-07  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r10] Usage, src/main.c:
+	  extracted usage description to extra file Usage
+
+	* [r10] configure.ac: added bug report mailing list
+
+	* [r10] src/main.c:
+	  - added long options
+	  - added -V, --version option
+	  - made -i and -o options optional
+	  - changed default read error handling to skip multiple blocks
+
+	* [r9] src/dvdbackup.c, src/main.c: merged diffs from debian (0.1.1-12):
+	  - Output an error message when DVDOpen fails
+	  - s/mkisofs/genisoimage/g
+	  - Handle short reads from DVDReadBlocks
+	  - Handle broken ifo/bup files
+
+2008-03-06  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r8] README.svn: added
+
+	* [r7] src/dvdbackup.c: added malloc checks
+
+	* [r7] src/main.c: Fixed typos
+
+2008-03-05  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r6] src/dvdbackup.c, src/dvdbackup.h, src/main.c: split dvdbackup.c
+	  into dvdbackup.c, dvdbackup.h and main.c
+	* [r6] configure.ac, src/Makefile.am: updated
+
+	* [r6] src/dvdbackup.c: removed unsigned char buffy and used
+	  sizeof(unsigned char) instead
+
+	* [r5] AUTHORS, COPYING, src/dvdbackup.c:
+	  switched license to GPLv3 or later
+
+	* [r4] src/dvdbackup.c: fixed compile warnings
+
+	* [r4] ., src: updated svn:ignore
+
+	* [r3] AUTHORS, ChangeLog, Makefile, Makefile.am, NEWS, configure.ac,
+	  m4, m4/ax_cflags_gcc_option.m4, src/Makefile, src/Makefile.am:
+	  using GNU build system to configure project and generate makefiles
+
+	* [r1] branches, tags, ., COPYING, INSTALL, Makefile, README, debian,
+	  debian/README, debian/changelog, debian/compat, debian/control,
+	  debian/copyright, debian/dvdbackup.1, debian/dvdbackup.dirs,
+	  debian/rules, src, src/Makefile, src/dvdbackup.c: Initial import

@@ -1,0 +1,28 @@
+This package was debianized by Stephen Gran <sgran@debian.org> on
+Mon,  7 Jul 2003 13:59:36 -0400.
+
+It was originally downloaded from http://dvd-create.sourceforge.net/ but 
+is now available from http://dvdbackup.sourceforge.net/
+
+Upstream Authors: Olaf Beck <olaf_sc@yahoo.com>
+                  Benjamin Drung <benjamin.drung@gmail.com>
+
+Copyright:
+
+/*
+ * Copyright (C) 2002  Olaf Beck <olaf_sc@yahoo.com>
+ * Copyright (C) 2008  Benjamin Drung <benjamin.drung@gmail.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ */
+
+A full copy of the GPL can be found at /usr/share/common-licenses/
