@@ -1,3 +1,18 @@
+dvdbackup 0.4 (2009-03-02)
+
+	New Features:
+		* Added new translations from Launchpad: French (fr), Galician (gl),
+		  Italian (it), Norwegian Bokmål (nb), Russian (ru) and Spanish (es)
+
+	Changes:
+		* Use C99 standard and compile with -pedantic flag.
+		* Code cleanup
+
+	Bug fixes:
+		* Fixed typos
+		* Fixed compiler warnings
+		* Added missing header file
+
 dvdbackup 0.2 (2008-03-20)
 
 	New Features:

@@ -1,62 +1,66 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Benjamin Drung
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# translation of _dvdbackup-ru.po to
+# Russian translation for dvdbackup
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the dvdbackup package.
 #
-#, fuzzy
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+# Sergei Zivukov <ekonomvygoda@yandex.ru>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: dvdbackup 0.4\n"
+"Project-Id-Version: _dvdbackup-ru\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
 "POT-Creation-Date: 2009-03-02 17:06+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2008-07-13 18:18+0000\n"
+"Last-Translator: Sergei Zivukov <Unknown>\n"
+"Language-Team: <en@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Launchpad-Export-Date: 2009-02-19 23:36+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
 
 #: src/dvdbackup.c:235
 #, c-format
 msgid "Do not try to copy chapters from the VMG domain; there are not any\n"
-msgstr ""
+msgstr "Не пытайтесь копировать главы из VMG-домена; нет\n"
 
 #: src/dvdbackup.c:246
 #, c-format
 msgid "Out of memory copying %s\n"
-msgstr ""
+msgstr "Ошибка памяти копирования %s\n"
 
 #: src/dvdbackup.c:256 src/dvdbackup.c:317 src/dvdbackup.c:987
 #: src/dvdbackup.c:1067 src/dvdbackup.c:1140 src/dvdbackup.c:1150
 #, c-format
 msgid "Error creating %s\n"
-msgstr ""
+msgstr "Ошибка создания %s\n"
 
 #: src/dvdbackup.c:267 src/dvdbackup.c:994
 #, c-format
 msgid "Failed opening TITLE VOB\n"
-msgstr ""
+msgstr "Ошибка открытия ЗАГОЛОВКА VOB\n"
 
 #: src/dvdbackup.c:287
 #, c-format
 msgid "Error reading MENU VOB %d != %d\n"
-msgstr ""
+msgstr "Ошибка чтения МЕНЮ VOB %d != %d\n"
 
 #: src/dvdbackup.c:294
 #, c-format
 msgid "DVDReadBlocks read %d blocks of %d blocks\n"
-msgstr ""
+msgstr "DVDReadBlocks прочитал %d блоков из %d блоков\n"
 
 #: src/dvdbackup.c:297
 #, c-format
 msgid "Error writing TITLE VOB\n"
-msgstr ""
+msgstr "Ошибка записи ЗАГОЛОВКА VOB\n"
 
 #: src/dvdbackup.c:421
 #, c-format
 msgid "Cannot open VMG info.\n"
-msgstr ""
+msgstr "Не удалось открыть VMG-информацию.\n"
 
 #: src/dvdbackup.c:435
 #, c-format
@@ -66,7 +70,7 @@ msgstr ""
 #: src/dvdbackup.c:469
 #, c-format
 msgid "Out of memory creating arrays for titles info\n"
-msgstr ""
+msgstr "Ошибка памяти создания массивов для заголовков информации\n"
 
 #: src/dvdbackup.c:605
 #, c-format
@@ -74,26 +78,28 @@ msgid ""
 "You have encountered a very special DVD; please send a bug report along with "
 "all IFO files from this title\n"
 msgstr ""
+"Вы столкнулись с особенным DVD; отправьте сообщение об ошибке со всеми IFO-"
+"файлами от этого заголовка\n"
 
 #: src/dvdbackup.c:836
 #, c-format
 msgid "Error reading %s at block %d\n"
-msgstr ""
+msgstr "Ошибка чтения %s в блоке %d\n"
 
 #: src/dvdbackup.c:838
 #, c-format
 msgid "Error reading %s at block %d, read error returned\n"
-msgstr ""
+msgstr "Ошибка чтения %s в блоке %d, ошибка чтения возвращена\n"
 
 #: src/dvdbackup.c:845
 #, c-format
 msgid "Error writing %s.\n"
-msgstr ""
+msgstr "Ошибка записи %s.\n"
 
 #: src/dvdbackup.c:862
 #, c-format
 msgid "aborting\n"
-msgstr ""
+msgstr "обрывание\n"
 
 #: src/dvdbackup.c:867
 #, c-format
@@ -135,102 +141,108 @@ msgstr ""
 msgid ""
 "The Title VOB number %d of title set %d does not have a valid DVD size\n"
 msgstr ""
+"Заголовок VOB под номером %d из набора заголовков %d не имеет правильного "
+"DVD-размера\n"
 
 #: src/dvdbackup.c:950
 #, c-format
 msgid "Do not try to copy a Title VOB from the VMG domain; there are not any\n"
-msgstr ""
+msgstr "Не пытайтесь копировать Заголовок VOB из VMG-домена; нет\n"
 
 #: src/dvdbackup.c:974
 #, c-format
 msgid "The Title file %s exists will try to over write it.\n"
-msgstr ""
+msgstr "Файл заголовка %s существует, попробуем его переписать.\n"
 
 #: src/dvdbackup.c:976
 #, c-format
 msgid "The Title %s file is not valid, it may be a directory\n"
-msgstr ""
+msgstr "Файл заголовка %s не правильный, возможно, это каталог\n"
 
 #: src/dvdbackup.c:980 src/dvdbackup.c:1059
 #, c-format
 msgid "Error opening %s\n"
-msgstr ""
+msgstr "Ошибка открытия %s\n"
 
 #: src/dvdbackup.c:1039
 #, c-format
 msgid ""
 "Warning: The Menu VOB of title set %d (%s) does not have a valid DVD size.\n"
 msgstr ""
+"Внимание: VOB-меню из набора заголовков %d (%s) не имеет правильного DVD-"
+"размера.\n"
 
 #: src/dvdbackup.c:1044
 #, c-format
 msgid "Failed opening %s\n"
-msgstr ""
+msgstr "Ошибка открытия %s\n"
 
 #: src/dvdbackup.c:1052
 #, c-format
 msgid "The Menu file %s exists will try to over write it.\n"
-msgstr ""
+msgstr "Файл меню %s существует, попробуем его переписать.\n"
 
 #: src/dvdbackup.c:1054
 #, c-format
 msgid "The Menu %s file is not valid, it may be a directory\n"
-msgstr ""
+msgstr "Файл меню %s неправильный, возможно, это каталог\n"
 
 #: src/dvdbackup.c:1108
 #, c-format
 msgid "The IFO of title set %d does not have a valid DVD size\n"
-msgstr ""
+msgstr "IFO из набора заголовков %d не имеет правильный DVD-размер\n"
 
 #: src/dvdbackup.c:1124
 #, c-format
 msgid "The IFO file %s exists will try to over write it.\n"
-msgstr ""
+msgstr "IFO-файл %s существует, попробуем его переписать.\n"
 
 #: src/dvdbackup.c:1126
 #, c-format
 msgid "The IFO %s file is not valid, it may be a directory\n"
-msgstr ""
+msgstr "IFO-файл %s неправильный, возможно, это каталог\n"
 
 #: src/dvdbackup.c:1132
 #, c-format
 msgid "The BUP file %s exists will try to over write it.\n"
-msgstr ""
+msgstr "BUP-файл %s существует, попробуем переписать его.\n"
 
 #: src/dvdbackup.c:1134
 #, c-format
 msgid "The BUP %s file is not valid, it may be a directory\n"
-msgstr ""
+msgstr "BUP-файл %s неправильный, возможно, это каталог\n"
 
 #: src/dvdbackup.c:1162
 #, c-format
 msgid "Failed opening IFO for title set %d\n"
-msgstr ""
+msgstr "Ошибка чтения IFO для набора заголовков %d\n"
 
 #: src/dvdbackup.c:1184
 #, c-format
 msgid "Error reading IFO for title set %d\n"
-msgstr ""
+msgstr "Ошибка чтения IFO для набора заголовков %d\n"
 
 #: src/dvdbackup.c:1194 src/dvdbackup.c:1203
 #, c-format
 msgid "Error writing %s\n"
-msgstr ""
+msgstr "Ошибка записи %s\n"
 
 #: src/dvdbackup.c:1254 src/main.c:367
 #, c-format
 msgid "Cannot open specified device %s - check your DVD device\n"
 msgstr ""
+"Не удалось открыть специфическое устройство %s - проверьте Ваше DVD-"
+"устройство\n"
 
 #: src/dvdbackup.c:1262
 #, c-format
 msgid "Cannot seek DVD device %s - check your DVD device\n"
-msgstr ""
+msgstr "Не удалось найти DVD-устройство %s - проверьте Ваше DVD-устройство\n"
 
 #: src/dvdbackup.c:1270
 #, c-format
 msgid "Cannot read title from DVD device %s\n"
-msgstr ""
+msgstr "Не удалось прочитать заголовок из DVD-устройства %s\n"
 
 #: src/dvdbackup.c:1371
 #, c-format
@@ -249,7 +261,7 @@ msgstr ""
 #: src/dvdbackup.c:1420
 #, c-format
 msgid "IFO = %jd, MENU_VOB = %jd\n"
-msgstr ""
+msgstr "IFO = %jd, MENU_VOB = %jd\n"
 
 #: src/dvdbackup.c:1426
 #, c-format

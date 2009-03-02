@@ -2,7 +2,7 @@
  * dvdbackup - tool to rip DVDs from the command line
  *
  * Copyright (C) 2002  Olaf Beck <olaf_sc@yahoo.com>
- * Copyright (C) 2008  Benjamin Drung <benjamin.drung@gmail.com>
+ * Copyright (C) 2008-2009  Benjamin Drung <benjamin.drung@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,6 +27,7 @@
 
 /* C standard libraries */
 #include <limits.h>
+#include <locale.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -59,7 +60,7 @@ Copyright (C) %s Benjamin Drung <benjamin.drung@gmail.com>\n\n\
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\
 This is free software: you are free to change and redistribute it.\n\
 There is NO WARRANTY, to the extent permitted by law.\n\
-Homepage: %s\n"), "2008", "http://dvdbackup.sourceforge.net/");
+Homepage: %s\n"), "2008-2009", "http://dvdbackup.sourceforge.net/");
 }
 
 
@@ -102,16 +103,16 @@ Print a friendly, customizable greeting.\n"), stdout); */
                            present\n\
   -r, --error={a,b,m}      select read error handling: a=abort, b=skip block,\n\
                            m=skip multiple blocks (default)\n\n"));
-	
+
 	printf(_("\
   -a is option to the -F switch and has no effect on other options\n\
   -s and -e should preferably be used together with -t\n"));
 
 	printf("\n");
-	  /* TRANSLATORS: --help output 5 (end)
-	     TRANSLATORS: the placeholder indicates the bug-reporting address
-	     for this application.  Please add _another line_ with the
-	     address for translation bugs. */
+	/* TRANSLATORS: --help output 5 (end)
+	   TRANSLATORS: the placeholder indicates the bug-reporting address
+	   for this application.  Please add _another line_ with the
+	   address for translation bugs. */
 	printf (_("Report bugs to <%s>.\n"), PACKAGE_BUGREPORT);
 }
 
@@ -131,9 +132,9 @@ int main(int argc, char* argv[]) {
 
 	/* Switches */
 	int title_set = 0;
-	int titles;
-	int start_chapter;
-	int end_chapter;
+	int titles = 0;
+	int start_chapter = 0;
+	int end_chapter = 0;
 
 	int do_mirror = 0;
 	int do_title_set = 0;
@@ -238,7 +239,7 @@ int main(int argc, char* argv[]) {
 			
 		case 'i':
 			dvd = optarg;
-      		break;
+			break;
 		case 'o':
 			targetdir = optarg;
 			break;
@@ -262,7 +263,7 @@ int main(int argc, char* argv[]) {
 	}
 
 	if(lose || optind < argc) {
-		/* Print error message and exit.  */
+		/* Print error message and exit. */
 		if (optind < argc) {
 			fprintf(stderr, _("%s: extra operand: %s\n"), program_name, argv[optind]);
 		}
@@ -274,11 +275,11 @@ int main(int argc, char* argv[]) {
 		if(errorstrat_temp[0]=='a') {
 			errorstrat=STRATEGY_ABORT;
 		} else if(errorstrat_temp[0]=='b') {
-		  	errorstrat=STRATEGY_SKIP_BLOCK;
+			errorstrat=STRATEGY_SKIP_BLOCK;
 		} else if(errorstrat_temp[0]=='m') {
-		  	errorstrat=STRATEGY_SKIP_MULTIBLOCK;
+			errorstrat=STRATEGY_SKIP_MULTIBLOCK;
 		} else {
-		  	print_help();
+			print_help();
 			exit(1);
 		}
 	}
@@ -349,10 +350,10 @@ int main(int argc, char* argv[]) {
 		do_title_set = 1;
 	}
 
-	if (do_info + do_titles + do_chapter + do_feature + do_title_set  + do_mirror > 1 ) {
+	if (do_info + do_titles + do_chapter + do_feature + do_title_set + do_mirror > 1 ) {
 		print_help();
 		exit(1);
-	} else if ( do_info + do_titles + do_chapter + do_feature + do_title_set  + do_mirror == 0) {
+	} else if ( do_info + do_titles + do_chapter + do_feature + do_title_set + do_mirror == 0) {
 		print_help();
 		exit(1);
 	}
@@ -451,7 +452,7 @@ int main(int argc, char* argv[]) {
 
 
 	if(do_mirror) {
-		if ( DVDMirror(_dvd, targetdir, title_name, errorstrat)  != 0 ) {
+		if ( DVDMirror(_dvd, targetdir, title_name, errorstrat) != 0 ) {
 			fprintf(stderr, _("Mirror of DVD failed\n"));
 			return_code = -1;
 		} else {
@@ -468,7 +469,7 @@ int main(int argc, char* argv[]) {
 			fprintf(stderr, _("Mirror of title set %d failed\n"), title_set);
 			return_code = -1;
 		} else {
-			return_code  = 0;
+			return_code = 0;
 		}
 
 	}
@@ -479,7 +480,7 @@ int main(int argc, char* argv[]) {
 
 
 	if(do_feature) {
-		if ( DVDMirrorMainFeature(_dvd, targetdir, title_name, errorstrat)  != 0 ) {
+		if ( DVDMirrorMainFeature(_dvd, targetdir, title_name, errorstrat) != 0 ) {
 			fprintf(stderr, _("Mirror of main feature film of DVD failed\n"));
 			return_code = -1;
 		} else {
@@ -489,10 +490,10 @@ int main(int argc, char* argv[]) {
 
 	if(do_titles) {
 		if (DVDMirrorTitles(_dvd, targetdir, title_name, titles) != 0) {
-			fprintf(stderr, _("Mirror of title  %d failed\n"), titles);
+			fprintf(stderr, _("Mirror of title %d failed\n"), titles);
 			return_code = -1;
 		} else {
-			return_code  = 0;
+			return_code = 0;
 		}
 	}
 
@@ -502,7 +503,7 @@ int main(int argc, char* argv[]) {
 			fprintf(stderr, _("Mirror of chapters %d to %d in title %d failed\n"), start_chapter, end_chapter, titles);
 			return_code = -1;
 		} else {
-			return_code  = 0;
+			return_code = 0;
 		}
 	}
 

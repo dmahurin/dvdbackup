@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Benjamin Drung
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Norwegian Bokmal translation for dvdbackup
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the dvdbackup package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: dvdbackup 0.4\n"
+"Project-Id-Version: dvdbackup\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
 "POT-Creation-Date: 2009-03-02 17:06+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2008-11-18 11:35+0000\n"
+"Last-Translator: Kenneth Langdalen <Unknown>\n"
+"Language-Team: Norwegian Bokmal <nb@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2009-02-19 23:36+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
 
 #: src/dvdbackup.c:235
 #, c-format
@@ -492,21 +493,21 @@ msgstr[1] ""
 #: src/dvdbackup.c:1941
 #, c-format
 msgid "\t\t\tTitle %d:\n"
-msgstr ""
+msgstr "\t\t\tTittel %d:\n"
 
 #: src/dvdbackup.c:1942
 #, c-format
 msgid "\t\t\t\tTitle %d has %d chapter\n"
 msgid_plural "\t\t\t\tTitle %d has %d chapters\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "\t\t\t\tTittelen %d har %d kapittel\n"
+msgstr[1] "\t\t\t\tTittelen %d har %d kapitler\n"
 
 #: src/dvdbackup.c:1945
 #, c-format
 msgid "\t\t\t\tTitle %d has %d audio channel\n"
 msgid_plural "\t\t\t\tTitle %d has %d audio channels\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "\t\t\t\tTittelen %d har %d lydkanal\n"
+msgstr[1] "\t\t\t\tTittelen %d har %d lydkanaler\n"
 
 #: src/main.c:58
 #, c-format
@@ -525,7 +526,7 @@ msgstr ""
 #: src/main.c:69
 #, c-format
 msgid "Usage: %s [OPTION]...\n"
-msgstr ""
+msgstr "Bruk: %s [FLAGG]\n"
 
 #. TRANSLATORS: --help output 3: options 1/2
 #. no-wrap
@@ -589,17 +590,17 @@ msgstr ""
 #: src/main.c:116
 #, c-format
 msgid "Report bugs to <%s>.\n"
-msgstr ""
+msgstr "Rapporter feil til <%s>.\n"
 
 #: src/main.c:268
 #, c-format
 msgid "%s: extra operand: %s\n"
-msgstr ""
+msgstr "%s: ekstra operator: %s\n"
 
 #: src/main.c:270
 #, c-format
 msgid "Try `%s --help' for more information.\n"
-msgstr ""
+msgstr "Prøv `%s --help' for mer informasjon.\n"
 
 #: src/main.c:380
 #, c-format

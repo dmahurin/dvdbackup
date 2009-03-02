@@ -1,3 +1,81 @@
+2009-03-02  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r63] configure.ac, NEWS: Release version 0.4
+
+	* [r62] debian/: Removed. The Debian package is now maintained at
+	  http://alioth.debian.org/
+
+	* [r61] configure.ac: enable extra warnings for gcc if they are not
+	  already enabled
+
+2009-02-20  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r60] po/es.po, po/fr.po, po/it.po, po/gl.po, po/LINGUAS, po/nb.po,
+	  po/ru.po: Added translations from Launchpad.
+	* [r60] po/dvdbackup.pot: Updated.
+
+2009-02-19  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r56] configure.ac:
+	  - Updated gettext to version 0.17
+	  - Added more header checks
+	* [r56] Removed all files which are copied by gettext.
+
+	* [r55] INSTALL: Updated to newest version from autoconf.
+
+	* [r55] src/dvdbackup.c, src/dvdbackup.h, src/main.c: Updated year in
+	  copyright.
+
+	* [r54] src/main.c: Added include <locale.h> for LC_ALL constant.
+
+	* [r54] ChangeLog, NEWS: Updated.
+
+2008-11-19  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r52] src/main.c: Removed compile warnings.
+
+2008-05-01  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r49] configure.ac: Add AC_PROG_CC_C99 and set -pedantic compiler flag.
+
+2008-04-09  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r47] src/dvdbackup.c:
+	  - (DVDCopyIfoBup) removed gotos
+	  - (uniq) removed
+	  - (DVDDisplayInfo) Added human readable output of file sizes.
+
+	* [r47] src/dvdbackup.c, src/dvdbackup.h, src/main.c: converted spaces to
+	  tabs
+
+2008-04-08  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r45] src/dvdbackup.c:
+	  - Removed DVDMirrorVMG. Use DVDMirrorTitleX with title set 0 instead.
+	  - Renamed DVDCopyTileVobX to DVDCopyTitleVobX.
+	  - Added DVDCopyBlocks for DVDCopyTitleVobX and DVDCopyMenu.
+
+2008-04-02  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r43] src/dvdbackup.c (DVDGetFileSet):
+	  - fixed typo
+	  - added more verbose output
+
+2008-03-24  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r40] src/dvdbackup.c: Changed type of file sizes from int to off_t 
+
+	* [r39] src/dvdbackup.c (DVDCopyMenu): changed invalid DVD size error to
+	  warning
+
+	* [r38] src/dvdbackup.c:
+	  - (DVDGetFileSet): Cleanup.
+	  - Replaced 2048 with DVD_VIDEO_LB_LEN (defined in dvdread/dvd_reader.h)
+	  - created constant BUFFER_SIZE
+	  - replaced vobsize with MAX_VOB_SIZE
+
+	* [r37] src/dvdbackup.c (DVDCopyMenu): Error messages prints filename.
+
 2008-03-20  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r33] configure.ac, NEWS, po/dvdbackup.pot: Released version 0.2
