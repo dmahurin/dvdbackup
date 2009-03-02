@@ -6,6 +6,8 @@ Uploaders: Benjamin Drung <benjamin.drung@gmail.com>
 Build-Depends: debhelper (>= 5.0), libdvdread-dev (>=0.9.6)
 Standards-Version: 3.8.0
 Homepage: http://dvdbackup.sourceforge.net
+Vcs-Svn: svn://svn.debian.org/svn/pkg-dvdbackup/trunk/
+Vcs-Browser: http://svn.debian.org/viewsvn/pkg-dvdbackup/trunk/
 
 Package: dvdbackup
 Architecture: any
