@@ -11,8 +11,9 @@ dvdbackup (0.4-1) UNRELEASED; urgency=low
   * debian/rules: Switch to cdbs
   * debian/dvdbackup.{dirs,docs,manpages}: Removed
   * debian/dvdbackup.install: Updated for cdbs
+  * debian/copyright: Updated year and corrected link to GPL
 
- -- Benjamin Drung <benjamin.drung@gmail.com>  Mon, 02 Mar 2009 23:40:24 +0100
+ -- Benjamin Drung <benjamin.drung@gmail.com>  Mon, 02 Mar 2009 23:58:07 +0100
 
 dvdbackup (0.2-2) unstable; urgency=low
 
