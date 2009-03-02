@@ -1,6 +1,8 @@
 2009-03-02  Benjamin Drung  <benjamin.drung@gmail.com>
 
-	* [62] debian/: Removed. The Debian package is now maintained at
+	* [r63] configure.ac, NEWS, po/dvdbackup.pot, po/*.po: Release version 0.4
+
+	* [r62] debian/: Removed. The Debian package is now maintained at
 	  http://alioth.debian.org/
 
 	* [r61] configure.ac: enable extra warnings for gcc if they are not
