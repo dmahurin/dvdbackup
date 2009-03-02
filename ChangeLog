@@ -1,5 +1,7 @@
 2009-03-02  Benjamin Drung  <benjamin.drung@gmail.com>
 
+	* [r65] configure.ac: Updated version string to 0.4+svn
+
 	* [r63] configure.ac, NEWS, po/dvdbackup.pot, po/*.po: Release version 0.4
 
 	* [r62] debian/: Removed. The Debian package is now maintained at

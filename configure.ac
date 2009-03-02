@@ -4,7 +4,7 @@ dnl ----------------------------------------------------------
 dnl Initialization and Versioning
 dnl ----------------------------------------------------------
 
-AC_INIT([dvdbackup], [0.4], [dvdbackup-bugs@lists.sourceforge.net])
+AC_INIT([dvdbackup], [0.4+svn], [dvdbackup-bugs@lists.sourceforge.net])
 
 # Where to generate output; srcdir location.
 AC_CONFIG_HEADERS([config.h])
