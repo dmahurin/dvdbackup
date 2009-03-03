@@ -22,6 +22,6 @@ Description: tool to rip DVD's from the command line
 Package: dvdbackup-dbg
 Architecture: any
 Priority: extra
-Depends: dvdbackup, ${misc:Depends}
+Depends: dvdbackup (= ${binary:Version}), ${misc:Depends}
 Description: debug files for dvdbackup
  This package contains the stripped debugging symbols from dvdbackup.
