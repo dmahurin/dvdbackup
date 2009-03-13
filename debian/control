@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Stephen Gran <sgran@debian.org>
 Uploaders: Benjamin Drung <benjamin.drung@gmail.com>
 Build-Depends: cdbs, debhelper (>= 5.0), libdvdread-dev (>= 4.1.3-4)
-Standards-Version: 3.8.0
+Standards-Version: 3.8.1
 Homepage: http://dvdbackup.sourceforge.net
 Vcs-Svn: svn://svn.debian.org/svn/pkg-dvdbackup/trunk/
 Vcs-Browser: http://svn.debian.org/viewsvn/pkg-dvdbackup/trunk/

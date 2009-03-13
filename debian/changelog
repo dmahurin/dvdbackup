@@ -2,7 +2,7 @@ dvdbackup (0.4-1) UNRELEASED; urgency=low
 
   * New upstream version
   * debian/control:
-    - Update Debian Standards-Version to 3.8.0
+    - Update Debian Standards-Version to 3.8.1
     - Add Homepage and Vcs-{Browser,Svn} fields
     - Add myself to Uploaders
     - Add cdbs to Build-Depends
@@ -15,7 +15,7 @@ dvdbackup (0.4-1) UNRELEASED; urgency=low
   * debian/dvdbackup.install: Updated for cdbs
   * debian/copyright: Updated year and corrected link to GPL
 
- -- Benjamin Drung <benjamin.drung@gmail.com>  Tue, 03 Mar 2009 01:39:07 +0100
+ -- Benjamin Drung <benjamin.drung@gmail.com>  Fri, 13 Mar 2009 13:05:26 +0100
 
 dvdbackup (0.2-2) unstable; urgency=low
 
