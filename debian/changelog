@@ -9,13 +9,14 @@ dvdbackup (0.4-1) UNRELEASED; urgency=low
     - Add ${misc:Depends} to Depends
     - Build-Depends on newer libdvdread-dev (Closes: #516825)
     - dvdbackup-dev needs to depend on same version of dvdbackup
+    - Adjust section to the new sections in Debian
   * Add newline to the end of debian/watch
   * debian/rules: Switch to cdbs (Closes: #506600)
   * debian/dvdbackup.{dirs,docs,manpages}: Removed
   * debian/dvdbackup.install: Updated for cdbs
   * debian/copyright: Updated year and corrected link to GPL
 
- -- Benjamin Drung <benjamin.drung@gmail.com>  Fri, 13 Mar 2009 13:05:26 +0100
+ -- Benjamin Drung <benjamin.drung@gmail.com>  Mon, 16 Mar 2009 00:25:19 +0100
 
 dvdbackup (0.2-2) unstable; urgency=low
 

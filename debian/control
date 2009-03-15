@@ -1,5 +1,5 @@
 Source: dvdbackup
-Section: utils
+Section: video
 Priority: optional
 Maintainer: Stephen Gran <sgran@debian.org>
 Uploaders: Benjamin Drung <benjamin.drung@gmail.com>
@@ -21,6 +21,7 @@ Description: tool to rip DVD's from the command line
 
 Package: dvdbackup-dbg
 Architecture: any
+Section: debug
 Priority: extra
 Depends: dvdbackup (= ${binary:Version}), ${misc:Depends}
 Description: debug files for dvdbackup
