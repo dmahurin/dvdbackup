@@ -805,11 +805,10 @@ static titles_info_t * DVDGetInfo(dvd_reader_t * _dvd) {
 }
 
 
-static int DVDCopyBlocks(dvd_file_t* dvd_file, int destination, int size, char* filename, read_error_strategy_t errorstrat) {
+static int DVDCopyBlocks(dvd_file_t* dvd_file, int destination, int offset, int size, char* filename, read_error_strategy_t errorstrat) {
 	int i;
 	
 	/* all sizes are in DVD logical blocks */
-	int offset = 0;
 	int remaining = size;
 	int to_read = BUFFER_SIZE;
 	int act_read; /* number of buffers actually read */
@@ -996,7 +995,7 @@ static int DVDCopyTitleVobX(dvd_reader_t * dvd, title_set_info_t * title_set_inf
 		return(1);
 	}
 
-	result = DVDCopyBlocks(dvd_file, streamout, size, filename, errorstrat);
+	result = DVDCopyBlocks(dvd_file, streamout, offset, size, filename, errorstrat);
 
 	DVDCloseFile(dvd_file);
 	close(streamout);
@@ -1071,7 +1070,7 @@ static int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, in
 		}
 	}
 
-	result = DVDCopyBlocks(dvd_file, streamout, size, filename, errorstrat);
+	result = DVDCopyBlocks(dvd_file, streamout, 0, size, filename, errorstrat);
 
 	DVDCloseFile(dvd_file);
 	close(streamout);

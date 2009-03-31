@@ -1,3 +1,8 @@
+2009-03-31  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r67] src/dvdbackup.c (DVDCopyBlocks): Fix offset bug; thanks to Lenard
+	        Spencer
+
 2009-03-02  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r65] configure.ac: Updated version string to 0.4+svn
