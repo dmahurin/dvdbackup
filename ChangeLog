@@ -1,5 +1,7 @@
 2009-03-31  Benjamin Drung  <benjamin.drung@gmail.com>
 
+	* [r68] src/dvdbackup.c: Fix typos and improve wording.
+
 	* [r67] src/dvdbackup.c (DVDCopyBlocks): Fix offset bug; thanks to Lenard
 	        Spencer
 
