@@ -1,3 +1,9 @@
+dvdbackup (0.4-2) UNRELEASED; urgency=low
+
+  * debian/control: Update my e-mail address.
+
+ -- Benjamin Drung <bdrung@ubuntu.com>  Thu, 28 May 2009 19:55:07 +0200
+
 dvdbackup (0.4-1) unstable; urgency=low
 
   [ Benjamin Drung ]
