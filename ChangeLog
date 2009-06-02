@@ -1,5 +1,7 @@
 2009-06-02  Benjamin Drung  <benjamin.drung@gmail.com>
 
+	* [r70] po/de.po: Added; thanks to Chris Leick <c.leick@vollbio.de>
+
 	* [r69] src/dvdbackup.c, src/main.c: Fix typos and improve wording; thanks
 	        to Chris Leick <c.leick@vollbio.de>
 
