@@ -2,8 +2,9 @@ dvdbackup (0.4-2) UNRELEASED; urgency=low
 
   * debian/control: Update my e-mail address.
   * debian/rules: Install changelog file.
+  * debian/copyright: Refer to GPL-3 instead of versionless GPL.
 
- -- Benjamin Drung <bdrung@ubuntu.com>  Wed, 03 Jun 2009 00:03:41 +0200
+ -- Benjamin Drung <bdrung@ubuntu.com>  Wed, 03 Jun 2009 00:05:53 +0200
 
 dvdbackup (0.4-1) unstable; urgency=low
 
