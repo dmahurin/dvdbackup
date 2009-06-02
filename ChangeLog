@@ -1,3 +1,8 @@
+2009-06-02  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r69] src/dvdbackup.c, src/main.c: Fix typos and improve wording; thanks
+	        to Chris Leick <c.leick@vollbio.de>
+
 2009-03-31  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r68] src/dvdbackup.c: Fix typos and improve wording.

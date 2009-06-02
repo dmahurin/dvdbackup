@@ -403,7 +403,7 @@ int main(int argc, char* argv[]) {
 
 	if (stat(targetname, &fileinfo) == 0) {
 		if (! S_ISDIR(fileinfo.st_mode)) {
-			fprintf(stderr,_("The target directory is not valid; it may be a ordinary file\n"));
+			fprintf(stderr,_("The target directory is not valid; it may be an ordinary file.\n"));
 		}
 	} else {
 		if (mkdir(targetname, 0777) != 0) {
@@ -419,7 +419,7 @@ int main(int argc, char* argv[]) {
 
 	if (stat(targetname, &fileinfo) == 0) {
 		if (! S_ISDIR(fileinfo.st_mode)) {
-			fprintf(stderr,_("The title directory is not valid; it may be a ordinary file\n"));
+			fprintf(stderr,_("The title directory is not valid; it may be an ordinary file.\n"));
 		}
 	} else {
 		if (mkdir(targetname, 0777) != 0) {
@@ -434,7 +434,7 @@ int main(int argc, char* argv[]) {
 
 	if (stat(targetname, &fileinfo) == 0) {
 		if (! S_ISDIR(fileinfo.st_mode)) {
-			fprintf(stderr,_("The VIDEO_TS directory is not valid; it may be a ordinary file\n"));
+			fprintf(stderr,_("The VIDEO_TS directory is not valid; it may be an ordinary file.\n"));
 		}
 	} else {
 		if (mkdir(targetname, 0777) != 0) {

@@ -284,7 +284,7 @@ static int DVDWriteCells(dvd_reader_t * dvd, int cell_start_sector[],
 			to_read = left;
 		}
 		if ((rbuff = DVDReadBlocks(dvd_file,soffset, to_read, buffer)) < 0) {
-			fprintf(stderr, _("Error reading MENU VOB %d != %d\n"), rbuff, to_read);
+			fprintf(stderr, _("Error reading MENU VOB: %d != %d\n"), rbuff, to_read);
 			free(buffer);
 			DVDCloseFile(dvd_file);
 			close(streamout);
@@ -972,7 +972,7 @@ static int DVDCopyTitleVobX(dvd_reader_t * dvd, title_set_info_t * title_set_inf
 	if (stat(targetname, &fileinfo) == 0) {
 		fprintf(stderr, _("The Title file %s exists; will try to overwrite it.\n"), targetname);
 		if (! S_ISREG(fileinfo.st_mode)) {
-			fprintf(stderr,_("The Title %s file is not valid, it may be a directory\n"), targetname);
+			fprintf(stderr,_("The %s %s file is not valid, it may be a directory.\n"), _("Title"), targetname);
 			return(1);
 		} else {
 			if ((streamout = open(targetname, O_WRONLY | O_TRUNC, 0666)) == -1) {
@@ -1050,7 +1050,7 @@ static int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, in
 	if (stat(targetname, &fileinfo) == 0) {
 		fprintf(stderr, _("The Menu file %s exists; will try to overwrite it.\n"), targetname);
 		if (! S_ISREG(fileinfo.st_mode)) {
-			fprintf(stderr,_("The Menu %s file is not valid, it may be a directory\n"), targetname);
+			fprintf(stderr,_("The %s %s file is not valid, it may be a directory.\n"), _("Menu"), targetname);
 			DVDCloseFile(dvd_file);
 			return(1);
 		} else {
@@ -1120,17 +1120,17 @@ static int DVDCopyIfoBup(dvd_reader_t* dvd, title_set_info_t* title_set_info, in
 	}
 
 	if (stat(targetname_ifo, &fileinfo) == 0) {
-		fprintf(stderr, _("The IFO file %s exists; will try to overwrite it.\n"), targetname_ifo);
+		fprintf(stderr, _("The %s file %s exists; will try to overwrite it.\n"), _("IFO"), targetname_ifo);
 		if (! S_ISREG(fileinfo.st_mode)) {
-			fprintf(stderr,_("The IFO %s file is not valid, it may be a directory\n"), targetname_ifo);
+			fprintf(stderr,_("The %s %s file is not valid, it may be a directory.\n"), _("IFO"), targetname_ifo);
 			return(1);
 		}
 	}
 
 	if (stat(targetname_bup, &fileinfo) == 0) {
-		fprintf(stderr, _("The BUP file %s exists; will try to overwrite it.\n"), targetname_bup);
+		fprintf(stderr, _("The %s file %s exists; will try to overwrite it.\n"), _("BUP"), targetname_bup);
 		if (! S_ISREG(fileinfo.st_mode)) {
-			fprintf(stderr,_("The BUP %s file is not valid, it may be a directory\n"), targetname_bup);
+			fprintf(stderr,_("The %s %s file is not valid, it may be a directory.\n"), _("BUP"), targetname_bup);
 			return(1);
 		}
 	}
