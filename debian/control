@@ -25,4 +25,9 @@ Section: debug
 Priority: extra
 Depends: dvdbackup (= ${binary:Version}), ${misc:Depends}
 Description: debug files for dvdbackup
+ dvdbackup will extract all (or optionally only selected) titles as found
+ on the dvd.  It will structure the extracted files in a format suitable for
+ burning at a later time with genisoimage and dvdrecord.  Has the advantage of
+ being very easy to use, small, and fast.
+ .
  This package contains the stripped debugging symbols from dvdbackup.
