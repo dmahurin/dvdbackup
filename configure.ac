@@ -54,6 +54,8 @@ dnl Checks for libraries
 dnl ----------------------------------------------------------
 
 AC_CHECK_LIB(dvdread, DVDOpen, , AC_MSG_ERROR([You need libdvdread]))
+AC_CHECK_LIB(dvdread, DVDFileStat, [HAVE_DVDFileStat=yes], AC_MSG_ERROR([You have installed an incompatible version of libdvdread.
+Have a look at http://dvdbackup.sourceforge.net for more details.]))
 
 dnl ----------------------------------------------------------
 dnl Checks for header files

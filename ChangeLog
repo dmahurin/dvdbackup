@@ -1,3 +1,8 @@
+2009-06-03  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r72] configure.ac: Check if a compatible version of libdvdread is used
+	        (libdvdread must have a DVDFileStat function).
+
 2009-06-02  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r71] po/dvdbackup.pot, po/*.po: Updated.
