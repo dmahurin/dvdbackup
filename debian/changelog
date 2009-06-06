@@ -3,10 +3,10 @@ dvdbackup (0.4-2) UNRELEASED; urgency=low
   * debian/control:
     - Update my e-mail address.
     - Use longer description for dvdbackup-dbg.
-  * debian/rules: Install changelog file.
   * debian/copyright: Refer to GPL-3 instead of versionless GPL.
+  * Switch to debhelper 7.
 
- -- Benjamin Drung <bdrung@ubuntu.com>  Wed, 03 Jun 2009 00:09:00 +0200
+ -- Benjamin Drung <bdrung@ubuntu.com>  Sat, 06 Jun 2009 17:17:54 +0200
 
 dvdbackup (0.4-1) unstable; urgency=low
 
