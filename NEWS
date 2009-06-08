@@ -1,7 +1,7 @@
-dvdbackup 0.4.1 (UNRELEASED)
+dvdbackup 0.4.1 (2009-06-09)
 
 	New Features:
-		* New translation: German (de); thanks to Chris Leick
+		* New complete translation: German (de); thanks to Chris Leick
 
 	Bug fixes:
 		* Fix offset bug (which results in wrong .vob files); thanks to Lenard
