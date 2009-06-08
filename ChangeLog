@@ -1,5 +1,10 @@
 2009-06-09  Benjamin Drung  <benjamin.drung@gmail.com>
 
+	* [r74] po/es.po, po/fr.po, po/it.po, po/gl.po, po/nb.po, po/ru.po: Updated
+	        translations from Launchpad.
+	* [r74] po/de.po: Translate missing strings.
+	* [r74] po/dvdbackup.pot: Updated.
+
 	* [r73] src/dvdbackup.c: Improve strings to make translation easier.
 
 2009-06-03  Benjamin Drung  <benjamin.drung@gmail.com>
