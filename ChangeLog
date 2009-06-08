@@ -1,3 +1,7 @@
+2009-06-09  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r73] src/dvdbackup.c: Improve strings to make translation easier.
+
 2009-06-03  Benjamin Drung  <benjamin.drung@gmail.com>
 
 	* [r72] configure.ac: Check if a compatible version of libdvdread is used

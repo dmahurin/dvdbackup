@@ -970,9 +970,11 @@ static int DVDCopyTitleVobX(dvd_reader_t * dvd, title_set_info_t * title_set_inf
 
 
 	if (stat(targetname, &fileinfo) == 0) {
-		fprintf(stderr, _("The Title file %s exists; will try to overwrite it.\n"), targetname);
+		/* TRANSLATORS: The sentence starts with "The title file %s exists[...]" */
+		fprintf(stderr, _("The %s %s exists; will try to overwrite it.\n"), _("title file"), targetname);
 		if (! S_ISREG(fileinfo.st_mode)) {
-			fprintf(stderr,_("The %s %s file is not valid, it may be a directory.\n"), _("Title"), targetname);
+			/* TRANSLATORS: The sentence starts with "The title file %s is not valid[...]" */
+			fprintf(stderr,_("The %s %s is not valid, it may be a directory.\n"), _("title file"), targetname);
 			return(1);
 		} else {
 			if ((streamout = open(targetname, O_WRONLY | O_TRUNC, 0666)) == -1) {
@@ -1048,9 +1050,11 @@ static int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, in
 	sprintf(targetname,"%s/%s/VIDEO_TS/%s",targetdir, title_name, filename);
 
 	if (stat(targetname, &fileinfo) == 0) {
-		fprintf(stderr, _("The Menu file %s exists; will try to overwrite it.\n"), targetname);
+		/* TRANSLATORS: The sentence starts with "The menu file %s exists[...]" */
+		fprintf(stderr, _("The %s %s exists; will try to overwrite it.\n"), _("menu file"), targetname);
 		if (! S_ISREG(fileinfo.st_mode)) {
-			fprintf(stderr,_("The %s %s file is not valid, it may be a directory.\n"), _("Menu"), targetname);
+			/* TRANSLATORS: The sentence starts with "The menu file %s is not valid[...]" */
+			fprintf(stderr,_("The %s %s is not valid, it may be a directory.\n"), _("menu file"), targetname);
 			DVDCloseFile(dvd_file);
 			return(1);
 		} else {
@@ -1120,17 +1124,21 @@ static int DVDCopyIfoBup(dvd_reader_t* dvd, title_set_info_t* title_set_info, in
 	}
 
 	if (stat(targetname_ifo, &fileinfo) == 0) {
-		fprintf(stderr, _("The %s file %s exists; will try to overwrite it.\n"), _("IFO"), targetname_ifo);
+		/* TRANSLATORS: The sentence starts with "The IFO file %s exists[...]" */
+		fprintf(stderr, _("The %s %s exists; will try to overwrite it.\n"), _("IFO file"), targetname_ifo);
 		if (! S_ISREG(fileinfo.st_mode)) {
-			fprintf(stderr,_("The %s %s file is not valid, it may be a directory.\n"), _("IFO"), targetname_ifo);
+			/* TRANSLATORS: The sentence starts with "The IFO file %s is not valid[...]" */
+			fprintf(stderr,_("The %s %s is not valid, it may be a directory.\n"), _("IFO file"), targetname_ifo);
 			return(1);
 		}
 	}
 
 	if (stat(targetname_bup, &fileinfo) == 0) {
-		fprintf(stderr, _("The %s file %s exists; will try to overwrite it.\n"), _("BUP"), targetname_bup);
+		/* TRANSLATORS: The sentence starts with "The BUP file %s exists[...]" */
+		fprintf(stderr, _("The %s %s exists; will try to overwrite it.\n"), _("BUP file"), targetname_bup);
 		if (! S_ISREG(fileinfo.st_mode)) {
-			fprintf(stderr,_("The %s %s file is not valid, it may be a directory.\n"), _("BUP"), targetname_bup);
+			/* TRANSLATORS: The sentence starts with "The BUP file %s is not valid[...]" */
+			fprintf(stderr,_("The %s %s is not valid, it may be a directory.\n"), _("BUP file"), targetname_bup);
 			return(1);
 		}
 	}
