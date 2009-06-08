@@ -1,6 +1,42 @@
+2009-06-09  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r75] configure.ac, NEWS: Release version 0.4.1
+
+	* [r74] po/es.po, po/fr.po, po/it.po, po/gl.po, po/nb.po, po/ru.po: Updated
+	        translations from Launchpad.
+	* [r74] po/de.po: Translate missing strings.
+	* [r74] po/dvdbackup.pot: Updated.
+
+	* [r73] src/dvdbackup.c: Improve strings to make translation easier.
+
+2009-06-03  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r72] configure.ac: Check if a compatible version of libdvdread is used
+	        (libdvdread must have a DVDFileStat function).
+
+2009-06-02  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r71] po/dvdbackup.pot, po/*.po: Updated.
+
+	* [r71] po/LINGUAS: Added German (de) translation.
+
+	* [r70] po/de.po: Added; thanks to Chris Leick <c.leick@vollbio.de>
+
+	* [r69] src/dvdbackup.c, src/main.c: Fix typos and improve wording; thanks
+	        to Chris Leick <c.leick@vollbio.de>
+
+2009-03-31  Benjamin Drung  <benjamin.drung@gmail.com>
+
+	* [r68] src/dvdbackup.c: Fix typos and improve wording.
+
+	* [r67] src/dvdbackup.c (DVDCopyBlocks): Fix offset bug; thanks to Lenard
+	        Spencer
+
 2009-03-02  Benjamin Drung  <benjamin.drung@gmail.com>
 
-	* [r63] configure.ac, NEWS: Release version 0.4
+	* [r65] configure.ac: Updated version string to 0.4+svn
+
+	* [r63] configure.ac, NEWS, po/dvdbackup.pot, po/*.po: Release version 0.4
 
 	* [r62] debian/: Removed. The Debian package is now maintained at
 	  http://alioth.debian.org/

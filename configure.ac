@@ -4,7 +4,7 @@ dnl ----------------------------------------------------------
 dnl Initialization and Versioning
 dnl ----------------------------------------------------------
 
-AC_INIT([dvdbackup], [0.4], [dvdbackup-bugs@lists.sourceforge.net])
+AC_INIT([dvdbackup], [0.4.1], [dvdbackup-bugs@lists.sourceforge.net])
 
 # Where to generate output; srcdir location.
 AC_CONFIG_HEADERS([config.h])
@@ -54,6 +54,8 @@ dnl Checks for libraries
 dnl ----------------------------------------------------------
 
 AC_CHECK_LIB(dvdread, DVDOpen, , AC_MSG_ERROR([You need libdvdread]))
+AC_CHECK_LIB(dvdread, DVDFileStat, [HAVE_DVDFileStat=yes], AC_MSG_ERROR([You have installed an incompatible version of libdvdread.
+Have a look at http://dvdbackup.sourceforge.net for more details.]))
 
 dnl ----------------------------------------------------------
 dnl Checks for header files

@@ -232,7 +232,7 @@ static int DVDWriteCells(dvd_reader_t * dvd, int cell_start_sector[],
 
 	/* Create VTS_XX_X.VOB */
 	if (title_set == 0) {
-		fprintf(stderr,_("Do not try to copy chapters from the VMG domain; there are not any\n"));
+		fprintf(stderr,_("Do not try to copy chapters from the VMG domain; there are none.\n"));
 		return(1);
 	} else {
 		sprintf(targetname,"%s/%s/VIDEO_TS/VTS_%02i_%i.VOB",targetdir, title_name, title_set, vob);
@@ -284,7 +284,7 @@ static int DVDWriteCells(dvd_reader_t * dvd, int cell_start_sector[],
 			to_read = left;
 		}
 		if ((rbuff = DVDReadBlocks(dvd_file,soffset, to_read, buffer)) < 0) {
-			fprintf(stderr, _("Error reading MENU VOB %d != %d\n"), rbuff, to_read);
+			fprintf(stderr, _("Error reading MENU VOB: %d != %d\n"), rbuff, to_read);
 			free(buffer);
 			DVDCloseFile(dvd_file);
 			close(streamout);
@@ -805,11 +805,10 @@ static titles_info_t * DVDGetInfo(dvd_reader_t * _dvd) {
 }
 
 
-static int DVDCopyBlocks(dvd_file_t* dvd_file, int destination, int size, char* filename, read_error_strategy_t errorstrat) {
+static int DVDCopyBlocks(dvd_file_t* dvd_file, int destination, int offset, int size, char* filename, read_error_strategy_t errorstrat) {
 	int i;
 	
 	/* all sizes are in DVD logical blocks */
-	int offset = 0;
 	int remaining = size;
 	int to_read = BUFFER_SIZE;
 	int act_read; /* number of buffers actually read */
@@ -947,7 +946,7 @@ static int DVDCopyTitleVobX(dvd_reader_t * dvd, title_set_info_t * title_set_inf
 
 	/* Create VTS_XX_X.VOB */
 	if (title_set == 0) {
-		fprintf(stderr,_("Do not try to copy a Title VOB from the VMG domain; there are not any\n"));
+		fprintf(stderr,_("Do not try to copy a Title VOB from the VMG domain; there are none.\n"));
 		return(1);
 	} else {
 		sprintf(targetname,"%s/%s/VIDEO_TS/VTS_%02i_%i.VOB",targetdir, title_name, title_set, vob);
@@ -971,9 +970,11 @@ static int DVDCopyTitleVobX(dvd_reader_t * dvd, title_set_info_t * title_set_inf
 
 
 	if (stat(targetname, &fileinfo) == 0) {
-		fprintf(stderr, _("The Title file %s exists will try to over write it.\n"), targetname);
+		/* TRANSLATORS: The sentence starts with "The title file %s exists[...]" */
+		fprintf(stderr, _("The %s %s exists; will try to overwrite it.\n"), _("title file"), targetname);
 		if (! S_ISREG(fileinfo.st_mode)) {
-			fprintf(stderr,_("The Title %s file is not valid, it may be a directory\n"), targetname);
+			/* TRANSLATORS: The sentence starts with "The title file %s is not valid[...]" */
+			fprintf(stderr,_("The %s %s is not valid, it may be a directory.\n"), _("title file"), targetname);
 			return(1);
 		} else {
 			if ((streamout = open(targetname, O_WRONLY | O_TRUNC, 0666)) == -1) {
@@ -996,7 +997,7 @@ static int DVDCopyTitleVobX(dvd_reader_t * dvd, title_set_info_t * title_set_inf
 		return(1);
 	}
 
-	result = DVDCopyBlocks(dvd_file, streamout, size, filename, errorstrat);
+	result = DVDCopyBlocks(dvd_file, streamout, offset, size, filename, errorstrat);
 
 	DVDCloseFile(dvd_file);
 	close(streamout);
@@ -1049,9 +1050,11 @@ static int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, in
 	sprintf(targetname,"%s/%s/VIDEO_TS/%s",targetdir, title_name, filename);
 
 	if (stat(targetname, &fileinfo) == 0) {
-		fprintf(stderr, _("The Menu file %s exists will try to over write it.\n"), targetname);
+		/* TRANSLATORS: The sentence starts with "The menu file %s exists[...]" */
+		fprintf(stderr, _("The %s %s exists; will try to overwrite it.\n"), _("menu file"), targetname);
 		if (! S_ISREG(fileinfo.st_mode)) {
-			fprintf(stderr,_("The Menu %s file is not valid, it may be a directory\n"), targetname);
+			/* TRANSLATORS: The sentence starts with "The menu file %s is not valid[...]" */
+			fprintf(stderr,_("The %s %s is not valid, it may be a directory.\n"), _("menu file"), targetname);
 			DVDCloseFile(dvd_file);
 			return(1);
 		} else {
@@ -1071,7 +1074,7 @@ static int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, in
 		}
 	}
 
-	result = DVDCopyBlocks(dvd_file, streamout, size, filename, errorstrat);
+	result = DVDCopyBlocks(dvd_file, streamout, 0, size, filename, errorstrat);
 
 	DVDCloseFile(dvd_file);
 	close(streamout);
@@ -1121,17 +1124,21 @@ static int DVDCopyIfoBup(dvd_reader_t* dvd, title_set_info_t* title_set_info, in
 	}
 
 	if (stat(targetname_ifo, &fileinfo) == 0) {
-		fprintf(stderr, _("The IFO file %s exists will try to over write it.\n"), targetname_ifo);
+		/* TRANSLATORS: The sentence starts with "The IFO file %s exists[...]" */
+		fprintf(stderr, _("The %s %s exists; will try to overwrite it.\n"), _("IFO file"), targetname_ifo);
 		if (! S_ISREG(fileinfo.st_mode)) {
-			fprintf(stderr,_("The IFO %s file is not valid, it may be a directory\n"), targetname_ifo);
+			/* TRANSLATORS: The sentence starts with "The IFO file %s is not valid[...]" */
+			fprintf(stderr,_("The %s %s is not valid, it may be a directory.\n"), _("IFO file"), targetname_ifo);
 			return(1);
 		}
 	}
 
 	if (stat(targetname_bup, &fileinfo) == 0) {
-		fprintf(stderr, _("The BUP file %s exists will try to over write it.\n"), targetname_bup);
+		/* TRANSLATORS: The sentence starts with "The BUP file %s exists[...]" */
+		fprintf(stderr, _("The %s %s exists; will try to overwrite it.\n"), _("BUP file"), targetname_bup);
 		if (! S_ISREG(fileinfo.st_mode)) {
-			fprintf(stderr,_("The BUP %s file is not valid, it may be a directory\n"), targetname_bup);
+			/* TRANSLATORS: The sentence starts with "The BUP file %s is not valid[...]" */
+			fprintf(stderr,_("The %s %s is not valid, it may be a directory.\n"), _("BUP file"), targetname_bup);
 			return(1);
 		}
 	}
@@ -1545,7 +1552,7 @@ int DVDMirrorMainFeature(dvd_reader_t * _dvd, char * targetdir,char * title_name
 
 	titles_info = DVDGetInfo(_dvd);
 	if (!titles_info) {
-		fprintf(stderr, _("Guess work of main feature film failed\n"));
+		fprintf(stderr, _("Guesswork of main feature film failed.\n"));
 		return(1);
 	}
 
@@ -1815,7 +1822,7 @@ int DVDDisplayInfo(dvd_reader_t* dvd, char* device) {
 
 	titles_info = DVDGetInfo(dvd);
 	if (!titles_info) {
-		fprintf(stderr, _("Guess work of main feature film failed\n"));
+		fprintf(stderr, _("Guesswork of main feature film failed.\n"));
 		return(1);
 	}
 
