@@ -1,5 +1,7 @@
 2009-06-09  Benjamin Drung  <benjamin.drung@gmail.com>
 
+	* [r77] configure.ac: Updated version string to 0.4.1+svn
+
 	* [r75] configure.ac, NEWS, po/dvdbackup.pot, po/*.po: Release version 0.4.1
 
 	* [r74] po/es.po, po/fr.po, po/it.po, po/gl.po, po/nb.po, po/ru.po: Updated
