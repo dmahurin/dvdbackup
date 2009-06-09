@@ -1,5 +1,9 @@
-dvdbackup (0.4-2) UNRELEASED; urgency=low
+dvdbackup (0.4.1-1) UNRELEASED; urgency=high
 
+  * New upstream release
+    + Fixes offset bug, which results in wrong .vob files (Closes: #529073).
+    + German translation; thanks to Chris Leick (Closes: #531568).
+    + Fixes grammatical errors (Closes: #530708).
   * debian/control:
     - Update my e-mail address.
     - Use longer description for dvdbackup-dbg.
@@ -7,7 +11,7 @@ dvdbackup (0.4-2) UNRELEASED; urgency=low
   * Switch to debhelper 7.
   * Update debian/copyright to Debian Enhancement Proposals 5.
 
- -- Benjamin Drung <bdrung@ubuntu.com>  Sat, 06 Jun 2009 17:33:17 +0200
+ -- Benjamin Drung <bdrung@ubuntu.com>  Tue, 09 Jun 2009 02:11:29 +0200
 
 dvdbackup (0.4-1) unstable; urgency=low
 
