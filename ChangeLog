@@ -1,5 +1,7 @@
 2009-06-09  Benjamin Drung  <benjamin.drung@gmail.com>
 
+	* [r79] po/de.po: Update German translation; thanks to Chris Leick
+
 	* [r77] configure.ac: Updated version string to 0.4.1+svn
 
 	* [r75] configure.ac, NEWS, po/dvdbackup.pot, po/*.po: Release version 0.4.1
