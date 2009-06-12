@@ -1,4 +1,4 @@
-dvdbackup (0.4.1-1) UNRELEASED; urgency=high
+dvdbackup (0.4.1-1) unstable; urgency=high
 
   * New upstream release
     + Fixes offset bug, which results in wrong .vob files (Closes: #529073).
