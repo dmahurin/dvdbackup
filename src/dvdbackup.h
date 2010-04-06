@@ -27,6 +27,7 @@
 /* Flag for verbose mode */
 extern int verbose;
 extern int aspect;
+extern int progress;
 
 typedef enum {
 	STRATEGY_ABORT,

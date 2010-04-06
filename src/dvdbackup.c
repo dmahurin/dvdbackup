@@ -59,7 +59,8 @@
 /* Flag for verbose mode */
 int verbose = 0;
 int aspect;
-
+int progress = 0;
+char progressText[MAXNAME] = "n/a";
 
 /* Structs to keep title set information in */
 
@@ -810,6 +811,8 @@ static int DVDCopyBlocks(dvd_file_t* dvd_file, int destination, int offset, int 
 	
 	/* all sizes are in DVD logical blocks */
 	int remaining = size;
+	int total = size; // total size in blocks
+	float totalMiB = (float)(total) / 512.0f; // total size in [MiB]
 	int to_read = BUFFER_SIZE;
 	int act_read; /* number of buffers actually read */
 
@@ -831,6 +834,9 @@ static int DVDCopyBlocks(dvd_file_t* dvd_file, int destination, int offset, int 
 		act_read = DVDReadBlocks(dvd_file, offset, to_read, buffer);
 		
 		if(act_read != to_read) {
+			if(progress) {
+				fprintf(stdout, "\n");
+			}
 			if(act_read >= 0) {
 				fprintf(stderr, _("Error reading %s at block %d\n"), filename, offset+act_read);
 			} else {
@@ -841,6 +847,9 @@ static int DVDCopyBlocks(dvd_file_t* dvd_file, int destination, int offset, int 
 		if(act_read > 0) {
 			/* Writing blocks */
 			if(write(destination, buffer, act_read * DVD_VIDEO_LB_LEN) != act_read * DVD_VIDEO_LB_LEN) {
+				if(progress) {
+					fprintf(stdout, "\n");
+				}
 				fprintf(stderr, _("Error writing %s.\n"), filename);
 				return(1);
 			}
@@ -851,6 +860,10 @@ static int DVDCopyBlocks(dvd_file_t* dvd_file, int destination, int offset, int 
 
 		if(act_read != to_read) {
 			int numBlanks = 0;
+
+			if(progress) {
+				fprintf(stdout, "\n");
+			}
 
 			if (act_read < 0) {
 				act_read = 0;
@@ -881,8 +894,23 @@ static int DVDCopyBlocks(dvd_file_t* dvd_file, int destination, int offset, int 
 			offset += numBlanks;
 			remaining -= numBlanks;
 		}
+
+		if(progress) {
+			int done = total - remaining; // blocks done
+			if(remaining < BUFFER_SIZE || (done % BUFFER_SIZE) == 0) { // don't print too often
+				float doneMiB = (float)(done) / 512.0f; // [MiB] done
+				fprintf(stdout, _("\rCopying %s: %.0f%% done (%.0f/%.0f MiB)"),
+						progressText, doneMiB / totalMiB * 100.0f, doneMiB, totalMiB);
+				fflush(stdout);
+			}
+		}
+
 	}
-	
+
+	if(progress) {
+		fprintf(stdout, "\n");
+	}
+
 	return 0;
 }
 
@@ -1074,6 +1102,10 @@ static int DVDCopyMenu(dvd_reader_t * dvd, title_set_info_t * title_set_info, in
 		}
 	}
 
+	if(progress) {
+		strncpy(progressText, _("menu"), MAXNAME);
+	}
+
 	result = DVDCopyBlocks(dvd_file, streamout, 0, size, filename, errorstrat);
 
 	DVDCloseFile(dvd_file);
@@ -1225,8 +1257,7 @@ static int DVDMirrorTitleX(dvd_reader_t* dvd, title_set_info_t* title_set_info,
 
 	/* Loop through the vobs */
 	int i;
-
-
+	int n;
 
 	if ( DVDCopyIfoBup(dvd, title_set_info, title_set, targetdir, title_name) != 0 ) {
 		return(1);
@@ -1236,10 +1267,15 @@ static int DVDMirrorTitleX(dvd_reader_t* dvd, title_set_info_t* title_set_info,
 		return(1);
 	}
 
-	for (i = 0; i < title_set_info->title_set[title_set].number_of_vob_files ; i++) {
+	n = title_set_info->title_set[title_set].number_of_vob_files;
+	for (i = 0; i < n; i++) {
 #ifdef DEBUG
 		fprintf(stderr,"In the VOB copy loop for %d\n", i);
-#endif		
+#endif
+		if(progress) {
+			snprintf(progressText, MAXNAME, _("Title, part %i/%i"), i+1, n);
+		}
+
 		if ( DVDCopyTitleVobX(dvd, title_set_info, title_set, i + 1, targetdir, title_name, errorstrat) != 0 ) {
 		return(1);
 		}

@@ -102,7 +102,8 @@ Print a friendly, customizable greeting.\n"), stdout); */
   -a, --aspect=0           to get aspect ratio 4:3 instead of 16:9 if both are\n\
                            present\n\
   -r, --error={a,b,m}      select read error handling: a=abort, b=skip block,\n\
-                           m=skip multiple blocks (default)\n\n"));
+                           m=skip multiple blocks (default)\n\
+  -p, --progress           print progress information while copying VOBs\n\n"));
 
 	printf(_("\
   -a is option to the -F switch and has no effect on other options\n\
@@ -195,9 +196,10 @@ int main(int argc, char* argv[]) {
 		{"name", required_argument, NULL, 'n'},
 		{"aspect", required_argument, NULL, 'a'},
 		{"error", required_argument, NULL, 'r'},
+		{"progress", no_argument, NULL, 'p'},
 		{NULL, 0, NULL, 0}
 	};
-	const char* shortopts = "hVIMFT:t:s:e:i:o:vn:a:r:";
+	const char* shortopts = "hVIMFT:t:s:e:i:o:vn:a:r:p";
 	
 	init_i18n();
 	program_name = argv[0];
@@ -254,6 +256,9 @@ int main(int argc, char* argv[]) {
 			break;
 		case 'r':
 			errorstrat_temp=optarg;
+			break;
+		case 'p':
+			progress = 1;
 			break;
 
 		default:
