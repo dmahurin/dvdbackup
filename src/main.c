@@ -181,7 +181,7 @@ int main(int argc, char* argv[]) {
 	static const struct option longopts[] = {
 		{"help", no_argument, NULL, 'h'},
 		{"version", no_argument, NULL, 'V'},
-		
+
 		{"info", no_argument, NULL, 'I'},
 		{"mirror", no_argument, NULL, 'M'},
 		{"feature", no_argument, NULL, 'F'},
@@ -200,12 +200,12 @@ int main(int argc, char* argv[]) {
 		{NULL, 0, NULL, 0}
 	};
 	const char* shortopts = "hVIMFT:t:s:e:i:o:vn:a:r:p";
-	
+
 	init_i18n();
 	program_name = argv[0];
 
 	/* TODO: do isdigit check */
-	
+
 	while((flags = getopt_long(argc, argv, shortopts, longopts, NULL)) != -1) {
 		switch(flags) {
 		case 'h':
@@ -238,7 +238,7 @@ int main(int argc, char* argv[]) {
 		case 'e':
 			end_chapter_temp = optarg;
 			break;
-			
+
 		case 'i':
 			dvd = optarg;
 			break;
@@ -275,7 +275,7 @@ int main(int argc, char* argv[]) {
 		fprintf(stderr, _("Try `%s --help' for more information.\n"), program_name);
 		exit (EXIT_FAILURE);
 	}
-	
+
 	if(errorstrat_temp != NULL) {
 		if(errorstrat_temp[0]=='a') {
 			errorstrat=STRATEGY_ABORT;

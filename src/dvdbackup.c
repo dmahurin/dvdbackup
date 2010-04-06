@@ -189,7 +189,7 @@ static int DVDWriteCells(dvd_reader_t * dvd, int cell_start_sector[],
 	int size;
 	int left;
 
-	int to_read = BUFFER_SIZE; 
+	int to_read = BUFFER_SIZE;
 	int rbuff;
 
 	/* Offsets */
@@ -201,7 +201,7 @@ static int DVDWriteCells(dvd_reader_t * dvd, int cell_start_sector[],
 
 	int title_set;
 	int number_of_vob_files;
-	
+
 #ifdef DEBUG
 	fprintf(stderr,"DVDWriteCells: length is %d\n", length);
 #endif
@@ -436,7 +436,7 @@ static titles_info_t * DVDGetInfo(dvd_reader_t * _dvd) {
 		fprintf(stderr, _("Out of memory creating titles info structure\n"));
 		return NULL;
 	}
-	
+
 	titles_info->titles = (titles_t *)malloc((titles)* sizeof(titles_t));
 	titles_info->number_of_titles = titles;
 
@@ -475,7 +475,7 @@ static titles_info_t * DVDGetInfo(dvd_reader_t * _dvd) {
 						audio_audio_array, title_set_audio_array,
 						size_size_array, title_set_size_array,
 						channels_channel_array, title_set_channel_array);
-		return NULL;		
+		return NULL;
 	}
 
 	/* Interate over the titles nr_of_srpts */
@@ -808,7 +808,7 @@ static titles_info_t * DVDGetInfo(dvd_reader_t * _dvd) {
 
 static int DVDCopyBlocks(dvd_file_t* dvd_file, int destination, int offset, int size, char* filename, read_error_strategy_t errorstrat) {
 	int i;
-	
+
 	/* all sizes are in DVD logical blocks */
 	int remaining = size;
 	int total = size; // total size in blocks
@@ -823,16 +823,16 @@ static int DVDCopyBlocks(dvd_file_t* dvd_file, int destination, int offset, int 
 	for(i = 0; i < BUFFER_SIZE * DVD_VIDEO_LB_LEN; i++) {
 		buffer_zero[i] = '\0';
 	}
-	
+
 	while( remaining > 0 ) {
 
 		if (to_read > remaining) {
 			to_read = remaining;
 		}
-		
+
 		/* Reading blocks */
 		act_read = DVDReadBlocks(dvd_file, offset, to_read, buffer);
-		
+
 		if(act_read != to_read) {
 			if(progress) {
 				fprintf(stdout, "\n");
@@ -853,7 +853,7 @@ static int DVDCopyBlocks(dvd_file_t* dvd_file, int destination, int offset, int 
 				fprintf(stderr, _("Error writing %s.\n"), filename);
 				return(1);
 			}
-			
+
 			offset += act_read;
 			remaining -= act_read;
 		}
@@ -936,7 +936,7 @@ static int DVDCopyTitleVobX(dvd_reader_t * dvd, title_set_info_t * title_set_inf
 
 	/* DVD handler */
 	dvd_file_t* dvd_file=NULL;
-	
+
 	/* Return value */
 	int result;
 
@@ -1178,7 +1178,7 @@ static int DVDCopyIfoBup(dvd_reader_t* dvd, title_set_info_t* title_set_info, in
 	if ((streamout_ifo = open(targetname_ifo, O_WRONLY | O_CREAT | O_TRUNC, 0666)) == -1) {
 		fprintf(stderr, _("Error creating %s\n"), targetname_ifo);
 		perror(PACKAGE);
-		ifoClose(ifo_file);	
+		ifoClose(ifo_file);
 		free(buffer);
 		close(streamout_ifo);
 		close(streamout_bup);
@@ -1188,18 +1188,18 @@ static int DVDCopyIfoBup(dvd_reader_t* dvd, title_set_info_t* title_set_info, in
 	if ((streamout_bup = open(targetname_bup, O_WRONLY | O_CREAT | O_TRUNC, 0666)) == -1) {
 		fprintf(stderr, _("Error creating %s\n"), targetname_bup);
 		perror(PACKAGE);
-		ifoClose(ifo_file);	
+		ifoClose(ifo_file);
 		free(buffer);
 		close(streamout_ifo);
 		close(streamout_bup);
 		return 1;
 	}
 
-	/* Copy VIDEO_TS.IFO, since it's a small file try to copy it in one shot */	
+	/* Copy VIDEO_TS.IFO, since it's a small file try to copy it in one shot */
 
 	if ((ifo_file = ifoOpen(dvd, title_set))== 0) {
 		fprintf(stderr, _("Failed opening IFO for title set %d\n"), title_set);
-		ifoClose(ifo_file);	
+		ifoClose(ifo_file);
 		free(buffer);
 		close(streamout_ifo);
 		close(streamout_bup);
@@ -1210,7 +1210,7 @@ static int DVDCopyIfoBup(dvd_reader_t* dvd, title_set_info_t* title_set_info, in
 
 	if ((buffer = (unsigned char *)malloc(size * sizeof(unsigned char))) == NULL) {
 		perror(PACKAGE);
-		ifoClose(ifo_file);	
+		ifoClose(ifo_file);
 		free(buffer);
 		close(streamout_ifo);
 		close(streamout_bup);
@@ -1221,7 +1221,7 @@ static int DVDCopyIfoBup(dvd_reader_t* dvd, title_set_info_t* title_set_info, in
 
 	if (DVDReadBytes(ifo_file->file,buffer,size) != size) {
 		fprintf(stderr, _("Error reading IFO for title set %d\n"), title_set);
-		ifoClose(ifo_file);	
+		ifoClose(ifo_file);
 		free(buffer);
 		close(streamout_ifo);
 		close(streamout_bup);
@@ -1231,7 +1231,7 @@ static int DVDCopyIfoBup(dvd_reader_t* dvd, title_set_info_t* title_set_info, in
 
 	if (write(streamout_ifo,buffer,size) != size) {
 		fprintf(stderr, _("Error writing %s\n"),targetname_ifo);
-		ifoClose(ifo_file);	
+		ifoClose(ifo_file);
 		free(buffer);
 		close(streamout_ifo);
 		close(streamout_bup);
@@ -1240,7 +1240,7 @@ static int DVDCopyIfoBup(dvd_reader_t* dvd, title_set_info_t* title_set_info, in
 
 	if (write(streamout_bup,buffer,size) != size) {
 		fprintf(stderr, _("Error writing %s\n"),targetname_bup);
-		ifoClose(ifo_file);	
+		ifoClose(ifo_file);
 		free(buffer);
 		close(streamout_ifo);
 		close(streamout_bup);
@@ -1968,7 +1968,7 @@ int DVDDisplayInfo(dvd_reader_t* dvd, char* device) {
 				break;
 			}
 		}
-		
+
 		titles = 0;
 		for(i = 0; i < titles_info->number_of_titles; i++) {
 			if (titles_info->titles[i].title_set == f + 1) {
