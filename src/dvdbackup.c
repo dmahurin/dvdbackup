@@ -26,6 +26,7 @@
 #define _(String) gettext(String)
 
 /* C standard libraries */
+#include <ctype.h>
 #include <limits.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -1319,11 +1320,14 @@ int DVDGetTitleName(const char *device, char *title)
 	title[32] = '\0';
 
 
-	/* Remove trailing white space */
+	/* Remove trailing white space and convert title to lower case */
 
 	last = 32;
-	for ( i = 0; i < 32; i++ ) {
-		if ( title[i] != ' ' ) { last = i; }
+	for( i = 0; i < 32; i++ ) {
+		title[i] = tolower(title[i]);
+		if(title[i] != ' ') {
+			last = i;
+		}
 	}
 
 	title[last + 1] = '\0';
