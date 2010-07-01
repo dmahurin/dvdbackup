@@ -900,7 +900,8 @@ static int DVDCopyBlocks(dvd_file_t* dvd_file, int destination, int offset, int 
 			int done = total - remaining; // blocks done
 			if(remaining < BUFFER_SIZE || (done % BUFFER_SIZE) == 0) { // don't print too often
 				float doneMiB = (float)(done) / 512.0f; // [MiB] done
-				fprintf(stdout, _("\rCopying %s: %.0f%% done (%.0f/%.0f MiB)"),
+				fprintf(stdout, "\r");
+				fprintf(stdout, _("Copying %s: %.0f%% done (%.0f/%.0f MiB)"),
 						progressText, doneMiB / totalMiB * 100.0f, doneMiB, totalMiB);
 				fflush(stdout);
 			}
