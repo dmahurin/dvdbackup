@@ -941,9 +941,9 @@ static int DVDCopyTitleVobX(dvd_reader_t * dvd, title_set_info_t * title_set_inf
 	/* Return value */
 	int result;
 
-	/* create filename VIDEO_TS.VOB or VTS_XX_0.VOB */
+	/* create filename VIDEO_TS.VOB or VTS_XX_X.VOB */
 	if(title_set > 0) {
-		sprintf(filename, "VTS_%02i_0.VOB", title_set);
+		sprintf(filename, "VTS_%02i_%i.VOB", title_set, vob);
 	}
 
 	if (title_set_info->number_of_title_sets + 1 < title_set) {
