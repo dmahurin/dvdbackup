@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: dvdbackup\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
 "POT-Creation-Date: 2009-06-09 01:20+0200\n"
-"PO-Revision-Date: 2009-06-03 09:36+0000\n"
-"Last-Translator: Benjamin Drung <benjamin.drung@gmail.com>\n"
+"PO-Revision-Date: 2009-10-02 23:51+0000\n"
+"Last-Translator: Nicola Cardinali <Unknown>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2009-06-08 22:56+0000\n"
+"X-Launchpad-Export-Date: 2010-07-02 03:31+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: src/dvdbackup.c:235
 #, c-format
 msgid "Do not try to copy chapters from the VMG domain; there are none.\n"
-msgstr ""
+msgstr "Non provare a copiare i capitoli dal dominio VMG; non ce ne sono.\n"
 
 #: src/dvdbackup.c:246
 #, c-format
@@ -42,7 +42,7 @@ msgstr "Fallita apertura del TITLE VOB\n"
 #: src/dvdbackup.c:287
 #, c-format
 msgid "Error reading MENU VOB: %d != %d\n"
-msgstr ""
+msgstr "Errore nella lettura del MENU VOB: %d != %d\n"
 
 #: src/dvdbackup.c:294
 #, c-format
@@ -113,7 +113,7 @@ msgstr "padding %d blocchi\n"
 #: src/dvdbackup.c:876
 #, c-format
 msgid "Error writing %s (padding)\n"
-msgstr "Errore scrivendo %s (padding)\n"
+msgstr "Errore durante la scrittura di %s (padding)\n"
 
 #: src/dvdbackup.c:921
 #, c-format
@@ -147,6 +147,7 @@ msgstr ""
 #, c-format
 msgid "Do not try to copy a Title VOB from the VMG domain; there are none.\n"
 msgstr ""
+"Non provare a copiare un titolo VOB dal dominio VMG; non ce n'è nessuno.\n"
 
 #. TRANSLATORS: The sentence starts with "The title file %s exists[...]"
 #. TRANSLATORS: The sentence starts with "The menu file %s exists[...]"
@@ -154,13 +155,13 @@ msgstr ""
 #. TRANSLATORS: The sentence starts with "The BUP file %s exists[...]"
 #: src/dvdbackup.c:974 src/dvdbackup.c:1054 src/dvdbackup.c:1128
 #: src/dvdbackup.c:1138
-#, fuzzy, c-format
+#, c-format
 msgid "The %s %s exists; will try to overwrite it.\n"
-msgstr "Il file BUP %s esiste, provo a sovrascriverlo.\n"
+msgstr "Il %s %s esiste; provo a sovrascriverlo.\n"
 
 #: src/dvdbackup.c:974 src/dvdbackup.c:977
 msgid "title file"
-msgstr ""
+msgstr "file titolo"
 
 #. TRANSLATORS: The sentence starts with "The title file %s is not valid[...]"
 #. TRANSLATORS: The sentence starts with "The menu file %s is not valid[...]"
@@ -168,9 +169,9 @@ msgstr ""
 #. TRANSLATORS: The sentence starts with "The BUP file %s is not valid[...]"
 #: src/dvdbackup.c:977 src/dvdbackup.c:1057 src/dvdbackup.c:1131
 #: src/dvdbackup.c:1141
-#, fuzzy, c-format
+#, c-format
 msgid "The %s %s is not valid, it may be a directory.\n"
-msgstr "Il file BUP %s non e' valido, potrebbe essere una directory\n"
+msgstr "Il %s %s non è valido; potrebbe essere una cartella.\n"
 
 #: src/dvdbackup.c:981 src/dvdbackup.c:1062
 #, c-format
@@ -192,7 +193,7 @@ msgstr "Errore nell'apertura di %s\n"
 
 #: src/dvdbackup.c:1054 src/dvdbackup.c:1057
 msgid "menu file"
-msgstr ""
+msgstr "file menu"
 
 #: src/dvdbackup.c:1111
 #, c-format
@@ -201,11 +202,11 @@ msgstr "L'IFO del set di titoli %d non ha una dimensione DVD valida.\n"
 
 #: src/dvdbackup.c:1128 src/dvdbackup.c:1131
 msgid "IFO file"
-msgstr ""
+msgstr "file IFO"
 
 #: src/dvdbackup.c:1138 src/dvdbackup.c:1141
 msgid "BUP file"
-msgstr ""
+msgstr "file BUP"
 
 #: src/dvdbackup.c:1169
 #, c-format
@@ -313,23 +314,26 @@ msgstr "Fine del ciclo\n"
 #: src/dvdbackup.c:1505 src/dvdbackup.c:1537
 #, c-format
 msgid "Mirror of Title set %d failed\n"
-msgstr ""
+msgstr "Mirror del Title set %d fallito\n"
 
 #: src/dvdbackup.c:1531
 #, c-format
 msgid ""
 "Cannot copy title_set %d there is only %d title_sets present on this DVD\n"
 msgstr ""
+"Impossibile copiare il title_set %d, sono presenti solo %d title_set su "
+"questo DVD\n"
 
 #: src/dvdbackup.c:1555 src/dvdbackup.c:1825
 #, c-format
 msgid "Guesswork of main feature film failed.\n"
-msgstr ""
+msgstr "Ricerca fallita della parte principale del film.\n"
 
 #: src/dvdbackup.c:1566
 #, c-format
 msgid "Mirror of main feature file which is title set %d failed\n"
 msgstr ""
+"Copia fallita del file della parte principale che è il title set %d\n"
 
 #: src/dvdbackup.c:1597 src/dvdbackup.c:1760
 #, c-format
@@ -354,6 +358,7 @@ msgstr "Impossibile aprire il file IFO del title_set %d\n"
 #, c-format
 msgid "Truncated the end_chapter; only %d chapters in %d title\n"
 msgstr ""
+"Sono stati troncati gli ultimi capitoli; solo %d capitoli nel titolo %d\n"
 
 #: src/dvdbackup.c:1688
 #, c-format
@@ -393,7 +398,7 @@ msgstr ""
 #: src/dvdbackup.c:1868
 #, c-format
 msgid "\tTitle set containing the main feature is %d\n"
-msgstr ""
+msgstr "\tIl title set che contiene la parte principale è %d\n"
 
 #: src/dvdbackup.c:1872
 #, c-format
@@ -414,22 +419,22 @@ msgstr "\tIl fattore di forma caratteristico è sconosciuto\n"
 #, c-format
 msgid "\tThe main feature has %d angle\n"
 msgid_plural "\tThe main feature has %d angles\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "\tIl filmato principale ha %d angolo\n"
+msgstr[1] "\tIl filmato principale ha %d angoli\n"
 
 #: src/dvdbackup.c:1882
 #, c-format
 msgid "\tThe main feature has %d audio track\n"
 msgid_plural "\tThe main feature has %d audio tracks\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "\tIl filmato principale ha %d traccia audio\n"
+msgstr[1] "\tIl filmato principale ha %d tracce audio\n"
 
 #: src/dvdbackup.c:1885
 #, c-format
 msgid "\tThe main feature has %d subpicture channel\n"
 msgid_plural "\tThe main feature has %d subpicture channels\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "\tIl filmato principale ha %d canali sottotitoli\n"
+msgstr[1] "\tIl filmato principale ha %d canali sottotitoli\n"
 
 #: src/dvdbackup.c:1901
 #, c-format
@@ -437,7 +442,9 @@ msgid "\tThe main feature has a maximum of %d chapter in one of its titles\n"
 msgid_plural ""
 "\tThe main feature has a maximum of %d chapters in one of its titles\n"
 msgstr[0] ""
+"\tIl filmato principale ha un massimo di %d capitolo in uno dei suoi titoli\n"
 msgstr[1] ""
+"\tIl filmato principale ha un massimo di %d capitoli in uno dei suoi titoli\n"
 
 #: src/dvdbackup.c:1904
 #, c-format
@@ -446,7 +453,11 @@ msgid ""
 msgid_plural ""
 "\tThe main feature has a maximum of %d audio channels in one of its titles\n"
 msgstr[0] ""
+"\tIl filmato principale ha un massimo di %d traccia audio in uno dei suoi "
+"titoli\n"
 msgstr[1] ""
+"\tIl filmato principale ha un massimo di %d tracce audio in uno dei suoi "
+"titoli\n"
 
 #: src/dvdbackup.c:1911
 #, c-format
@@ -455,6 +466,9 @@ msgid ""
 "\n"
 "Title Sets:"
 msgstr ""
+"\n"
+"\n"
+"Title Sets:"
 
 #: src/dvdbackup.c:1913
 #, c-format
@@ -463,42 +477,45 @@ msgid ""
 "\n"
 "\tTitle set %d\n"
 msgstr ""
+"\n"
+"\n"
+"\tTitle set %d\n"
 
 #: src/dvdbackup.c:1917
 #, c-format
 msgid "\t\tThe aspect ratio of title set %d is 16:9\n"
-msgstr ""
+msgstr "\t\tL'aspect ratio del title set %d è 16:9\n"
 
 #: src/dvdbackup.c:1919
 #, c-format
 msgid "\t\tThe aspect ratio of title set %d is 4:3\n"
-msgstr ""
+msgstr "\t\tL'aspect ratio del title set %d è 4:3\n"
 
 #: src/dvdbackup.c:1921
 #, c-format
 msgid "\t\tThe aspect ratio of title set %d is unknown\n"
-msgstr ""
+msgstr "\t\tL'aspect ratio del title set %d è sconosciuto\n"
 
 #: src/dvdbackup.c:1923
 #, c-format
 msgid "\t\tTitle set %d has %d angle\n"
 msgid_plural "\t\tTitle set %d has %d angles\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "\t\tIl title set %d ha %d angolo\n"
+msgstr[1] "\t\tIl title set %d ha %d angoli\n"
 
 #: src/dvdbackup.c:1926
 #, c-format
 msgid "\t\tTitle set %d has %d audio track\n"
 msgid_plural "\t\tTitle set %d has %d audio tracks\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "\t\tIl title set %d ha %d traccia audio\n"
+msgstr[1] "\t\tIl title set %d ha %d tracce audio\n"
 
 #: src/dvdbackup.c:1929
 #, c-format
 msgid "\t\tTitle set %d has %d subpicture channel\n"
 msgid_plural "\t\tTitle set %d has %d subpicture channels\n"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "\t\tIl title set %d ha %d canale sottotitoli\n"
+msgstr[1] "\t\tIl title set %d ha %d canali sottotitoli\n"
 
 #: src/dvdbackup.c:1942
 #, c-format
@@ -509,7 +526,11 @@ msgid_plural ""
 "\n"
 "\t\tTitles included in title set %d are\n"
 msgstr[0] ""
+"\n"
+"\t\tIl titolo incluso nel title set %d è\n"
 msgstr[1] ""
+"\n"
+"\t\tI titoli inclusi nel title set %d sono\n"
 
 #: src/dvdbackup.c:1948
 #, c-format
@@ -536,8 +557,8 @@ msgid ""
 "Copyright (C) 2002 Olaf Beck <olaf_sc@yahoo.com>\n"
 "Copyright (C) %s Benjamin Drung <benjamin.drung@gmail.com>\n"
 "\n"
-"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
-"html>\n"
+"License GPLv3+: GNU GPL version 3 or later "
+"<http://gnu.org/licenses/gpl.html>\n"
 "This is free software: you are free to change and redistribute it.\n"
 "There is NO WARRANTY, to the extent permitted by law.\n"
 "Homepage: %s\n"
@@ -545,8 +566,8 @@ msgstr ""
 "Copyright (C) 2002 Olaf Beck <olaf_sc@yahoo.com>\n"
 "Copyright (C) %s Benjamin Drung <benjamin.drung@gmail.com>\n"
 "\n"
-"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
-"html>\n"
+"License GPLv3+: GNU GPL version 3 or later "
+"<http://gnu.org/licenses/gpl.html>\n"
 "This is free software: you are free to change and redistribute it.\n"
 "There is NO WARRANTY, to the extent permitted by law.\n"
 "Homepage: %s\n"
@@ -601,6 +622,12 @@ msgid ""
 "  -o, --output=DIRECTORY   where directory is your backup target\n"
 "                           if not given the current directory is used\n"
 msgstr ""
+"  -i, --input=DISPOSITIVO dove DISPOSITIVO è il tuo drive DVD\n"
+"                           se non viene passato nessun valore, viene usato "
+"/dev/dvd\n"
+"  -o, --output=CARTELLA dove CARTELLA è la destinazione del backup\n"
+"                           se non viene passato nessun valore, viene usata "
+"la cartella corrente\n"
 
 #: src/main.c:99
 #, c-format
@@ -631,6 +658,8 @@ msgid ""
 "  -a is option to the -F switch and has no effect on other options\n"
 "  -s and -e should preferably be used together with -t\n"
 msgstr ""
+"  -a è una opzione allo switch -F e non ha effetti sulle altre opzioni\n"
+"  -s e -e dovrebbero essere usate preferibilmente assieme a -t\n"
 
 #. TRANSLATORS: --help output 5 (end)
 #. TRANSLATORS: the placeholder indicates the bug-reporting address
@@ -657,6 +686,8 @@ msgid ""
 "You must provide a title name when you read your DVD-Video structure direct "
 "from the HD\n"
 msgstr ""
+"Dovresti fornire il nome del titolo quando leggi la struttura del DVD-Video "
+"direttamente dall'HD\n"
 
 #: src/main.c:385
 #, c-format
@@ -664,6 +695,8 @@ msgid ""
 "The DVD-Video title on the disk is DVD_VIDEO, which is too generic; please "
 "provide a title with the -n switch\n"
 msgstr ""
+"Il titolo del DVD-Video sul disco è DVD_VIDEO, che è troppo generico; "
+"fornire un titolo con lo switch -n\n"
 
 #: src/main.c:392
 #, c-format
@@ -678,6 +711,7 @@ msgstr ""
 #, c-format
 msgid "The target directory is not valid; it may be an ordinary file.\n"
 msgstr ""
+"La cartella di destinazione non è valida; potrebbe essere un comune file.\n"
 
 #: src/main.c:410
 #, c-format
@@ -688,6 +722,7 @@ msgstr "Errore nella creazione della cartella di destinazione %s\n"
 #, c-format
 msgid "The title directory is not valid; it may be an ordinary file.\n"
 msgstr ""
+"La cartella del titolo non è valida; potrebbe essere un comune file.\n"
 
 #: src/main.c:426
 #, c-format
@@ -697,40 +732,42 @@ msgstr "Impossibile creare la cartella dei titoli\n"
 #: src/main.c:437
 #, c-format
 msgid "The VIDEO_TS directory is not valid; it may be an ordinary file.\n"
-msgstr ""
+msgstr "La cartella VIDEO_TS non è valida; potrebbe essere un comune file.\n"
 
 #: src/main.c:441
 #, c-format
 msgid "Failed creating VIDEO_TS directory\n"
-msgstr ""
+msgstr "Creazione fallita della cartella VIDEO_TS\n"
 
 #: src/main.c:456
 #, c-format
 msgid "Mirror of DVD failed\n"
-msgstr ""
+msgstr "Copia del DVD fallita\n"
 
 #: src/main.c:469
 #, c-format
 msgid "Mirror of title set %d failed\n"
-msgstr ""
+msgstr "Copia del title set %d fallita\n"
 
 #: src/main.c:484
 #, c-format
 msgid "Mirror of main feature film of DVD failed\n"
-msgstr ""
+msgstr "La copia della parte principale del film del DVD è fallita\n"
 
 #: src/main.c:493
 #, c-format
 msgid "Mirror of title %d failed\n"
-msgstr ""
+msgstr "Copia del titolo %d fallita\n"
 
 #: src/main.c:503
 #, c-format
 msgid "Mirror of chapters %d to %d in title %d failed\n"
-msgstr ""
+msgstr "Copia fallita dei capitoli da %d a %d nel titolo %d\n"
 
-#~ msgid "The Title %s file is not valid, it may be a directory\n"
-#~ msgstr "Il file di titolo %s non e' valido, potrebbe essere una cartella\n"
-
+#, c-format
 #~ msgid "The Menu %s file is not valid, it may be a directory\n"
 #~ msgstr "Il file di menu %s non e' valido, potrebbe essere una cartella\n"
+
+#, c-format
+#~ msgid "The Title %s file is not valid, it may be a directory\n"
+#~ msgstr "Il file di titolo %s non e' valido, potrebbe essere una cartella\n"
