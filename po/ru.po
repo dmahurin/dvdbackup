@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: _dvdbackup-ru\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
 "POT-Creation-Date: 2009-06-09 01:20+0200\n"
-"PO-Revision-Date: 2010-06-11 16:38+0000\n"
-"Last-Translator: Sios <Unknown>\n"
+"PO-Revision-Date: 2010-07-02 19:10+0000\n"
+"Last-Translator: Pastushenko Aleksandr <Unknown>\n"
 "Language-Team: <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2010-07-02 03:31+0000\n"
+"X-Launchpad-Export-Date: 2010-07-03 03:43+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: src/dvdbackup.c:235
@@ -105,17 +105,17 @@ msgstr "Прерывание\n"
 #: src/dvdbackup.c:866
 #, c-format
 msgid "padding single block\n"
-msgstr ""
+msgstr "дополнить одиночный блок\n"
 
 #: src/dvdbackup.c:871
 #, c-format
 msgid "padding %d blocks\n"
-msgstr ""
+msgstr "добавить %d блоков\n"
 
 #: src/dvdbackup.c:876
 #, c-format
 msgid "Error writing %s (padding)\n"
-msgstr ""
+msgstr "Ошибка записи %s (дополнительно)\n"
 
 #: src/dvdbackup.c:921
 #, c-format
@@ -158,7 +158,7 @@ msgstr "Не пытайтесь скопировать главы из обла�
 #: src/dvdbackup.c:1138
 #, c-format
 msgid "The %s %s exists; will try to overwrite it.\n"
-msgstr ""
+msgstr "%s %s не существует; пытаюсь перезаписать его.\n"
 
 #: src/dvdbackup.c:974 src/dvdbackup.c:977
 msgid "title file"
@@ -172,7 +172,7 @@ msgstr "Заголовок файла"
 #: src/dvdbackup.c:1141
 #, c-format
 msgid "The %s %s is not valid, it may be a directory.\n"
-msgstr ""
+msgstr "%s %s не корректен, возможно это каталог.\n"
 
 #: src/dvdbackup.c:981 src/dvdbackup.c:1062
 #, c-format
@@ -244,7 +244,7 @@ msgstr "Не удалось прочитать заголовок из DVD-ус�
 #: src/dvdbackup.c:1378
 #, c-format
 msgid "Cannot open Video Manager (VMG) info.\n"
-msgstr ""
+msgstr "Невозможно открыть инфо по Менеджеру Видео (VMG).\n"
 
 #: src/dvdbackup.c:1426
 #, c-format
@@ -254,6 +254,10 @@ msgid ""
 "\n"
 "File sizes for Title set 0 VIDEO_TS.XXX\n"
 msgstr ""
+"\n"
+"\n"
+"\n"
+"Размеры файлов для Установки заголовков 0 VIDEO_TS.XXX\n"
 
 #: src/dvdbackup.c:1427
 #, c-format
@@ -273,12 +277,12 @@ msgstr "После открытия файлов\n"
 #: src/dvdbackup.c:1457
 #, c-format
 msgid "After Menu VOB check\n"
-msgstr ""
+msgstr "После проверки VOB Меню\n"
 
 #: src/dvdbackup.c:1471
 #, c-format
 msgid "After Menu Title VOB check\n"
-msgstr ""
+msgstr "После проверки заголовков VOB Меню\n"
 
 #: src/dvdbackup.c:1475
 #, c-format
@@ -288,11 +292,15 @@ msgid ""
 "\n"
 "File sizes for Title set %d i.e. VTS_%02d_X.XXX\n"
 msgstr ""
+"\n"
+"\n"
+"\n"
+"Размер файла VTS_%02d_X.XXX установлен %d\n"
 
 #: src/dvdbackup.c:1476
 #, c-format
 msgid "IFO: %jd, MENU: %jd\n"
-msgstr ""
+msgstr "IFO: %jd, МЕНЮ: %jd\n"
 
 #: src/dvdbackup.c:1478
 #, c-format
