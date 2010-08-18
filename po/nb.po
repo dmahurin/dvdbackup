@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: dvdbackup\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
 "POT-Creation-Date: 2009-06-09 01:20+0200\n"
-"PO-Revision-Date: 2010-08-16 22:38+0000\n"
+"PO-Revision-Date: 2010-08-17 17:10+0000\n"
 "Last-Translator: Børge Johannessen <Unknown>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-08-17 06:52+0000\n"
+"X-Launchpad-Export-Date: 2010-08-18 06:48+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: src/dvdbackup.c:235
@@ -94,7 +94,7 @@ msgstr ""
 #: src/dvdbackup.c:861
 #, c-format
 msgid "aborting\n"
-msgstr ""
+msgstr "avbryter\n"
 
 #: src/dvdbackup.c:866
 #, c-format
@@ -154,7 +154,7 @@ msgstr ""
 
 #: src/dvdbackup.c:974 src/dvdbackup.c:977
 msgid "title file"
-msgstr ""
+msgstr "Filnavn"
 
 #. TRANSLATORS: The sentence starts with "The title file %s is not valid[...]"
 #. TRANSLATORS: The sentence starts with "The menu file %s is not valid[...]"
@@ -169,7 +169,7 @@ msgstr ""
 #: src/dvdbackup.c:981 src/dvdbackup.c:1062
 #, c-format
 msgid "Error opening %s\n"
-msgstr ""
+msgstr "Feil under åpning av %s\n"
 
 #: src/dvdbackup.c:1040
 #, c-format
@@ -180,11 +180,11 @@ msgstr ""
 #: src/dvdbackup.c:1045
 #, c-format
 msgid "Failed opening %s\n"
-msgstr ""
+msgstr "Mislyktes å åpne %s\n"
 
 #: src/dvdbackup.c:1054 src/dvdbackup.c:1057
 msgid "menu file"
-msgstr ""
+msgstr "Menyfil"
 
 #: src/dvdbackup.c:1111
 #, c-format
@@ -193,11 +193,11 @@ msgstr ""
 
 #: src/dvdbackup.c:1128 src/dvdbackup.c:1131
 msgid "IFO file"
-msgstr ""
+msgstr "IFO fil"
 
 #: src/dvdbackup.c:1138 src/dvdbackup.c:1141
 msgid "BUP file"
-msgstr ""
+msgstr "BUP fil"
 
 #: src/dvdbackup.c:1169
 #, c-format
@@ -212,7 +212,7 @@ msgstr ""
 #: src/dvdbackup.c:1201 src/dvdbackup.c:1210
 #, c-format
 msgid "Error writing %s\n"
-msgstr ""
+msgstr "Feil under lagring i %s\n"
 
 #: src/dvdbackup.c:1261 src/main.c:367
 #, c-format
