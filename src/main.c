@@ -60,7 +60,7 @@ Copyright (C) %s Benjamin Drung <benjamin.drung@gmail.com>\n\n\
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\
 This is free software: you are free to change and redistribute it.\n\
 There is NO WARRANTY, to the extent permitted by law.\n\
-Homepage: %s\n"), "2008-2009", "http://dvdbackup.sourceforge.net/");
+Homepage: %s\n"), "2008-2010", "http://dvdbackup.sourceforge.net/");
 }
 
 
