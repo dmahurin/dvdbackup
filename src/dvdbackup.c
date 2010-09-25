@@ -1293,7 +1293,9 @@ int DVDGetTitleName(const char *device, char *title)
 	/* Variables for filehandel and title string interaction */
 
 	char tempBuf[DVD_SEC_SIZ];
-	int filehandle, i, last;
+	int filehandle, i;
+	int length = 32;
+	int word_length = 0;
 
 	/* Open DVD device */
 
@@ -1316,24 +1318,29 @@ int DVDGetTitleName(const char *device, char *title)
 		fprintf(stderr, _("Cannot read title from DVD device %s\n"), device);
 		return(1);
 	}
-	snprintf(title, 32, "%s", tempBuf + 40);
+	snprintf(title, length + 1, "%s", tempBuf + 40);
 
-	/* Terminate the title string */
-
-	title[32] = '\0';
-
-
-	/* Remove trailing white space and convert title to lower case */
-
-	last = 32;
-	for( i = 0; i < 32; i++ ) {
-		title[i] = tolower(title[i]);
-		if(title[i] != ' ') {
-			last = i;
-		}
+	/* Remove trailing white space */
+	while(title[length-1] == ' ') {
+		title[length-1] = '\0';
+		length--;
 	}
 
-	title[last + 1] = '\0';
+	/* convert title to lower case and replace underscores with spaces */
+	for(i = 0; i < length; i++) {
+		word_length++;
+		if(word_length == 1) {
+			title[i] = toupper(title[i]);
+		} else {
+			title[i] = tolower(title[i]);
+		}
+		if(title[i] == '_') {
+			title[i] = ' ';
+		}
+		if(title[i] == ' ') {
+			word_length = 0;
+		}
+	}
 
 	return(0);
 }
@@ -1878,7 +1885,7 @@ int DVDDisplayInfo(dvd_reader_t* dvd, char* device) {
 	DVDGetTitleName(device, title_name);
 
 
-	printf(_("DVD-Video information of the DVD with title %s\n\n"), title_name);
+	printf(_("DVD-Video information of the DVD with title \"%s\"\n\n"), title_name);
 
 	/* Print file structure */
 
