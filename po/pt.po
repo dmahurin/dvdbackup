@@ -1,43 +1,43 @@
-# Norwegian Bokmal translation for dvdbackup
-# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# Portuguese translation for dvdbackup
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
 # This file is distributed under the same license as the dvdbackup package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dvdbackup\n"
-"Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2009-06-09 01:20+0200\n"
-"PO-Revision-Date: 2010-08-17 17:10+0000\n"
-"Last-Translator: Børge Johannessen <Unknown>\n"
-"Language-Team: Norwegian Bokmal <nb@li.org>\n"
+"PO-Revision-Date: 2009-10-30 00:48+0000\n"
+"Last-Translator: undertuga <undertuga@gmail.com>\n"
+"Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-08-18 06:48+0000\n"
+"X-Launchpad-Export-Date: 2010-07-02 03:31+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: src/dvdbackup.c:235
 #, c-format
 msgid "Do not try to copy chapters from the VMG domain; there are none.\n"
-msgstr "Ikke prøv å kopier kapitler fra VMG domene; det er ingen.\n"
+msgstr "Não tente copiar capítulos de um domínio VMG; não existe nenhum.\n"
 
 #: src/dvdbackup.c:246
 #, c-format
 msgid "Out of memory copying %s\n"
-msgstr "Fritt for minne ved kopiering %s\n"
+msgstr ""
 
 #: src/dvdbackup.c:256 src/dvdbackup.c:317 src/dvdbackup.c:988
 #: src/dvdbackup.c:1070 src/dvdbackup.c:1147 src/dvdbackup.c:1157
 #, c-format
 msgid "Error creating %s\n"
-msgstr "Feil i oppretting av %s\n"
+msgstr "Erro ao criar %s\n"
 
 #: src/dvdbackup.c:267 src/dvdbackup.c:995
 #, c-format
 msgid "Failed opening TITLE VOB\n"
-msgstr "Mislyktes å åpne tittel vob\n"
+msgstr ""
 
 #: src/dvdbackup.c:287
 #, c-format
@@ -52,17 +52,17 @@ msgstr ""
 #: src/dvdbackup.c:297
 #, c-format
 msgid "Error writing TITLE VOB\n"
-msgstr "Feil i skriving tittel vob\n"
+msgstr ""
 
 #: src/dvdbackup.c:421
 #, c-format
 msgid "Cannot open VMG info.\n"
-msgstr "Kan ikke åpne VMG informasjon.\n"
+msgstr "Não é possível abrir a informação VMG.\n"
 
 #: src/dvdbackup.c:435
 #, c-format
 msgid "Out of memory creating titles info structure\n"
-msgstr "Fritt for minne i titteloppretting av informasjonsstruktur\n"
+msgstr ""
 
 #: src/dvdbackup.c:469
 #, c-format
@@ -94,7 +94,7 @@ msgstr ""
 #: src/dvdbackup.c:861
 #, c-format
 msgid "aborting\n"
-msgstr "avbryter\n"
+msgstr "a abortar\n"
 
 #: src/dvdbackup.c:866
 #, c-format
@@ -119,7 +119,7 @@ msgstr ""
 #: src/dvdbackup.c:926
 #, c-format
 msgid "Failed vob test\n"
-msgstr ""
+msgstr "Falhou o teste vob\n"
 
 #: src/dvdbackup.c:931
 #, c-format
@@ -154,7 +154,7 @@ msgstr ""
 
 #: src/dvdbackup.c:974 src/dvdbackup.c:977
 msgid "title file"
-msgstr "Filnavn"
+msgstr "Titulo do ficheiro"
 
 #. TRANSLATORS: The sentence starts with "The title file %s is not valid[...]"
 #. TRANSLATORS: The sentence starts with "The menu file %s is not valid[...]"
@@ -169,7 +169,7 @@ msgstr ""
 #: src/dvdbackup.c:981 src/dvdbackup.c:1062
 #, c-format
 msgid "Error opening %s\n"
-msgstr "Feil under åpning av %s\n"
+msgstr "Erro ao abrir %s\n"
 
 #: src/dvdbackup.c:1040
 #, c-format
@@ -180,11 +180,11 @@ msgstr ""
 #: src/dvdbackup.c:1045
 #, c-format
 msgid "Failed opening %s\n"
-msgstr "Mislyktes å åpne %s\n"
+msgstr "Falout ao abrir %s\n"
 
 #: src/dvdbackup.c:1054 src/dvdbackup.c:1057
 msgid "menu file"
-msgstr "Menyfil"
+msgstr ""
 
 #: src/dvdbackup.c:1111
 #, c-format
@@ -193,11 +193,11 @@ msgstr ""
 
 #: src/dvdbackup.c:1128 src/dvdbackup.c:1131
 msgid "IFO file"
-msgstr "IFO fil"
+msgstr ""
 
 #: src/dvdbackup.c:1138 src/dvdbackup.c:1141
 msgid "BUP file"
-msgstr "BUP fil"
+msgstr ""
 
 #: src/dvdbackup.c:1169
 #, c-format
@@ -212,7 +212,7 @@ msgstr ""
 #: src/dvdbackup.c:1201 src/dvdbackup.c:1210
 #, c-format
 msgid "Error writing %s\n"
-msgstr "Feil under lagring i %s\n"
+msgstr ""
 
 #: src/dvdbackup.c:1261 src/main.c:367
 #, c-format
@@ -489,21 +489,21 @@ msgstr[1] ""
 #: src/dvdbackup.c:1948
 #, c-format
 msgid "\t\t\tTitle %d:\n"
-msgstr "\t\t\tTittel %d:\n"
+msgstr ""
 
 #: src/dvdbackup.c:1949
 #, c-format
 msgid "\t\t\t\tTitle %d has %d chapter\n"
 msgid_plural "\t\t\t\tTitle %d has %d chapters\n"
-msgstr[0] "\t\t\t\tTittelen %d har %d kapittel\n"
-msgstr[1] "\t\t\t\tTittelen %d har %d kapitler\n"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/dvdbackup.c:1952
 #, c-format
 msgid "\t\t\t\tTitle %d has %d audio channel\n"
 msgid_plural "\t\t\t\tTitle %d has %d audio channels\n"
-msgstr[0] "\t\t\t\tTittelen %d har %d lydkanal\n"
-msgstr[1] "\t\t\t\tTittelen %d har %d lydkanaler\n"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/main.c:58
 #, c-format
@@ -522,7 +522,7 @@ msgstr ""
 #: src/main.c:69
 #, c-format
 msgid "Usage: %s [OPTION]...\n"
-msgstr "Bruk: %s [FLAGG]\n"
+msgstr ""
 
 #. TRANSLATORS: --help output 3: options 1/2
 #. no-wrap
@@ -586,17 +586,17 @@ msgstr ""
 #: src/main.c:116
 #, c-format
 msgid "Report bugs to <%s>.\n"
-msgstr "Rapporter feil til <%s>.\n"
+msgstr ""
 
 #: src/main.c:268
 #, c-format
 msgid "%s: extra operand: %s\n"
-msgstr "%s: ekstra operator: %s\n"
+msgstr ""
 
 #: src/main.c:270
 #, c-format
 msgid "Try `%s --help' for more information.\n"
-msgstr "Prøv `%s --help' for mer informasjon.\n"
+msgstr ""
 
 #: src/main.c:380
 #, c-format
