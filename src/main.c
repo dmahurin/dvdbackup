@@ -114,7 +114,8 @@ Print a friendly, customizable greeting.\n"), stdout); */
 	   TRANSLATORS: the placeholder indicates the bug-reporting address
 	   for this application.  Please add _another line_ with the
 	   address for translation bugs. */
-	printf (_("Report bugs on Launchpad: https://bugs.launchpad.net/dvdbackup\n"));
+	printf (_("Report bugs on Launchpad: %s\n"),
+		"https://bugs.launchpad.net/dvdbackup");
 }
 
 
