@@ -56,6 +56,7 @@
  */
 #define MAX_VOB_SIZE 524288
 
+#define DVD_SEC_SIZ 2048
 
 /* Flag for verbose mode */
 int verbose = 0;
@@ -101,7 +102,7 @@ static void bsort_max_to_min(int sector[], int title[], int size);
 
 
 static int CheckSizeArray(const int size_array[], int reference, int target) {
-	if ( (size_array[reference]/size_array[target] == 1) &&
+	if(size_array[target] && (size_array[reference]/size_array[target] == 1) &&
 			((size_array[reference] * 2 - size_array[target])/ size_array[target] == 1) &&
 			((size_array[reference]%size_array[target] * 3) < size_array[reference]) ) {
 		/* We have a dual DVD with two feature films - now let's see if they have the same amount of chapters*/
@@ -1291,6 +1292,7 @@ int DVDGetTitleName(const char *device, char *title)
 {
 	/* Variables for filehandel and title string interaction */
 
+	char tempBuf[DVD_SEC_SIZ];
 	int filehandle, i, last;
 
 	/* Open DVD device */
@@ -1302,19 +1304,19 @@ int DVDGetTitleName(const char *device, char *title)
 
 	/* Seek to title of first track, which is at (track_no * 32768) + 40 */
 
-	if ( 32808 != lseek(filehandle, 32808, SEEK_SET) ) {
+	if(lseek(filehandle, 32768, SEEK_SET) != 32768) {
 		close(filehandle);
 		fprintf(stderr, _("Cannot seek DVD device %s - check your DVD device\n"), device);
 		return(1);
 	}
 
 	/* Read the DVD-Video title */
-
-	if ( 32 != read(filehandle, title, 32)) {
+	if(DVD_SEC_SIZ != read(filehandle, tempBuf, DVD_SEC_SIZ)) {
 		close(filehandle);
 		fprintf(stderr, _("Cannot read title from DVD device %s\n"), device);
 		return(1);
 	}
+	snprintf(title, 32, "%s", tempBuf + 40);
 
 	/* Terminate the title string */
 
