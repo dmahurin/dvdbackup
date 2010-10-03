@@ -8,21 +8,21 @@ msgstr ""
 "Project-Id-Version: dvdbackup\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-09-26 01:20+0200\n"
-"PO-Revision-Date: 2010-09-29 09:08+0000\n"
+"PO-Revision-Date: 2010-10-02 10:54+0000\n"
 "Last-Translator: Fitoschido <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-09-30 04:35+0000\n"
+"X-Launchpad-Export-Date: 2010-10-03 04:55+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 "Language: es\n"
 
 #: src/dvdbackup.c:238
 #, c-format
 msgid "Do not try to copy chapters from the VMG domain; there are none.\n"
-msgstr ""
+msgstr "No trate de copiar capítulos del dominio VMG; no hay ninguno.\n"
 
 #: src/dvdbackup.c:249
 #, c-format
