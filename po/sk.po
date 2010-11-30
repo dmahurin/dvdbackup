@@ -1,0 +1,779 @@
+# Slovak translation for dvdbackup
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the dvdbackup package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dvdbackup\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2010-09-26 01:20+0200\n"
+"PO-Revision-Date: 2010-11-29 22:43+0000\n"
+"Last-Translator: bingo bongo <Unknown>\n"
+"Language-Team: Slovak <sk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"X-Launchpad-Export-Date: 2010-11-30 04:44+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: src/dvdbackup.c:238
+#, c-format
+msgid "Do not try to copy chapters from the VMG domain; there are none.\n"
+msgstr "Neskúšaj kopírovať kapitoly z VMG domény; niesú tam žiadne.\n"
+
+#: src/dvdbackup.c:249
+#, c-format
+msgid "Out of memory copying %s\n"
+msgstr "Nedostatok pamäte pri kopírovaní %s\n"
+
+#: src/dvdbackup.c:259 src/dvdbackup.c:320 src/dvdbackup.c:1019
+#: src/dvdbackup.c:1101 src/dvdbackup.c:1182 src/dvdbackup.c:1192
+#, c-format
+msgid "Error creating %s\n"
+msgstr "Chyba pri vytváraní %s\n"
+
+#: src/dvdbackup.c:270 src/dvdbackup.c:1026
+#, c-format
+msgid "Failed opening TITLE VOB\n"
+msgstr "Nepodarilo sa otvoriť TITLE VOB\n"
+
+#: src/dvdbackup.c:290
+#, c-format
+msgid "Error reading MENU VOB: %d != %d\n"
+msgstr "Chyba načítania MENU VOB: %d != %d\n"
+
+#: src/dvdbackup.c:297
+#, c-format
+msgid "DVDReadBlocks read %d blocks of %d blocks\n"
+msgstr "DVDReadBlocks načítal %d blokov z %d blokov\n"
+
+#: src/dvdbackup.c:300
+#, c-format
+msgid "Error writing TITLE VOB\n"
+msgstr "Chyba zapisovania TITLE VOB\n"
+
+#: src/dvdbackup.c:424
+#, c-format
+msgid "Cannot open VMG info.\n"
+msgstr "Nepodarilo sa otvoriť VMG info.\n"
+
+#: src/dvdbackup.c:438
+#, c-format
+msgid "Out of memory creating titles info structure\n"
+msgstr "Nedostatok pamäte pri vytváraní informačnej štruktúry titulkov\n"
+
+#: src/dvdbackup.c:472
+#, c-format
+msgid "Out of memory creating arrays for titles info\n"
+msgstr "Nedostatok pamäte pri vytváraní polí pre titulkové informácie\n"
+
+#: src/dvdbackup.c:608
+#, c-format
+msgid ""
+"You have encountered a very special DVD; please send a bug report along with "
+"all IFO files from this title\n"
+msgstr ""
+"Naďabil si na veľmi špeciálne DVD; prosím pošli oznámenie o chybe spolu so "
+"všetkými IFO súbormi tohoto titulu\n"
+
+#: src/dvdbackup.c:843
+#, c-format
+msgid "Error reading %s at block %d\n"
+msgstr "Chyba načítavania %s v bloku %d\n"
+
+#: src/dvdbackup.c:845
+#, c-format
+msgid "Error reading %s at block %d, read error returned\n"
+msgstr "Chyba načítania %s v bloku %d, vrátená chyba čítania\n"
+
+#: src/dvdbackup.c:855
+#, c-format
+msgid "Error writing %s.\n"
+msgstr "Chyba zapisovania %s.\n"
+
+#: src/dvdbackup.c:876
+#, c-format
+msgid "aborting\n"
+msgstr "prerušuje sa\n"
+
+#: src/dvdbackup.c:881
+#, c-format
+msgid "padding single block\n"
+msgstr "vypĺňanie samotného bloku\n"
+
+#: src/dvdbackup.c:886
+#, c-format
+msgid "padding %d blocks\n"
+msgstr "vypĺňanie %d blokov\n"
+
+#: src/dvdbackup.c:891
+#, c-format
+msgid "Error writing %s (padding)\n"
+msgstr "Chyba zapisovania %s (vypĺňanie)\n"
+
+#: src/dvdbackup.c:905
+#, c-format
+msgid "Copying %s: %.0f%% done (%.0f/%.0f MiB)"
+msgstr "Kopírovanie %s: %.0f%% dokončených (%.0f/%.0f MiB)"
+
+#: src/dvdbackup.c:952
+#, c-format
+msgid "Failed num title test\n"
+msgstr "Neúspešný test počtu titulov\n"
+
+#: src/dvdbackup.c:957
+#, c-format
+msgid "Failed vob test\n"
+msgstr "Neúspešný test vobu\n"
+
+#: src/dvdbackup.c:962
+#, c-format
+msgid "Failed vob 1 size test\n"
+msgstr "Neúspešný test šírky vobu 1\n"
+
+#: src/dvdbackup.c:965
+#, c-format
+msgid "Failed vob %d test\n"
+msgstr "Neúspešný test vobu %d\n"
+
+#: src/dvdbackup.c:970 src/dvdbackup.c:992
+#, c-format
+msgid ""
+"The Title VOB number %d of title set %d does not have a valid DVD size\n"
+msgstr "Titul VOB číslo %d zo sady %d nemá platnú DVD šírku\n"
+
+#: src/dvdbackup.c:980
+#, c-format
+msgid "Do not try to copy a Title VOB from the VMG domain; there are none.\n"
+msgstr "Neskúšaj kopírovať Titul VOB z VMG domény; nieje tam žiaden.\n"
+
+#. TRANSLATORS: The sentence starts with "The title file %s exists[...]"
+#. TRANSLATORS: The sentence starts with "The menu file %s exists[...]"
+#. TRANSLATORS: The sentence starts with "The IFO file %s exists[...]"
+#. TRANSLATORS: The sentence starts with "The BUP file %s exists[...]"
+#: src/dvdbackup.c:1005 src/dvdbackup.c:1085 src/dvdbackup.c:1163
+#: src/dvdbackup.c:1173
+#, c-format
+msgid "The %s %s exists; will try to overwrite it.\n"
+msgstr "%s %s existuje; pokúsiť sa ho prepísať.\n"
+
+#: src/dvdbackup.c:1005 src/dvdbackup.c:1008
+msgid "title file"
+msgstr "súbor titulu"
+
+#. TRANSLATORS: The sentence starts with "The title file %s is not valid[...]"
+#. TRANSLATORS: The sentence starts with "The menu file %s is not valid[...]"
+#. TRANSLATORS: The sentence starts with "The IFO file %s is not valid[...]"
+#. TRANSLATORS: The sentence starts with "The BUP file %s is not valid[...]"
+#: src/dvdbackup.c:1008 src/dvdbackup.c:1088 src/dvdbackup.c:1166
+#: src/dvdbackup.c:1176
+#, c-format
+msgid "The %s %s is not valid, it may be a directory.\n"
+msgstr "%s %s nieje platný, môže to byť adresár.\n"
+
+#: src/dvdbackup.c:1012 src/dvdbackup.c:1093
+#, c-format
+msgid "Error opening %s\n"
+msgstr "Chyba otvárania %s\n"
+
+#: src/dvdbackup.c:1071
+#, c-format
+msgid ""
+"Warning: The Menu VOB of title set %d (%s) does not have a valid DVD size.\n"
+msgstr ""
+"Upozornenie: Ponukový VOB zo sady titulu %d (%s) nemá platnú DVD šírku.\n"
+
+#: src/dvdbackup.c:1076
+#, c-format
+msgid "Failed opening %s\n"
+msgstr "Neúspešné otvorenie %s\n"
+
+#: src/dvdbackup.c:1085 src/dvdbackup.c:1088
+msgid "menu file"
+msgstr "súbor ponuky"
+
+#: src/dvdbackup.c:1109
+msgid "menu"
+msgstr "ponuka"
+
+#: src/dvdbackup.c:1146
+#, c-format
+msgid "The IFO of title set %d does not have a valid DVD size\n"
+msgstr "IFO sady titulov %d nemá platnú DVD šírku\n"
+
+#: src/dvdbackup.c:1163 src/dvdbackup.c:1166
+msgid "IFO file"
+msgstr "IFO súbor"
+
+#: src/dvdbackup.c:1173 src/dvdbackup.c:1176
+msgid "BUP file"
+msgstr "BUP súbor"
+
+#: src/dvdbackup.c:1204
+#, c-format
+msgid "Failed opening IFO for title set %d\n"
+msgstr "Nepodarilo sa otvoriť IFO pre sadu titulov %d\n"
+
+#: src/dvdbackup.c:1226
+#, c-format
+msgid "Error reading IFO for title set %d\n"
+msgstr "Chyba načítania IFO pre sadu sadu titulov %d\n"
+
+#: src/dvdbackup.c:1236 src/dvdbackup.c:1245
+#, c-format
+msgid "Error writing %s\n"
+msgstr "Chyba zapisovania %s\n"
+
+#: src/dvdbackup.c:1279
+#, c-format
+msgid "Title, part %i/%i"
+msgstr "Titul, časť %i/%i"
+
+#: src/dvdbackup.c:1303 src/main.c:373
+#, c-format
+msgid "Cannot open specified device %s - check your DVD device\n"
+msgstr ""
+"Nemôžem otvoriť zadané zariadenie %s - skontroluj svoje DVD zariadenie\n"
+
+#: src/dvdbackup.c:1311
+#, c-format
+msgid "Cannot seek DVD device %s - check your DVD device\n"
+msgstr ""
+"Nepodarilo sa nastaviť DVD zariadenie %s - skontroluj svoje DVD zariadenie\n"
+
+#: src/dvdbackup.c:1318
+#, c-format
+msgid "Cannot read title from DVD device %s\n"
+msgstr "Nedá sa načítať titul z DVD zariadenia %s\n"
+
+#: src/dvdbackup.c:1428
+#, c-format
+msgid "Cannot open Video Manager (VMG) info.\n"
+msgstr "Nedá sa otvoriť Video Manager (VMG) informácia.\n"
+
+#: src/dvdbackup.c:1476
+#, c-format
+msgid ""
+"\n"
+"\n"
+"\n"
+"File sizes for Title set 0 VIDEO_TS.XXX\n"
+msgstr ""
+"\n"
+"\n"
+"\n"
+"Šírky súborov pre sadu titulov 0 VIDEO_TS.XXX\n"
+
+#: src/dvdbackup.c:1477
+#, c-format
+msgid "IFO = %jd, MENU_VOB = %jd\n"
+msgstr "IFO = %jd, MENU_VOB = %jd\n"
+
+#: src/dvdbackup.c:1483
+#, c-format
+msgid "At top of loop\n"
+msgstr "Pri vrchu slučky\n"
+
+#: src/dvdbackup.c:1495
+#, c-format
+msgid "After opening files\n"
+msgstr "Po otvorení súborov\n"
+
+#: src/dvdbackup.c:1507
+#, c-format
+msgid "After Menu VOB check\n"
+msgstr "Po kontrole VOBu ponuky\n"
+
+#: src/dvdbackup.c:1521
+#, c-format
+msgid "After Menu Title VOB check\n"
+msgstr "Po kontrole VOBu titulu z ponuky\n"
+
+#: src/dvdbackup.c:1525
+#, c-format
+msgid ""
+"\n"
+"\n"
+"\n"
+"File sizes for Title set %d i.e. VTS_%02d_X.XXX\n"
+msgstr ""
+"\n"
+"\n"
+"\n"
+"Šírky súboru pre sady titulov %d napr. VTS_%02d_X.XXX\n"
+
+#: src/dvdbackup.c:1526
+#, c-format
+msgid "IFO: %jd, MENU: %jd\n"
+msgstr "IFO: %jd, MENU: %jd\n"
+
+#: src/dvdbackup.c:1528
+#, c-format
+msgid "VOB %d is %jd\n"
+msgstr "VOB %d je %jd\n"
+
+#: src/dvdbackup.c:1533
+#, c-format
+msgid "Bottom of loop\n"
+msgstr "Spodok slučky\n"
+
+#: src/dvdbackup.c:1555 src/dvdbackup.c:1587
+#, c-format
+msgid "Mirror of Title set %d failed\n"
+msgstr "Vytvorenie obrazu sady titulu %d bolo neúspešné\n"
+
+#: src/dvdbackup.c:1581
+#, c-format
+msgid ""
+"Cannot copy title_set %d there is only %d title_sets present on this DVD\n"
+msgstr ""
+"Nepodarilo sa skopírovať title_set %d ,iba %d title_sets je prítomných na "
+"tomto dvd\n"
+
+#: src/dvdbackup.c:1605 src/dvdbackup.c:1875
+#, c-format
+msgid "Guesswork of main feature film failed.\n"
+msgstr "Uhádnutie hlavného filmu bolo neúspešné.\n"
+
+#: src/dvdbackup.c:1616
+#, c-format
+msgid "Mirror of main feature file which is title set %d failed\n"
+msgstr ""
+"Vytvorenie obrazu hlavného filmu, ktorý je v sade titulu %d bolo neúspešné\n"
+
+#: src/dvdbackup.c:1647 src/dvdbackup.c:1810
+#, c-format
+msgid "Failed to obtain titles information\n"
+msgstr "Nepodarilo sa získať informáciu o tituloch\n"
+
+#: src/dvdbackup.c:1658
+#, c-format
+msgid ""
+"No title specified for chapter extraction, will try to figure out main "
+"feature title\n"
+msgstr ""
+"Žiaden titul pre extrakciu kapitol nebol špecifikovaný, skúsime zistiť titul "
+"hlavného filmu\n"
+
+#: src/dvdbackup.c:1672
+#, c-format
+msgid "Could not open title_set %d IFO file\n"
+msgstr "Nepodarilo sa otvoriť title_set %d IFO súbor\n"
+
+#: src/dvdbackup.c:1682 src/dvdbackup.c:1687
+#, c-format
+msgid "Truncated the end_chapter; only %d chapters in %d title\n"
+msgstr "Skrátená end_chapter; iba %d kapitol v %d titule\n"
+
+#: src/dvdbackup.c:1738
+#, c-format
+msgid "Memory allocation error 1\n"
+msgstr "Chyba alokácie pamäte 1\n"
+
+#: src/dvdbackup.c:1746
+#, c-format
+msgid "Memory allocation error\n"
+msgstr "Chyba alokácie pamäte\n"
+
+#: src/dvdbackup.c:1888
+#, c-format
+msgid ""
+"DVD-Video information of the DVD with title \"%s\"\n"
+"\n"
+msgstr ""
+"DVD-Video informácia pre DVD s titulom \"%s\"\n"
+"\n"
+
+#: src/dvdbackup.c:1892
+#, c-format
+msgid "File Structure DVD\n"
+msgstr "Súborová štruktúra DVD\n"
+
+#: src/dvdbackup.c:1917
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Main feature:\n"
+msgstr ""
+"\n"
+"\n"
+"Hlavný film:\n"
+
+#: src/dvdbackup.c:1918
+#, c-format
+msgid "\tTitle set containing the main feature is %d\n"
+msgstr "\tSada titulov obsahujúca hlavný film je %d\n"
+
+#: src/dvdbackup.c:1922
+#, c-format
+msgid "\tThe aspect ratio of the main feature is 16:9\n"
+msgstr "\tPomer strán hlavného filmu je 16:9\n"
+
+#: src/dvdbackup.c:1924
+#, c-format
+msgid "\tThe aspect ratio of the main feature is 4:3\n"
+msgstr "\tPomer strán hlavného filmu je 4:3\n"
+
+#: src/dvdbackup.c:1926
+#, c-format
+msgid "\tThe aspect ratio of the main feature is unknown\n"
+msgstr "\tPomer strán hlavného filmu je neznámy\n"
+
+#: src/dvdbackup.c:1929
+#, c-format
+msgid "\tThe main feature has %d angle\n"
+msgid_plural "\tThe main feature has %d angles\n"
+msgstr[0] "\tHlavný film má %d uhol\n"
+msgstr[1] "\tHlavný film má %d uhlov\n"
+msgstr[2] "\tHlavný film má %d uhlov\n"
+
+#: src/dvdbackup.c:1932
+#, c-format
+msgid "\tThe main feature has %d audio track\n"
+msgid_plural "\tThe main feature has %d audio tracks\n"
+msgstr[0] "\tHlavný film má %d zvukovú stopu\n"
+msgstr[1] "\tHlavný film má %d zvukových stôp\n"
+msgstr[2] "\tHlavný film má %d zvukových stôp\n"
+
+#: src/dvdbackup.c:1935
+#, c-format
+msgid "\tThe main feature has %d subpicture channel\n"
+msgid_plural "\tThe main feature has %d subpicture channels\n"
+msgstr[0] "\tHlavný film má %d podobrázkový kanál\n"
+msgstr[1] "\tHlavný film má %d podobrázkových kanálov\n"
+msgstr[2] "\tHlavný film má %d podobrázkových kanálov\n"
+
+#: src/dvdbackup.c:1951
+#, c-format
+msgid "\tThe main feature has a maximum of %d chapter in one of its titles\n"
+msgid_plural ""
+"\tThe main feature has a maximum of %d chapters in one of its titles\n"
+msgstr[0] "\tHlavný film má maximálne %d kapitolu v jednom z jeho titulov\n"
+msgstr[1] "\tHlavný film má maximálne %d kapitol v jednom z jeho titulov\n"
+msgstr[2] "\tHlavný film má maximálne %d kapitol v jednom z jeho titulov\n"
+
+#: src/dvdbackup.c:1954
+#, c-format
+msgid ""
+"\tThe main feature has a maximum of %d audio channel in one of its titles\n"
+msgid_plural ""
+"\tThe main feature has a maximum of %d audio channels in one of its titles\n"
+msgstr[0] ""
+"\tHlavný film má maximálne %d zvukový kanál v jednom z jeho titulov\n"
+msgstr[1] ""
+"\tHlavný film má maximálne %d zvukových kanálov v jednom z jeho titulov\n"
+msgstr[2] ""
+"\tHlavný film má maximálne %d zvukových kanálov v jednom z jeho titulov\n"
+
+#: src/dvdbackup.c:1961
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Title Sets:"
+msgstr ""
+"\n"
+"\n"
+"Sady titulu:"
+
+#: src/dvdbackup.c:1963
+#, c-format
+msgid ""
+"\n"
+"\n"
+"\tTitle set %d\n"
+msgstr ""
+"\n"
+"\n"
+"\tSada titulu %d\n"
+
+#: src/dvdbackup.c:1967
+#, c-format
+msgid "\t\tThe aspect ratio of title set %d is 16:9\n"
+msgstr "\t\tPomer strán sady titulu %d je 16:9\n"
+
+#: src/dvdbackup.c:1969
+#, c-format
+msgid "\t\tThe aspect ratio of title set %d is 4:3\n"
+msgstr "\t\tPomer strán sady titulu %d je 4:3\n"
+
+#: src/dvdbackup.c:1971
+#, c-format
+msgid "\t\tThe aspect ratio of title set %d is unknown\n"
+msgstr "\t\tPomer strán sady titulu %d je neznámy\n"
+
+#: src/dvdbackup.c:1973
+#, c-format
+msgid "\t\tTitle set %d has %d angle\n"
+msgid_plural "\t\tTitle set %d has %d angles\n"
+msgstr[0] "\t\tSada titulov %d má %d uhol\n"
+msgstr[1] "\t\tSada titulov %d má %d uhlov\n"
+msgstr[2] "\t\tSada titulov %d má %d uhlov\n"
+
+#: src/dvdbackup.c:1976
+#, c-format
+msgid "\t\tTitle set %d has %d audio track\n"
+msgid_plural "\t\tTitle set %d has %d audio tracks\n"
+msgstr[0] "\t\tSada titulov %d má %d zvukovú stopu\n"
+msgstr[1] "\t\tSada titulov %d má %d zvukových stôp\n"
+msgstr[2] "\t\tSada titulov %d má %d zvukových stôp\n"
+
+#: src/dvdbackup.c:1979
+#, c-format
+msgid "\t\tTitle set %d has %d subpicture channel\n"
+msgid_plural "\t\tTitle set %d has %d subpicture channels\n"
+msgstr[0] "\t\tSada titulov %d má %d podobrázkový kanál\n"
+msgstr[1] "\t\tSada titulov %d má %d podobrázkových kanálov\n"
+msgstr[2] "\t\tSada titulov %d má %d podobrázkových kanálov\n"
+
+#: src/dvdbackup.c:1992
+#, c-format
+msgid ""
+"\n"
+"\t\tTitle included in title set %d is\n"
+msgid_plural ""
+"\n"
+"\t\tTitles included in title set %d are\n"
+msgstr[0] ""
+"\n"
+"\t\tTitul obsiahnutý v sade titulov %d je\n"
+msgstr[1] ""
+"\n"
+"\t\tTituly obsiahnuté v sade titulov %d sú\n"
+msgstr[2] ""
+"\n"
+"\t\tTituly obsiahnuté v sade titulov %d sú\n"
+
+#: src/dvdbackup.c:1998
+#, c-format
+msgid "\t\t\tTitle %d:\n"
+msgstr "\t\t\tTitul %d:\n"
+
+#: src/dvdbackup.c:1999
+#, c-format
+msgid "\t\t\t\tTitle %d has %d chapter\n"
+msgid_plural "\t\t\t\tTitle %d has %d chapters\n"
+msgstr[0] "\t\t\t\tTitul %d má %d kapitolu\n"
+msgstr[1] "\t\t\t\tTitul %d má %d kapitol\n"
+msgstr[2] "\t\t\t\tTitul %d má %d kapitol\n"
+
+#: src/dvdbackup.c:2002
+#, c-format
+msgid "\t\t\t\tTitle %d has %d audio channel\n"
+msgid_plural "\t\t\t\tTitle %d has %d audio channels\n"
+msgstr[0] "\t\t\t\tTitul %d má %d zvukový kanál\n"
+msgstr[1] "\t\t\t\tTitul %d má %d zvukových kanálov\n"
+msgstr[2] "\t\t\t\tTitul %d má %d zvukových kanálov\n"
+
+#: src/main.c:58
+#, c-format
+msgid ""
+"Copyright (C) 2002 Olaf Beck <olaf_sc@yahoo.com>\n"
+"Copyright (C) %s Benjamin Drung <benjamin.drung@gmail.com>\n"
+"\n"
+"License GPLv3+: GNU GPL version 3 or later "
+"<http://gnu.org/licenses/gpl.html>\n"
+"This is free software: you are free to change and redistribute it.\n"
+"There is NO WARRANTY, to the extent permitted by law.\n"
+"Homepage: %s\n"
+msgstr ""
+"Copyright (C) 2002 Olaf Beck <olaf_sc@yahoo.com>\n"
+"Copyright (C) %s Benjamin Drung <benjamin.drung@gmail.com>\n"
+"\n"
+"Licencia GPLv3+: GNU GPL verzia 3 alebo neskoršia "
+"<http://gnu.org/licenses/gpl.html>\n"
+"Toto je slobodný software: máš voľnosť ho zmeniť a šíriť.\n"
+"Neni tu ŽIADNA ZÁRUKA, v rozsahu povolenom podľa zákona.\n"
+"Domovská stránka: %s\n"
+
+#. TRANSLATORS: --help output 1 (synopsis)
+#: src/main.c:69
+#, c-format
+msgid "Usage: %s [OPTION]...\n"
+msgstr "Použitie: %s [VOĽBA]...\n"
+
+#. TRANSLATORS: --help output 3: options 1/2
+#. no-wrap
+#: src/main.c:79
+#, c-format
+msgid ""
+"  -h, --help         display this help and exit\n"
+"  -V, --version      display version information and exit\n"
+"\n"
+msgstr ""
+"  -h, --help         zobrazí túto nápovedu a skončí\n"
+"  -V, --version      zobrazí informáciu o verzii a skončí\n"
+"\n"
+
+#. TRANSLATORS: --help output 4: options 2/2
+#. no-wrap
+#: src/main.c:85
+#, c-format
+msgid ""
+"  -I, --info         prints information about the DVD\n"
+"  -M, --mirror       backup the whole DVD\n"
+"  -F, --feature      backup the main feature of the DVD\n"
+"  -T, --titleset=X   backup title set X\n"
+"  -t, --title=X      backup title X\n"
+"  -s, --start=X      backup from chapter X\n"
+"  -e, --end=X        backup to chapter X\n"
+"\n"
+msgstr ""
+"  -I, --info         vypíše informáciu o DVD\n"
+"  -M, --mirror       zálohuje celé DVD\n"
+"  -F, --feature      zálohuje hlavný film na DVD\n"
+"  -T, --titleset=X   zálohuje sady titulov X\n"
+"  -t, --title=X      zálohuje titul X\n"
+"  -s, --start=X      zálohuje od kapitoly X\n"
+"  -e, --end=X        zálohuje po kapitolu X\n"
+"\n"
+
+#: src/main.c:94
+#, c-format
+msgid ""
+"  -i, --input=DEVICE       where DEVICE is your DVD device\n"
+"                           if not given /dev/dvd is used\n"
+"  -o, --output=DIRECTORY   where directory is your backup target\n"
+"                           if not given the current directory is used\n"
+msgstr ""
+"  -i, --input=DEVICE       kde DEVICE je tvoje DVD zariadenie\n"
+"                           ak nieje zadané /dev/dvd je použité\n"
+"  -o, --output=DIRECTORY   kde directory je cieľ tvojej zálohy\n"
+"                           ak nieje zadané použije sa aktuálny adresár\n"
+
+#: src/main.c:99
+#, c-format
+msgid ""
+"  -v, --verbose            print more information about progress\n"
+"  -n, --name=NAME          set the title (useful if autodetection fails)\n"
+"  -a, --aspect=0           to get aspect ratio 4:3 instead of 16:9 if both "
+"are\n"
+"                           present\n"
+"  -r, --error={a,b,m}      select read error handling: a=abort, b=skip "
+"block,\n"
+"                           m=skip multiple blocks (default)\n"
+"  -p, --progress           print progress information while copying VOBs\n"
+"\n"
+msgstr ""
+"  -v, --verbose            vytlačí viac informácií o postupe\n"
+"  -n, --name=NAME          nastaví titul (užitočné ak zlyhá autodetekcia)\n"
+"  -a, --aspect=0           pre získanie pomeru strán 4:3 namiesto 16:9 ak sú "
+"oba\n"
+"                           prítomné\n"
+"  -r, --error={a,b,m}      vyber narábanie s chybami čítania: a=prerušiť, "
+"b=preskočiť blok,\n"
+"                           m=preskočiť viacero blokov (prednastavené)\n"
+"  -p, --progress           vytlač informáciu o postupe počas kopírovania "
+"VOBov\n"
+"\n"
+
+#: src/main.c:108
+#, c-format
+msgid ""
+"  -a is option to the -F switch and has no effect on other options\n"
+"  -s and -e should preferably be used together with -t\n"
+msgstr ""
+"  -a je voľba príslušná ku prepínaču -F a nemá vplyv na ďalšie voľby\n"
+"  -s a -e by mali byť prednostne použité spolu s -t\n"
+
+#. TRANSLATORS: --help output 5 (end)
+#. TRANSLATORS: the placeholder indicates the bug-reporting address
+#. for this application.  Please add _another line_ with the
+#. address for translation bugs.
+#: src/main.c:117
+#, c-format
+msgid "Report bugs on Launchpad: %s\n"
+msgstr "Oznámenie chýb na Launchpade: %s\n"
+
+#: src/main.c:274
+#, c-format
+msgid "%s: extra operand: %s\n"
+msgstr "%s: extra operand: %s\n"
+
+#: src/main.c:276
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr "Viac informácií získaš príkazom `%s --help'.\n"
+
+#: src/main.c:386
+#, c-format
+msgid ""
+"You must provide a title name when you read your DVD-Video structure direct "
+"from the HD\n"
+msgstr ""
+"Musíš zadať názov titulu ak načítavaš svoju DVD-Video štruktúru priamo z "
+"hardisku\n"
+
+#: src/main.c:391
+#, c-format
+msgid ""
+"The DVD-Video title on the disk is DVD_VIDEO, which is too generic; please "
+"provide a title with the -n switch\n"
+msgstr ""
+"DVD-Video titul na disku je DVD_VIDEO, čo je príliš všeobecné; prosím "
+"poskytni názov s -n prepínačom\n"
+
+#: src/main.c:398
+#, c-format
+msgid ""
+"The title name specified is longer than 32 characters; truncating the title "
+"name\n"
+msgstr "Zadaný názov titulu je dlhší než 32 znakov; skráť názov titulu\n"
+
+#: src/main.c:412
+#, c-format
+msgid "The target directory is not valid; it may be an ordinary file.\n"
+msgstr "Cieľový adresár je neplatný; smie to byť iba obyčajný súbor.\n"
+
+#: src/main.c:416
+#, c-format
+msgid "Failed creating target directory %s\n"
+msgstr "Vytvorenie cieľového adresára %s bolo neúspešné\n"
+
+#: src/main.c:428
+#, c-format
+msgid "The title directory is not valid; it may be an ordinary file.\n"
+msgstr "Adresár titulu nieje platný; smie to byť obyčajný súbor.\n"
+
+#: src/main.c:432
+#, c-format
+msgid "Failed creating title directory\n"
+msgstr "Vytvorenie adresára titulu bolo neúspešné\n"
+
+#: src/main.c:443
+#, c-format
+msgid "The VIDEO_TS directory is not valid; it may be an ordinary file.\n"
+msgstr "Adresár pre VIDEO_TS nieje platný; smie to byť iba obyčajný súbor.\n"
+
+#: src/main.c:447
+#, c-format
+msgid "Failed creating VIDEO_TS directory\n"
+msgstr "Vytvorenie obrazu VIDEO_TS adresára bolo neúspešné\n"
+
+#: src/main.c:462
+#, c-format
+msgid "Mirror of DVD failed\n"
+msgstr "Vytvorenie obrazu DVD bolo neúpešné\n"
+
+#: src/main.c:475
+#, c-format
+msgid "Mirror of title set %d failed\n"
+msgstr "Vytvorenie obrazu sady titulu %d bolo neúspešné\n"
+
+#: src/main.c:490
+#, c-format
+msgid "Mirror of main feature film of DVD failed\n"
+msgstr "Vytvorenie obrazu hlavného filmu z DVD bolo neúspešné\n"
+
+#: src/main.c:499
+#, c-format
+msgid "Mirror of title %d failed\n"
+msgstr "Vytvorenie obrazu titulu %d bolo neúspešné\n"
+
+#: src/main.c:509
+#, c-format
+msgid "Mirror of chapters %d to %d in title %d failed\n"
+msgstr "Vytvorenie obrazu kapitol %d až %d v titule %d bolo neúspešné\n"
