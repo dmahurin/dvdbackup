@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: dvdbackup\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-09-26 01:20+0200\n"
-"PO-Revision-Date: 2010-11-01 11:32+0000\n"
-"Last-Translator: simone.sandri <Unknown>\n"
+"PO-Revision-Date: 2011-01-07 22:17+0000\n"
+"Last-Translator: Martino Barbon <Unknown>\n"
 "Language-Team: Italian <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-11-02 04:48+0000\n"
+"X-Launchpad-Export-Date: 2011-01-08 04:40+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 "Language: it\n"
 
@@ -38,7 +38,7 @@ msgstr "Errore nella creazione di %s\n"
 #: src/dvdbackup.c:270 src/dvdbackup.c:1026
 #, c-format
 msgid "Failed opening TITLE VOB\n"
-msgstr "Fallita apertura del TITLE VOB\n"
+msgstr "Impossibile caricare TITLE VOB\n"
 
 #: src/dvdbackup.c:290
 #, c-format
@@ -772,9 +772,86 @@ msgid "Mirror of chapters %d to %d in title %d failed\n"
 msgstr "Copia fallita dei capitoli da %d a %d nel titolo %d\n"
 
 #, c-format
+#~ msgid "The target directory is not valid; it may be a ordinary file\n"
+#~ msgstr ""
+#~ "La cartella di destinazione non è valida; potrebbe trattarsi di un file.\n"
+
+#, c-format
+#~ msgid "The BUP %s file is not valid, it may be a directory\n"
+#~ msgstr "Il file BUP %s non e' valido, potrebbe essere una directory\n"
+
+#, c-format
+#~ msgid "The IFO %s file is not valid, it may be a directory\n"
+#~ msgstr "Il file IFO %s non e' valido, potrebbe essere una directory\n"
+
+#, c-format
 #~ msgid "The Menu %s file is not valid, it may be a directory\n"
 #~ msgstr "Il file di menu %s non e' valido, potrebbe essere una cartella\n"
 
 #, c-format
 #~ msgid "The Title %s file is not valid, it may be a directory\n"
 #~ msgstr "Il file di titolo %s non e' valido, potrebbe essere una cartella\n"
+
+#, c-format
+#~ msgid ""
+#~ "Do not try to copy a Title VOB from the VMG domain; there are not any\n"
+#~ msgstr ""
+#~ "Non cercare di copiare un titolo VOB da un dominio VMG; non ce ne sono\n"
+
+#, c-format
+#~ msgid "Do not try to copy chapters from the VMG domain; there are not any\n"
+#~ msgstr "Non cercare di copiare capitoli dal dominio VMG; non ce ne sono\n"
+
+#, c-format
+#~ msgid "Error reading MENU VOB %d != %d\n"
+#~ msgstr "Errore leggendo il MENU VOB %d != %d\n"
+
+#, c-format
+#~ msgid ""
+#~ "  -v, --verbose            print more information about progress\n"
+#~ "  -n, --name=NAME          set the title (useful if autodetection fails)\n"
+#~ "  -a, --aspect=0           to get aspect ratio 4:3 instead of 16:9 if both "
+#~ "are\n"
+#~ "                           present\n"
+#~ "  -r, --error={a,b,m}      select read error handling: a=abort, b=skip "
+#~ "block,\n"
+#~ "                           m=skip multiple blocks (default)\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  -v, --verbose            stampa più informazioni circa il progresso\n"
+#~ "  -n, --name=NAME          imposta il titolo (comodo se l'autorilevamento "
+#~ "fallisce)\n"
+#~ "  -a, --aspect=0           per ottenere il rapporto 4:3 invece di 16:9 se "
+#~ "entrami sono presenti\n"
+#~ "  -r, --error={a,b,m}      selezionare la gestione dell'errore in lettura: "
+#~ "a=arrestare, b=salta blocco,\n"
+#~ "                           m=salta più blocchi (predefinito)\n"
+#~ "\n"
+
+#, c-format
+#~ msgid "Report bugs to <%s>.\n"
+#~ msgstr "Segnalare i bug a <%s>.\n"
+
+#, c-format
+#~ msgid "The BUP file %s exists will try to over write it.\n"
+#~ msgstr "Il file BUP %s esiste, provo a sovrascriverlo.\n"
+
+#, c-format
+#~ msgid "The Title file %s exists will try to over write it.\n"
+#~ msgstr "Il file di titolo %s esiste, provo a sovrascriverlo.\n"
+
+#, c-format
+#~ msgid "The IFO file %s exists will try to over write it.\n"
+#~ msgstr "Il file IFO %s esiste, provo a sovrascriverlo.\n"
+
+#, c-format
+#~ msgid "The Menu file %s exists will try to over write it.\n"
+#~ msgstr "Il file di menù %s esiste, provo a sovrascriverlo.\n"
+
+#, c-format
+#~ msgid ""
+#~ "DVD-Video information of the DVD with title %s\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Informazioni DVD-Video del DVD con titolo %s\n"
+#~ "\n"
