@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: dvdbackup\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-09-26 01:20+0200\n"
-"PO-Revision-Date: 2010-12-09 10:46+0000\n"
-"Last-Translator: Fitoschido <Unknown>\n"
+"PO-Revision-Date: 2011-03-28 00:00+0000\n"
+"Last-Translator: Paulomorales <paulocmorales@hotmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-12-10 04:47+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-03-28 04:35+0000\n"
+"X-Generator: Launchpad (build 12559)\n"
 "Language: es\n"
 
 #: src/dvdbackup.c:238
@@ -133,12 +133,12 @@ msgstr "Fallo la prueva vob\n"
 #: src/dvdbackup.c:962
 #, c-format
 msgid "Failed vob 1 size test\n"
-msgstr ""
+msgstr "Falló el test de tamaño del vob 1\n"
 
 #: src/dvdbackup.c:965
 #, c-format
 msgid "Failed vob %d test\n"
-msgstr ""
+msgstr "Falló test del vob %d\n"
 
 #: src/dvdbackup.c:970 src/dvdbackup.c:992
 #, c-format
@@ -310,7 +310,7 @@ msgstr "VOB %d es %jd\n"
 #: src/dvdbackup.c:1533
 #, c-format
 msgid "Bottom of loop\n"
-msgstr ""
+msgstr "Fondo del bucle\n"
 
 #: src/dvdbackup.c:1555 src/dvdbackup.c:1587
 #, c-format
@@ -358,7 +358,7 @@ msgstr ""
 #: src/dvdbackup.c:1738
 #, c-format
 msgid "Memory allocation error 1\n"
-msgstr ""
+msgstr "Error de asignación de Memoria 1\n"
 
 #: src/dvdbackup.c:1746
 #, c-format
