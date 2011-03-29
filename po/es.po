@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: dvdbackup\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-09-26 01:20+0200\n"
-"PO-Revision-Date: 2011-03-28 00:00+0000\n"
-"Last-Translator: Paulomorales <paulocmorales@hotmail.com>\n"
+"PO-Revision-Date: 2011-03-28 09:10+0000\n"
+"Last-Translator: Fitoschido <fitoschido@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-03-28 04:35+0000\n"
+"X-Launchpad-Export-Date: 2011-03-29 04:38+0000\n"
 "X-Generator: Launchpad (build 12559)\n"
 "Language: es\n"
 
@@ -68,7 +68,7 @@ msgstr "Sin memoria al crear la estructura de información de los títulos\n"
 #: src/dvdbackup.c:472
 #, c-format
 msgid "Out of memory creating arrays for titles info\n"
-msgstr ""
+msgstr "Memoria agotada al crear arreglos para información de títulos.\n"
 
 #: src/dvdbackup.c:608
 #, c-format
@@ -215,12 +215,12 @@ msgstr "Fichero BUP"
 #: src/dvdbackup.c:1204
 #, c-format
 msgid "Failed opening IFO for title set %d\n"
-msgstr ""
+msgstr "Falló apertura de IFO para el conjunto de títulos %d\n"
 
 #: src/dvdbackup.c:1226
 #, c-format
 msgid "Error reading IFO for title set %d\n"
-msgstr ""
+msgstr "Error leyendo IFO para el conjunto de títulos %d\n"
 
 #: src/dvdbackup.c:1236 src/dvdbackup.c:1245
 #, c-format
