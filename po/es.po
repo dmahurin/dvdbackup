@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: dvdbackup\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-09-26 01:20+0200\n"
-"PO-Revision-Date: 2011-03-28 09:10+0000\n"
-"Last-Translator: Fitoschido <fitoschido@gmail.com>\n"
+"PO-Revision-Date: 2011-06-01 02:46+0000\n"
+"Last-Translator: Ab aeterno <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-03-29 04:38+0000\n"
-"X-Generator: Launchpad (build 12559)\n"
+"X-Launchpad-Export-Date: 2011-06-01 04:36+0000\n"
+"X-Generator: Launchpad (build 12959)\n"
 "Language: es\n"
 
 #: src/dvdbackup.c:238
@@ -123,7 +123,7 @@ msgstr "Copiando %s: %.0f%% completado (%.0f/%.0f MiB)"
 #: src/dvdbackup.c:952
 #, c-format
 msgid "Failed num title test\n"
-msgstr ""
+msgstr "Falló la prueba num título\n"
 
 #: src/dvdbackup.c:957
 #, c-format
@@ -149,7 +149,7 @@ msgstr ""
 #: src/dvdbackup.c:980
 #, c-format
 msgid "Do not try to copy a Title VOB from the VMG domain; there are none.\n"
-msgstr ""
+msgstr "No intente copiar el título VOB desde el dominio VMG; no hay nada.\n"
 
 #. TRANSLATORS: The sentence starts with "The title file %s exists[...]"
 #. TRANSLATORS: The sentence starts with "The menu file %s exists[...]"
@@ -230,7 +230,7 @@ msgstr "Error guardando %s\n"
 #: src/dvdbackup.c:1279
 #, c-format
 msgid "Title, part %i/%i"
-msgstr ""
+msgstr "Título, parte %i/%i"
 
 #: src/dvdbackup.c:1303 src/main.c:373
 #, c-format
@@ -262,6 +262,10 @@ msgid ""
 "\n"
 "File sizes for Title set 0 VIDEO_TS.XXX\n"
 msgstr ""
+"\n"
+"\n"
+"\n"
+"Tamaño de archivo del título conjunto 0 VIDEO_TS.XXX\n"
 
 #: src/dvdbackup.c:1477
 #, c-format
@@ -271,7 +275,7 @@ msgstr "IFO = %jd, MENU_VOB = %jd\n"
 #: src/dvdbackup.c:1483
 #, c-format
 msgid "At top of loop\n"
-msgstr ""
+msgstr "En la parte superior del bucle\n"
 
 #: src/dvdbackup.c:1495
 #, c-format
@@ -281,12 +285,12 @@ msgstr "Despues de abrir los archivos\n"
 #: src/dvdbackup.c:1507
 #, c-format
 msgid "After Menu VOB check\n"
-msgstr ""
+msgstr "Después del chequeo del menú VOB\n"
 
 #: src/dvdbackup.c:1521
 #, c-format
 msgid "After Menu Title VOB check\n"
-msgstr ""
+msgstr "Después del chequeo del menú VOB\n"
 
 #: src/dvdbackup.c:1525
 #, c-format
@@ -296,11 +300,15 @@ msgid ""
 "\n"
 "File sizes for Title set %d i.e. VTS_%02d_X.XXX\n"
 msgstr ""
+"\n"
+"\n"
+"\n"
+"Tamaños de filas para el título conjunto %d i.e. VTS_%02d_X.XXX\n"
 
 #: src/dvdbackup.c:1526
 #, c-format
 msgid "IFO: %jd, MENU: %jd\n"
-msgstr ""
+msgstr "IFO: %jd, MENU: %jd\n"
 
 #: src/dvdbackup.c:1528
 #, c-format
@@ -344,6 +352,8 @@ msgid ""
 "No title specified for chapter extraction, will try to figure out main "
 "feature title\n"
 msgstr ""
+"No hay titulo especificado para la extracción del capítulo, intentará para "
+"figurar fuera  la característica del título principal.\n"
 
 #: src/dvdbackup.c:1672
 #, c-format
