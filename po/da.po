@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: dvdbackup\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-09-26 01:20+0200\n"
-"PO-Revision-Date: 2011-10-02 04:44+0000\n"
-"Last-Translator: thegeek1977 <Unknown>\n"
+"PO-Revision-Date: 2011-10-02 04:48+0000\n"
+"Last-Translator: Steven Nybo Andersen <Steven@privat.dk>\n"
 "Language-Team: Danish <da@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2011-10-02 04:47+0000\n"
+"X-Launchpad-Export-Date: 2011-10-03 04:38+0000\n"
 "X-Generator: Launchpad (build 14071)\n"
 
 #: src/dvdbackup.c:238
@@ -76,11 +76,13 @@ msgid ""
 "You have encountered a very special DVD; please send a bug report along with "
 "all IFO files from this title\n"
 msgstr ""
+"Du er rendt ind i en meget speciel DVD; send venligst en fejlreport og "
+"vedhæft alle IFO-filerne til den.\n"
 
 #: src/dvdbackup.c:843
 #, c-format
 msgid "Error reading %s at block %d\n"
-msgstr ""
+msgstr "Fejl under læsning af %s ved blok %d\n"
 
 #: src/dvdbackup.c:845
 #, c-format
@@ -95,7 +97,7 @@ msgstr ""
 #: src/dvdbackup.c:876
 #, c-format
 msgid "aborting\n"
-msgstr ""
+msgstr "Anulllerer\n"
 
 #: src/dvdbackup.c:881
 #, c-format
