@@ -1,3 +1,25 @@
+dvdbackup 0.4.2 (2012-06-24)
+
+	New Features:
+		* Added new command line option -p, --progress: Print progress report
+		  while copying from the DVD; thanks to flipflip for the patch.
+		* Added new translations from Launchpad: Danish (da),
+		  English (United Kingdom) (en_GB), Estonian (et), Portuguese (pt),
+		  Slovak (sk), Turkish (tr)
+		* New complete translation: English (United Kingdom) (en_GB),
+		  French (fr), Italian (it), Slovak (sk)
+
+	Changes:
+		* Convert DVD title to lower case, but let every word in the title start
+		  with an upper case letter and replace underscores with spaces.
+
+	Bug fixes:
+		* Print the correct vob file name in which the read error happens.
+		  Thanks to Kolja Nowak for the patch. (Closes: #585560, LP: #648752)
+		* Fix DVD title detection on FreeBSD. Thanks to Emanuel Haupt.
+		* Fix copying of fragmented chapters. Thanks to Christian Kuehnke for
+		  the patch. (LP: #648920)
+
 dvdbackup 0.4.1 (2009-06-09)
 
 	New Features:

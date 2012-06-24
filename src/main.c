@@ -2,7 +2,7 @@
  * dvdbackup - tool to rip DVDs from the command line
  *
  * Copyright (C) 2002  Olaf Beck <olaf_sc@yahoo.com>
- * Copyright (C) 2008-2009  Benjamin Drung <benjamin.drung@gmail.com>
+ * Copyright (C) 2008-2012  Benjamin Drung <benjamin.drung@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,7 +60,7 @@ Copyright (C) %s Benjamin Drung <benjamin.drung@gmail.com>\n\n\
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\
 This is free software: you are free to change and redistribute it.\n\
 There is NO WARRANTY, to the extent permitted by law.\n\
-Homepage: %s\n"), "2008-2009", "http://dvdbackup.sourceforge.net/");
+Homepage: %s\n"), "2008-2012", "http://dvdbackup.sourceforge.net/");
 }
 
 
@@ -102,7 +102,8 @@ Print a friendly, customizable greeting.\n"), stdout); */
   -a, --aspect=0           to get aspect ratio 4:3 instead of 16:9 if both are\n\
                            present\n\
   -r, --error={a,b,m}      select read error handling: a=abort, b=skip block,\n\
-                           m=skip multiple blocks (default)\n\n"));
+                           m=skip multiple blocks (default)\n\
+  -p, --progress           print progress information while copying VOBs\n\n"));
 
 	printf(_("\
   -a is option to the -F switch and has no effect on other options\n\
@@ -113,7 +114,8 @@ Print a friendly, customizable greeting.\n"), stdout); */
 	   TRANSLATORS: the placeholder indicates the bug-reporting address
 	   for this application.  Please add _another line_ with the
 	   address for translation bugs. */
-	printf (_("Report bugs to <%s>.\n"), PACKAGE_BUGREPORT);
+	printf (_("Report bugs on Launchpad: %s\n"),
+		"https://bugs.launchpad.net/dvdbackup");
 }
 
 
@@ -180,7 +182,7 @@ int main(int argc, char* argv[]) {
 	static const struct option longopts[] = {
 		{"help", no_argument, NULL, 'h'},
 		{"version", no_argument, NULL, 'V'},
-		
+
 		{"info", no_argument, NULL, 'I'},
 		{"mirror", no_argument, NULL, 'M'},
 		{"feature", no_argument, NULL, 'F'},
@@ -195,15 +197,16 @@ int main(int argc, char* argv[]) {
 		{"name", required_argument, NULL, 'n'},
 		{"aspect", required_argument, NULL, 'a'},
 		{"error", required_argument, NULL, 'r'},
+		{"progress", no_argument, NULL, 'p'},
 		{NULL, 0, NULL, 0}
 	};
-	const char* shortopts = "hVIMFT:t:s:e:i:o:vn:a:r:";
-	
+	const char* shortopts = "hVIMFT:t:s:e:i:o:vn:a:r:p";
+
 	init_i18n();
 	program_name = argv[0];
 
 	/* TODO: do isdigit check */
-	
+
 	while((flags = getopt_long(argc, argv, shortopts, longopts, NULL)) != -1) {
 		switch(flags) {
 		case 'h':
@@ -236,7 +239,7 @@ int main(int argc, char* argv[]) {
 		case 'e':
 			end_chapter_temp = optarg;
 			break;
-			
+
 		case 'i':
 			dvd = optarg;
 			break;
@@ -255,6 +258,9 @@ int main(int argc, char* argv[]) {
 		case 'r':
 			errorstrat_temp=optarg;
 			break;
+		case 'p':
+			progress = 1;
+			break;
 
 		default:
 			lose = true;
@@ -270,7 +276,7 @@ int main(int argc, char* argv[]) {
 		fprintf(stderr, _("Try `%s --help' for more information.\n"), program_name);
 		exit (EXIT_FAILURE);
 	}
-	
+
 	if(errorstrat_temp != NULL) {
 		if(errorstrat_temp[0]=='a') {
 			errorstrat=STRATEGY_ABORT;
