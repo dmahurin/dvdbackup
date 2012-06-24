@@ -191,8 +191,8 @@ static int DVDWriteCells(dvd_reader_t * dvd, int cell_start_sector[],
 	int size;
 	int left;
 
-	int to_read = BUFFER_SIZE;
-	int rbuff;
+	int to_read;
+	int have_read;
 
 	/* Offsets */
 	int soffset;
@@ -229,7 +229,7 @@ static int DVDWriteCells(dvd_reader_t * dvd, int cell_start_sector[],
 
 #ifdef DEBUG
 	for (i = 0; i < number_of_vob_files ; i++) {
-		fprintf(stderr,"vob %i size: %d\n", i + 1, title_set_info->title_set[title_set].size_vob[i]);
+		fprintf(stderr,"vob %i size: %lld\n", i + 1, title_set_info->title_set[title_set].size_vob[i]);
 	}
 #endif
 
@@ -274,58 +274,60 @@ static int DVDWriteCells(dvd_reader_t * dvd, int cell_start_sector[],
 	}
 
 	size = 0;
-	left = cell_end_sector[length-1] - cell_start_sector[0] + 1;
-	soffset = cell_start_sector[0];
 
-#ifdef DEBUG
-	fprintf(stderr,"DVDWriteCells: left is %d\n", left);
-#endif
+	for (i=0; i<length; i++) {
+		left = cell_end_sector[i] - cell_start_sector[i];
+		soffset = cell_start_sector[i];
 
-	while( left > 0 ) {
-
-		if (to_read > left) {
+		while(left > 0) {
 			to_read = left;
-		}
-		if ((rbuff = DVDReadBlocks(dvd_file,soffset, to_read, buffer)) < 0) {
-			fprintf(stderr, _("Error reading MENU VOB: %d != %d\n"), rbuff, to_read);
-			free(buffer);
-			DVDCloseFile(dvd_file);
-			close(streamout);
-			return(1);
-		}
-		if (rbuff < to_read) {
-			fprintf(stderr, _("DVDReadBlocks read %d blocks of %d blocks\n"), rbuff, to_read);
-		}
-		if (write(streamout, buffer, rbuff * DVD_VIDEO_LB_LEN) != rbuff * DVD_VIDEO_LB_LEN) {
-			fprintf(stderr, _("Error writing TITLE VOB\n"));
-			free(buffer);
-			close(streamout);
-			return(1);
-		}
-#ifdef DEBUG
-		fprintf(stderr,"Current soffset changed from %i to ",soffset);
-#endif
-		soffset = soffset + to_read;
-		left = left - rbuff;
-		size = size + rbuff;
-		if ((size >= MAX_VOB_SIZE) && (left > 0)) {
-#ifdef DEBUG
-			fprintf(stderr,"size: %i, MAX_VOB_SIZE: %i\n ",size, MAX_VOB_SIZE);
-#endif
-			close(streamout);
-			vob = vob + 1;
-			size = 0;
-			sprintf(targetname,"%s/%s/VIDEO_TS/VTS_%02i_%i.VOB",targetdir, title_name, title_set, vob);
-			if ((streamout = open(targetname, O_WRONLY | O_CREAT | O_APPEND, 0666)) == -1) {
-				fprintf(stderr, _("Error creating %s\n"), targetname);
-				perror(PACKAGE);
+			if (to_read + size > MAX_VOB_SIZE) {
+				to_read = MAX_VOB_SIZE - size;
+			}
+			if (to_read > BUFFER_SIZE) {
+				to_read = BUFFER_SIZE;
+			}
+
+			if ((have_read = DVDReadBlocks(dvd_file,soffset, to_read, buffer)) < 0) {
+				fprintf(stderr, _("Error reading MENU VOB: %d != %d\n"), have_read, to_read);
+				free(buffer);
+				DVDCloseFile(dvd_file);
+				close(streamout);
 				return(1);
 			}
-		}
+			if (have_read < to_read) {
+				fprintf(stderr, _("DVDReadBlocks read %d blocks of %d blocks\n"), have_read, to_read);
+			}
+			if (write(streamout, buffer, have_read * DVD_VIDEO_LB_LEN) != have_read * DVD_VIDEO_LB_LEN) {
+				fprintf(stderr, _("Error writing TITLE VOB\n"));
+				free(buffer);
+				close(streamout);
+				return(1);
+			}
 #ifdef DEBUG
-		fprintf(stderr,"%i\n",soffset);
+			fprintf(stderr,"Current soffset changed from %i to ",soffset);
 #endif
-
+			soffset = soffset + have_read;
+#ifdef DEBUG
+			fprintf(stderr,"%i\n",soffset);
+#endif
+			left = left - have_read;
+			size = size + have_read;
+			if ((size >= MAX_VOB_SIZE) && (left > 0)) {
+#ifdef DEBUG
+				fprintf(stderr,"size: %i, MAX_VOB_SIZE: %i\n ",size, MAX_VOB_SIZE);
+#endif
+				close(streamout);
+				vob = vob + 1;
+				size = 0;
+				sprintf(targetname,"%s/%s/VIDEO_TS/VTS_%02i_%i.VOB",targetdir, title_name, title_set, vob);
+				if ((streamout = open(targetname, O_WRONLY | O_CREAT | O_APPEND, 0666)) == -1) {
+					fprintf(stderr, _("Error creating %s\n"), targetname);
+					perror(PACKAGE);
+					return(1);
+				}
+			}
+		}
 	}
 
 	DVDCloseFile(dvd_file);
