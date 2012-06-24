@@ -11,7 +11,7 @@ Vcs-Browser: http://git.debian.org/?p=pkg-dvdbackup/dvdbackup.git;a=summary
 
 Package: dvdbackup
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Suggests: libdvdcss2
 Description: tool to rip DVD's from the command line
  dvdbackup will extract all (or optionally only selected) titles as found
