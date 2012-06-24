@@ -1,0 +1,692 @@
+# Estonian translation for dvdbackup
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the dvdbackup package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dvdbackup\n"
+"Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
+"POT-Creation-Date: 2012-06-24 03:47+0200\n"
+"PO-Revision-Date: 2010-09-26 02:19+0000\n"
+"Last-Translator: lyyser <Unknown>\n"
+"Language-Team: Estonian <et@li.org>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2010-09-27 04:40+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: src/dvdbackup.c:239
+#, c-format
+msgid "Do not try to copy chapters from the VMG domain; there are none.\n"
+msgstr ""
+
+#: src/dvdbackup.c:250
+#, c-format
+msgid "Out of memory copying %s\n"
+msgstr "Kopeerimis mälu viga %s\n"
+
+#: src/dvdbackup.c:260 src/dvdbackup.c:326 src/dvdbackup.c:1019
+#: src/dvdbackup.c:1101 src/dvdbackup.c:1182 src/dvdbackup.c:1192
+#, c-format
+msgid "Error creating %s\n"
+msgstr "Tõrge loomisel %s\n"
+
+#: src/dvdbackup.c:271 src/dvdbackup.c:1026
+#, c-format
+msgid "Failed opening TITLE VOB\n"
+msgstr "TITLE VOB avamise viga\n"
+
+#: src/dvdbackup.c:293
+#, c-format
+msgid "Error reading MENU VOB: %d != %d\n"
+msgstr "Viga lugemisel MENU VOB: %d != %d\n"
+
+#: src/dvdbackup.c:300
+#, c-format
+msgid "DVDReadBlocks read %d blocks of %d blocks\n"
+msgstr "DVDReadBlocks lugemine %d blokid of %d blokid\n"
+
+#: src/dvdbackup.c:303
+#, c-format
+msgid "Error writing TITLE VOB\n"
+msgstr "Tõrge kirjutamisel TITLE VOB\n"
+
+#: src/dvdbackup.c:426
+#, c-format
+msgid "Cannot open VMG info.\n"
+msgstr "Ei suuda avada VMG info-.\n"
+
+#: src/dvdbackup.c:440
+#, c-format
+msgid "Out of memory creating titles info structure\n"
+msgstr "Mäluviga loomaks pealkirjade info struktuuri\n"
+
+#: src/dvdbackup.c:474
+#, c-format
+msgid "Out of memory creating arrays for titles info\n"
+msgstr "Mäluviga loomaks massiive mälu päiseteavet\n"
+
+#: src/dvdbackup.c:610
+#, c-format
+msgid ""
+"You have encountered a very special DVD; please send a bug report along with "
+"all IFO files from this title\n"
+msgstr ""
+
+#: src/dvdbackup.c:843
+#, c-format
+msgid "Error reading %s at block %d\n"
+msgstr ""
+
+#: src/dvdbackup.c:845
+#, c-format
+msgid "Error reading %s at block %d, read error returned\n"
+msgstr ""
+
+#: src/dvdbackup.c:855
+#, c-format
+msgid "Error writing %s.\n"
+msgstr "Tõrge kirjutamisel %s.\n"
+
+#: src/dvdbackup.c:876
+#, c-format
+msgid "aborting\n"
+msgstr "katkestan\n"
+
+#: src/dvdbackup.c:881
+#, c-format
+msgid "padding single block\n"
+msgstr ""
+
+#: src/dvdbackup.c:886
+#, c-format
+msgid "padding %d blocks\n"
+msgstr ""
+
+#: src/dvdbackup.c:891
+#, c-format
+msgid "Error writing %s (padding)\n"
+msgstr ""
+
+#: src/dvdbackup.c:905
+#, c-format
+msgid "Copying %s: %.0f%% done (%.0f/%.0f MiB)"
+msgstr ""
+
+#: src/dvdbackup.c:952
+#, c-format
+msgid "Failed num title test\n"
+msgstr ""
+
+#: src/dvdbackup.c:957
+#, c-format
+msgid "Failed vob test\n"
+msgstr ""
+
+#: src/dvdbackup.c:962
+#, c-format
+msgid "Failed vob 1 size test\n"
+msgstr ""
+
+#: src/dvdbackup.c:965
+#, c-format
+msgid "Failed vob %d test\n"
+msgstr ""
+
+#: src/dvdbackup.c:970 src/dvdbackup.c:992
+#, c-format
+msgid ""
+"The Title VOB number %d of title set %d does not have a valid DVD size\n"
+msgstr ""
+
+#: src/dvdbackup.c:980
+#, c-format
+msgid "Do not try to copy a Title VOB from the VMG domain; there are none.\n"
+msgstr ""
+
+#. TRANSLATORS: The sentence starts with "The title file %s exists[...]"
+#. TRANSLATORS: The sentence starts with "The menu file %s exists[...]"
+#. TRANSLATORS: The sentence starts with "The IFO file %s exists[...]"
+#. TRANSLATORS: The sentence starts with "The BUP file %s exists[...]"
+#: src/dvdbackup.c:1005 src/dvdbackup.c:1085 src/dvdbackup.c:1163
+#: src/dvdbackup.c:1173
+#, c-format
+msgid "The %s %s exists; will try to overwrite it.\n"
+msgstr ""
+
+#: src/dvdbackup.c:1005 src/dvdbackup.c:1008
+msgid "title file"
+msgstr "nime fail"
+
+#. TRANSLATORS: The sentence starts with "The title file %s is not valid[...]"
+#. TRANSLATORS: The sentence starts with "The menu file %s is not valid[...]"
+#. TRANSLATORS: The sentence starts with "The IFO file %s is not valid[...]"
+#. TRANSLATORS: The sentence starts with "The BUP file %s is not valid[...]"
+#: src/dvdbackup.c:1008 src/dvdbackup.c:1088 src/dvdbackup.c:1166
+#: src/dvdbackup.c:1176
+#, c-format
+msgid "The %s %s is not valid, it may be a directory.\n"
+msgstr ""
+
+#: src/dvdbackup.c:1012 src/dvdbackup.c:1093
+#, c-format
+msgid "Error opening %s\n"
+msgstr "Viga avamisel %s\n"
+
+#: src/dvdbackup.c:1071
+#, c-format
+msgid ""
+"Warning: The Menu VOB of title set %d (%s) does not have a valid DVD size.\n"
+msgstr ""
+
+#: src/dvdbackup.c:1076
+#, c-format
+msgid "Failed opening %s\n"
+msgstr "Nurjunud avmine %s\n"
+
+#: src/dvdbackup.c:1085 src/dvdbackup.c:1088
+msgid "menu file"
+msgstr "menüü fail"
+
+#: src/dvdbackup.c:1109
+#, fuzzy
+msgid "menu"
+msgstr "menüü fail"
+
+#: src/dvdbackup.c:1146
+#, c-format
+msgid "The IFO of title set %d does not have a valid DVD size\n"
+msgstr ""
+
+#: src/dvdbackup.c:1163 src/dvdbackup.c:1166
+msgid "IFO file"
+msgstr "IFO fail"
+
+#: src/dvdbackup.c:1173 src/dvdbackup.c:1176
+msgid "BUP file"
+msgstr "BUP fail"
+
+#: src/dvdbackup.c:1204
+#, c-format
+msgid "Failed opening IFO for title set %d\n"
+msgstr ""
+
+#: src/dvdbackup.c:1226
+#, c-format
+msgid "Error reading IFO for title set %d\n"
+msgstr ""
+
+#: src/dvdbackup.c:1236 src/dvdbackup.c:1245
+#, c-format
+msgid "Error writing %s\n"
+msgstr "Viga kirjutamisel %s\n"
+
+#: src/dvdbackup.c:1279
+#, c-format
+msgid "Title, part %i/%i"
+msgstr ""
+
+#: src/dvdbackup.c:1303 src/main.c:373
+#, c-format
+msgid "Cannot open specified device %s - check your DVD device\n"
+msgstr ""
+
+#: src/dvdbackup.c:1311
+#, c-format
+msgid "Cannot seek DVD device %s - check your DVD device\n"
+msgstr ""
+
+#: src/dvdbackup.c:1318
+#, c-format
+msgid "Cannot read title from DVD device %s\n"
+msgstr ""
+
+#: src/dvdbackup.c:1428
+#, c-format
+msgid "Cannot open Video Manager (VMG) info.\n"
+msgstr "Ei suuda avada Video Manager (VMG) infot.\n"
+
+#: src/dvdbackup.c:1476
+#, c-format
+msgid ""
+"\n"
+"\n"
+"\n"
+"File sizes for Title set 0 VIDEO_TS.XXX\n"
+msgstr ""
+
+#: src/dvdbackup.c:1477
+#, c-format
+msgid "IFO = %jd, MENU_VOB = %jd\n"
+msgstr "IFO = %jd, MENU_VOB = %jd\n"
+
+#: src/dvdbackup.c:1483
+#, c-format
+msgid "At top of loop\n"
+msgstr ""
+
+#: src/dvdbackup.c:1495
+#, c-format
+msgid "After opening files\n"
+msgstr "Peale faili avamsit\n"
+
+#: src/dvdbackup.c:1507
+#, c-format
+msgid "After Menu VOB check\n"
+msgstr ""
+
+#: src/dvdbackup.c:1521
+#, c-format
+msgid "After Menu Title VOB check\n"
+msgstr ""
+
+#: src/dvdbackup.c:1525
+#, c-format
+msgid ""
+"\n"
+"\n"
+"\n"
+"File sizes for Title set %d i.e. VTS_%02d_X.XXX\n"
+msgstr ""
+
+#: src/dvdbackup.c:1526
+#, c-format
+msgid "IFO: %jd, MENU: %jd\n"
+msgstr "IFO: %jd, MENU: %jd\n"
+
+#: src/dvdbackup.c:1528
+#, c-format
+msgid "VOB %d is %jd\n"
+msgstr "VOB %d on %jd\n"
+
+#: src/dvdbackup.c:1533
+#, c-format
+msgid "Bottom of loop\n"
+msgstr ""
+
+#: src/dvdbackup.c:1555 src/dvdbackup.c:1587
+#, c-format
+msgid "Mirror of Title set %d failed\n"
+msgstr ""
+
+#: src/dvdbackup.c:1581
+#, c-format
+msgid ""
+"Cannot copy title_set %d there is only %d title_sets present on this DVD\n"
+msgstr ""
+
+#: src/dvdbackup.c:1605 src/dvdbackup.c:1873
+#, c-format
+msgid "Guesswork of main feature film failed.\n"
+msgstr ""
+
+#: src/dvdbackup.c:1616
+#, c-format
+msgid "Mirror of main feature file which is title set %d failed\n"
+msgstr ""
+
+#: src/dvdbackup.c:1646 src/dvdbackup.c:1808
+#, c-format
+msgid "Failed to obtain titles information\n"
+msgstr ""
+
+#: src/dvdbackup.c:1657
+#, c-format
+msgid ""
+"No title specified for chapter extraction, will try to figure out main "
+"feature title\n"
+msgstr ""
+
+#: src/dvdbackup.c:1670
+#, c-format
+msgid "Could not open title_set %d IFO file\n"
+msgstr ""
+
+#: src/dvdbackup.c:1680 src/dvdbackup.c:1685
+#, c-format
+msgid "Truncated the end_chapter; only %d chapters in %d title\n"
+msgstr ""
+
+#: src/dvdbackup.c:1736
+#, c-format
+msgid "Memory allocation error 1\n"
+msgstr "Mälu eraldamise viga 1\n"
+
+#: src/dvdbackup.c:1744
+#, c-format
+msgid "Memory allocation error\n"
+msgstr "Mälu eraldamise viga\n"
+
+#: src/dvdbackup.c:1886
+#, c-format
+msgid ""
+"DVD-Video information of the DVD with title \"%s\"\n"
+"\n"
+msgstr ""
+
+#: src/dvdbackup.c:1890
+#, c-format
+msgid "File Structure DVD\n"
+msgstr "DVD faili struktuur\n"
+
+#: src/dvdbackup.c:1915
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Main feature:\n"
+msgstr ""
+
+#: src/dvdbackup.c:1916
+#, c-format
+msgid "\tTitle set containing the main feature is %d\n"
+msgstr ""
+
+#: src/dvdbackup.c:1920
+#, c-format
+msgid "\tThe aspect ratio of the main feature is 16:9\n"
+msgstr ""
+
+#: src/dvdbackup.c:1922
+#, c-format
+msgid "\tThe aspect ratio of the main feature is 4:3\n"
+msgstr ""
+
+#: src/dvdbackup.c:1924
+#, c-format
+msgid "\tThe aspect ratio of the main feature is unknown\n"
+msgstr ""
+
+#: src/dvdbackup.c:1927
+#, c-format
+msgid "\tThe main feature has %d angle\n"
+msgid_plural "\tThe main feature has %d angles\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/dvdbackup.c:1930
+#, c-format
+msgid "\tThe main feature has %d audio track\n"
+msgid_plural "\tThe main feature has %d audio tracks\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/dvdbackup.c:1933
+#, c-format
+msgid "\tThe main feature has %d subpicture channel\n"
+msgid_plural "\tThe main feature has %d subpicture channels\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/dvdbackup.c:1949
+#, c-format
+msgid "\tThe main feature has a maximum of %d chapter in one of its titles\n"
+msgid_plural ""
+"\tThe main feature has a maximum of %d chapters in one of its titles\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/dvdbackup.c:1952
+#, c-format
+msgid ""
+"\tThe main feature has a maximum of %d audio channel in one of its titles\n"
+msgid_plural ""
+"\tThe main feature has a maximum of %d audio channels in one of its titles\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/dvdbackup.c:1959
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Title Sets:"
+msgstr ""
+
+#: src/dvdbackup.c:1961
+#, c-format
+msgid ""
+"\n"
+"\n"
+"\tTitle set %d\n"
+msgstr ""
+
+#: src/dvdbackup.c:1965
+#, c-format
+msgid "\t\tThe aspect ratio of title set %d is 16:9\n"
+msgstr ""
+
+#: src/dvdbackup.c:1967
+#, c-format
+msgid "\t\tThe aspect ratio of title set %d is 4:3\n"
+msgstr ""
+
+#: src/dvdbackup.c:1969
+#, c-format
+msgid "\t\tThe aspect ratio of title set %d is unknown\n"
+msgstr ""
+
+#: src/dvdbackup.c:1971
+#, c-format
+msgid "\t\tTitle set %d has %d angle\n"
+msgid_plural "\t\tTitle set %d has %d angles\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/dvdbackup.c:1974
+#, c-format
+msgid "\t\tTitle set %d has %d audio track\n"
+msgid_plural "\t\tTitle set %d has %d audio tracks\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/dvdbackup.c:1977
+#, c-format
+msgid "\t\tTitle set %d has %d subpicture channel\n"
+msgid_plural "\t\tTitle set %d has %d subpicture channels\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/dvdbackup.c:1990
+#, c-format
+msgid ""
+"\n"
+"\t\tTitle included in title set %d is\n"
+msgid_plural ""
+"\n"
+"\t\tTitles included in title set %d are\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/dvdbackup.c:1996
+#, c-format
+msgid "\t\t\tTitle %d:\n"
+msgstr ""
+
+#: src/dvdbackup.c:1997
+#, c-format
+msgid "\t\t\t\tTitle %d has %d chapter\n"
+msgid_plural "\t\t\t\tTitle %d has %d chapters\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/dvdbackup.c:2000
+#, c-format
+msgid "\t\t\t\tTitle %d has %d audio channel\n"
+msgid_plural "\t\t\t\tTitle %d has %d audio channels\n"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/main.c:58
+#, c-format
+msgid ""
+"Copyright (C) 2002 Olaf Beck <olaf_sc@yahoo.com>\n"
+"Copyright (C) %s Benjamin Drung <benjamin.drung@gmail.com>\n"
+"\n"
+"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
+"html>\n"
+"This is free software: you are free to change and redistribute it.\n"
+"There is NO WARRANTY, to the extent permitted by law.\n"
+"Homepage: %s\n"
+msgstr ""
+
+#. TRANSLATORS: --help output 1 (synopsis)
+#: src/main.c:69
+#, c-format
+msgid "Usage: %s [OPTION]...\n"
+msgstr "Kasuta: %s [VÕTI]...\n"
+
+#. TRANSLATORS: --help output 3: options 1/2
+#. no-wrap
+#: src/main.c:79
+#, c-format
+msgid ""
+"  -h, --help         display this help and exit\n"
+"  -V, --version      display version information and exit\n"
+"\n"
+msgstr ""
+
+#. TRANSLATORS: --help output 4: options 2/2
+#. no-wrap
+#: src/main.c:85
+#, c-format
+msgid ""
+"  -I, --info         prints information about the DVD\n"
+"  -M, --mirror       backup the whole DVD\n"
+"  -F, --feature      backup the main feature of the DVD\n"
+"  -T, --titleset=X   backup title set X\n"
+"  -t, --title=X      backup title X\n"
+"  -s, --start=X      backup from chapter X\n"
+"  -e, --end=X        backup to chapter X\n"
+"\n"
+msgstr ""
+
+#: src/main.c:94
+#, c-format
+msgid ""
+"  -i, --input=DEVICE       where DEVICE is your DVD device\n"
+"                           if not given /dev/dvd is used\n"
+"  -o, --output=DIRECTORY   where directory is your backup target\n"
+"                           if not given the current directory is used\n"
+msgstr ""
+
+#: src/main.c:99
+#, c-format
+msgid ""
+"  -v, --verbose            print more information about progress\n"
+"  -n, --name=NAME          set the title (useful if autodetection fails)\n"
+"  -a, --aspect=0           to get aspect ratio 4:3 instead of 16:9 if both "
+"are\n"
+"                           present\n"
+"  -r, --error={a,b,m}      select read error handling: a=abort, b=skip "
+"block,\n"
+"                           m=skip multiple blocks (default)\n"
+"  -p, --progress           print progress information while copying VOBs\n"
+"\n"
+msgstr ""
+
+#: src/main.c:108
+#, c-format
+msgid ""
+"  -a is option to the -F switch and has no effect on other options\n"
+"  -s and -e should preferably be used together with -t\n"
+msgstr ""
+
+#. TRANSLATORS: --help output 5 (end)
+#. TRANSLATORS: the placeholder indicates the bug-reporting address
+#. for this application.  Please add _another line_ with the
+#. address for translation bugs.
+#: src/main.c:117
+#, fuzzy, c-format
+msgid "Report bugs on Launchpad: %s\n"
+msgstr "Vigadest teatage aadressil <%s>.\n"
+
+#: src/main.c:274
+#, c-format
+msgid "%s: extra operand: %s\n"
+msgstr ""
+
+#: src/main.c:276
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr "Täiendava info saamiseks proovi `%s --help'.\n"
+
+#: src/main.c:386
+#, c-format
+msgid ""
+"You must provide a title name when you read your DVD-Video structure direct "
+"from the HD\n"
+msgstr ""
+
+#: src/main.c:391
+#, c-format
+msgid ""
+"The DVD-Video title on the disk is DVD_VIDEO, which is too generic; please "
+"provide a title with the -n switch\n"
+msgstr ""
+
+#: src/main.c:398
+#, c-format
+msgid ""
+"The title name specified is longer than 32 characters; truncating the title "
+"name\n"
+msgstr ""
+
+#: src/main.c:412
+#, c-format
+msgid "The target directory is not valid; it may be an ordinary file.\n"
+msgstr ""
+
+#: src/main.c:416
+#, c-format
+msgid "Failed creating target directory %s\n"
+msgstr ""
+
+#: src/main.c:428
+#, c-format
+msgid "The title directory is not valid; it may be an ordinary file.\n"
+msgstr ""
+
+#: src/main.c:432
+#, c-format
+msgid "Failed creating title directory\n"
+msgstr ""
+
+#: src/main.c:443
+#, c-format
+msgid "The VIDEO_TS directory is not valid; it may be an ordinary file.\n"
+msgstr ""
+
+#: src/main.c:447
+#, c-format
+msgid "Failed creating VIDEO_TS directory\n"
+msgstr ""
+
+#: src/main.c:462
+#, c-format
+msgid "Mirror of DVD failed\n"
+msgstr ""
+
+#: src/main.c:475
+#, c-format
+msgid "Mirror of title set %d failed\n"
+msgstr ""
+
+#: src/main.c:490
+#, c-format
+msgid "Mirror of main feature film of DVD failed\n"
+msgstr ""
+
+#: src/main.c:499
+#, c-format
+msgid "Mirror of title %d failed\n"
+msgstr ""
+
+#: src/main.c:509
+#, c-format
+msgid "Mirror of chapters %d to %d in title %d failed\n"
+msgstr ""
