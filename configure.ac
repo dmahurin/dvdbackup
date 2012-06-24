@@ -4,7 +4,7 @@ dnl ----------------------------------------------------------
 dnl Initialization and Versioning
 dnl ----------------------------------------------------------
 
-AC_INIT([dvdbackup], [0.4.1+svn])
+AC_INIT([dvdbackup], [0.4.2])
 
 # Where to generate output; srcdir location.
 AC_CONFIG_HEADERS([config.h])
@@ -13,7 +13,7 @@ AC_CONFIG_SRCDIR([src/main.c])
 dnl Must come before AM_INIT_AUTOMAKE.
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
-AM_INIT_AUTOMAKE([dist-bzip2 -Wall -Werror])
+AM_INIT_AUTOMAKE([dist-xz -Wall -Werror])
 
 AM_GNU_GETTEXT_VERSION([0.17])
 AM_GNU_GETTEXT([external])
