@@ -1,3 +1,17 @@
+dvdbackup (0.4.2-1) unstable; urgency=low
+
+  * New upstream release.
+    - Print the correct vob file name in which the read error happens.
+      Thanks to Kolja Nowak for the patch. (Closes: #585560, LP: #648752)
+  * Update my email address.
+  * Move from Subversion to Git.
+  * Switch to dpkg-source 3.0 (quilt) format.
+  * Bump Standards-Version to 3.9.3 (no changes needed).
+  * Switch from cdbs to dh 9.
+  * Update machine-readable copyright file to version 1.0 of the specification.
+
+ -- Benjamin Drung <bdrung@debian.org>  Sun, 24 Jun 2012 04:26:40 +0200
+
 dvdbackup (0.4.1-1) unstable; urgency=high
 
   * New upstream release
