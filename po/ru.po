@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: _dvdbackup-ru\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-09-26 01:20+0200\n"
-"PO-Revision-Date: 2010-07-02 19:10+0000\n"
-"Last-Translator: Pastushenko Aleksandr <Unknown>\n"
+"PO-Revision-Date: 2011-08-25 05:55+0000\n"
+"Last-Translator: Sergey Morozik <Unknown>\n"
 "Language-Team: <en@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -19,8 +19,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Launchpad-Export-Date: 2010-07-03 03:43+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-08-26 04:31+0000\n"
+"X-Generator: Launchpad (build 13779)\n"
 
 #: src/dvdbackup.c:238
 #, c-format
@@ -120,7 +120,7 @@ msgstr "Ошибка записи %s (дополнительно)\n"
 #: src/dvdbackup.c:905
 #, c-format
 msgid "Copying %s: %.0f%% done (%.0f/%.0f MiB)"
-msgstr ""
+msgstr "Копирование %s: %.0f%% выполнено (%.0f/%.0f Мб)"
 
 #: src/dvdbackup.c:952
 #, c-format
@@ -237,7 +237,7 @@ msgstr "Ошибка записи %s\n"
 #: src/dvdbackup.c:1279
 #, c-format
 msgid "Title, part %i/%i"
-msgstr ""
+msgstr "Название, часть  %i/%i"
 
 #: src/dvdbackup.c:1303 src/main.c:373
 #, c-format
@@ -709,6 +709,3 @@ msgstr ""
 #, c-format
 msgid "Mirror of chapters %d to %d in title %d failed\n"
 msgstr ""
-
-#~ msgid "The Menu %s file is not valid, it may be a directory\n"
-#~ msgstr "Файл меню %s неправильный, возможно, это каталог\n"

@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: dvdbackup 0.4\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-09-26 01:20+0200\n"
-"PO-Revision-Date: 2010-04-06 23:36+0000\n"
-"Last-Translator: Chris Leick <Unknown>\n"
+"PO-Revision-Date: 2011-12-09 21:51+0000\n"
+"Last-Translator: raymond <Unknown>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-07-02 03:31+0000\n"
-"X-Generator: Launchpad (build Unknown)\n"
+"X-Launchpad-Export-Date: 2011-12-10 04:35+0000\n"
+"X-Generator: Launchpad (build 14450)\n"
 
 #: src/dvdbackup.c:238
 #, c-format
@@ -123,7 +123,7 @@ msgstr "Fehler beim Schreiben von %s (auffüllen)\n"
 #: src/dvdbackup.c:905
 #, c-format
 msgid "Copying %s: %.0f%% done (%.0f/%.0f MiB)"
-msgstr ""
+msgstr "Kopiere %s: %.0f%% abgeschlossen (%.0f/%.0f MiB)"
 
 #: src/dvdbackup.c:952
 #, c-format
@@ -207,9 +207,8 @@ msgid "menu file"
 msgstr "Menüdatei"
 
 #: src/dvdbackup.c:1109
-#, fuzzy
 msgid "menu"
-msgstr "Menüdatei"
+msgstr "Menü"
 
 #: src/dvdbackup.c:1146
 #, c-format
@@ -242,7 +241,7 @@ msgstr "Fehler beim Schreiben von %s\n"
 #: src/dvdbackup.c:1279
 #, c-format
 msgid "Title, part %i/%i"
-msgstr ""
+msgstr "Titel, Teil %i/%i"
 
 #: src/dvdbackup.c:1303 src/main.c:373
 #, c-format
@@ -395,12 +394,12 @@ msgid "Memory allocation error\n"
 msgstr "Speicherbereitstellungsfehler\n"
 
 #: src/dvdbackup.c:1888
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "DVD-Video information of the DVD with title \"%s\"\n"
 "\n"
 msgstr ""
-"DVD-Video-Informationen der DVD mit Titel %s\n"
+"DVD-Video Information der DVD mit dem Titel \"%s\"\n"
 "\n"
 
 #: src/dvdbackup.c:1892
@@ -686,11 +685,9 @@ msgstr ""
 #. for this application.  Please add _another line_ with the
 #. address for translation bugs.
 #: src/main.c:117
-#, fuzzy, c-format
+#, c-format
 msgid "Report bugs on Launchpad: %s\n"
-msgstr ""
-"Berichten Sie Fehler an <%s>.\n"
-"Übersetzungsfehler melden Sie bitte an Chris Leick <c.leick@vollbio.de>\n"
+msgstr "Melde Bugs auf Launchpad: %s\n"
 
 #: src/main.c:274
 #, c-format

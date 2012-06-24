@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: dvdbackup\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-09-26 01:20+0200\n"
-"PO-Revision-Date: 2009-10-30 00:48+0000\n"
-"Last-Translator: undertuga <undertuga@gmail.com>\n"
+"PO-Revision-Date: 2010-10-01 19:28+0000\n"
+"Last-Translator: Diogo Lavareda <diogolavareda9@hotmail.com>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Launchpad-Export-Date: 2010-07-02 03:31+0000\n"
+"X-Launchpad-Export-Date: 2010-10-02 04:58+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: src/dvdbackup.c:238
@@ -90,7 +90,7 @@ msgstr ""
 #: src/dvdbackup.c:855
 #, c-format
 msgid "Error writing %s.\n"
-msgstr ""
+msgstr "Erro a escrever %s.\n"
 
 #: src/dvdbackup.c:876
 #, c-format
@@ -186,7 +186,7 @@ msgstr ""
 #: src/dvdbackup.c:1076
 #, c-format
 msgid "Failed opening %s\n"
-msgstr "Falout ao abrir %s\n"
+msgstr "Falhou ao abrir %s\n"
 
 #: src/dvdbackup.c:1085 src/dvdbackup.c:1088
 msgid "menu file"
