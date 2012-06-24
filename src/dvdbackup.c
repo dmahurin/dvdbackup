@@ -202,16 +202,17 @@ static int DVDWriteCells(dvd_reader_t * dvd, int cell_start_sector[],
 	dvd_file_t* dvd_file = NULL;
 
 	int title_set;
-	int number_of_vob_files;
 
 #ifdef DEBUG
+	int number_of_vob_files;
+
 	fprintf(stderr,"DVDWriteCells: length is %d\n", length);
 #endif
 
 
 	title_set = titles_info->titles[titles - 1].title_set;
-	number_of_vob_files = title_set_info->title_set[title_set].number_of_vob_files;
 #ifdef DEBUG
+	number_of_vob_files = title_set_info->title_set[title_set].number_of_vob_files;
 	fprintf(stderr,"DVDWriteCells: title set is %d\n", title_set);
 	fprintf(stderr,"DVDWriteCells: vob files are %d\n", number_of_vob_files);
 #endif
