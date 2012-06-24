@@ -407,7 +407,6 @@ static titles_info_t * DVDGetInfo(dvd_reader_t * _dvd) {
 
 	/* Temp helpers */
 	int channels;
-	int temp;
 	int found;
 	int chapters_1;
 	int chapters_2;
@@ -633,7 +632,6 @@ static titles_info_t * DVDGetInfo(dvd_reader_t * _dvd) {
 
 	/* Now let's see if we can find our candidate among the top most chapters */
 	found_chapter=6;
-	temp = chapter_chapter_array[0];
 	for (i=0 ; (i < titles) && (i < 4) ; i++ ) {
 		if ( candidate == title_set_chapter_array[i] ) {
 			found_chapter=i+1;
@@ -701,7 +699,6 @@ static titles_info_t * DVDGetInfo(dvd_reader_t * _dvd) {
 	/* Now let's see if we can find our candidate among the top most chapters */
 
 	found_chapter=5;
-	temp = chapter_chapter_array[0];
 	for (i=0 ; (i < titles) && (i < 4) ; i++ ) {
 		if ( candidate == title_set_chapter_array[i] ) {
 			found_chapter=i+1;
@@ -1035,7 +1032,7 @@ static int DVDCopyTitleVobX(dvd_reader_t * dvd, title_set_info_t * title_set_inf
 
 	DVDCloseFile(dvd_file);
 	close(streamout);
-	return(0);
+	return result;
 }
 
 
@@ -1632,7 +1629,6 @@ int DVDMirrorChapters(dvd_reader_t * _dvd, char * targetdir,char * title_name, i
 
 	int result;
 	int chapters = 0;
-	int feature;
 	int i, s;
 	int spg, epg;
 	int pgc;
@@ -1659,7 +1655,6 @@ int DVDMirrorChapters(dvd_reader_t * _dvd, char * targetdir,char * title_name, i
 
 	if(titles == 0) {
 		fprintf(stderr, _("No title specified for chapter extraction, will try to figure out main feature title\n"));
-		feature = titles_info->main_title_set;
 		for (i=0; i < titles_info->number_of_titles ; i++ ) {
 			if ( titles_info->titles[i].title_set == titles_info->main_title_set ) {
 				if(chapters < titles_info->titles[i].chapters) {
