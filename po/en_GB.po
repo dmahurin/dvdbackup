@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: dvdbackup\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2010-09-26 01:20+0200\n"
+"Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
+"POT-Creation-Date: 2012-06-24 03:25+0200\n"
 "PO-Revision-Date: 2010-12-21 01:16+0000\n"
 "Last-Translator: bouchard renaud <Unknown>\n"
 "Language-Team: English (United Kingdom) <en_GB@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,58 +19,58 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-12-21 13:26+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: src/dvdbackup.c:238
+#: src/dvdbackup.c:239
 #, c-format
 msgid "Do not try to copy chapters from the VMG domain; there are none.\n"
 msgstr "Do not try to copy chapters from the VMG domain; there are none.\n"
 
-#: src/dvdbackup.c:249
+#: src/dvdbackup.c:250
 #, c-format
 msgid "Out of memory copying %s\n"
 msgstr "Out of memory copying %s\n"
 
-#: src/dvdbackup.c:259 src/dvdbackup.c:320 src/dvdbackup.c:1019
+#: src/dvdbackup.c:260 src/dvdbackup.c:326 src/dvdbackup.c:1019
 #: src/dvdbackup.c:1101 src/dvdbackup.c:1182 src/dvdbackup.c:1192
 #, c-format
 msgid "Error creating %s\n"
 msgstr "Error creating %s\n"
 
-#: src/dvdbackup.c:270 src/dvdbackup.c:1026
+#: src/dvdbackup.c:271 src/dvdbackup.c:1026
 #, c-format
 msgid "Failed opening TITLE VOB\n"
 msgstr "Failed opening TITLE VOB\n"
 
-#: src/dvdbackup.c:290
+#: src/dvdbackup.c:293
 #, c-format
 msgid "Error reading MENU VOB: %d != %d\n"
 msgstr "Error reading MENU VOB: %d != %d\n"
 
-#: src/dvdbackup.c:297
+#: src/dvdbackup.c:300
 #, c-format
 msgid "DVDReadBlocks read %d blocks of %d blocks\n"
 msgstr "DVDReadBlocks read %d blocks of %d blocks\n"
 
-#: src/dvdbackup.c:300
+#: src/dvdbackup.c:303
 #, c-format
 msgid "Error writing TITLE VOB\n"
 msgstr "Error writing TITLE VOB\n"
 
-#: src/dvdbackup.c:424
+#: src/dvdbackup.c:426
 #, c-format
 msgid "Cannot open VMG info.\n"
 msgstr "Cannot open VMG info.\n"
 
-#: src/dvdbackup.c:438
+#: src/dvdbackup.c:440
 #, c-format
 msgid "Out of memory creating titles info structure\n"
 msgstr "Out of memory creating titles info structure\n"
 
-#: src/dvdbackup.c:472
+#: src/dvdbackup.c:474
 #, c-format
 msgid "Out of memory creating arrays for titles info\n"
 msgstr "Out of memory creating arrays for titles info\n"
 
-#: src/dvdbackup.c:608
+#: src/dvdbackup.c:610
 #, c-format
 msgid ""
 "You have encountered a very special DVD; please send a bug report along with "
@@ -148,8 +149,7 @@ msgstr ""
 #: src/dvdbackup.c:980
 #, c-format
 msgid "Do not try to copy a Title VOB from the VMG domain; there are none.\n"
-msgstr ""
-"Do not try to copy a Title VOB from the VMG domain; there are none.\n"
+msgstr "Do not try to copy a Title VOB from the VMG domain; there are none.\n"
 
 #. TRANSLATORS: The sentence starts with "The title file %s exists[...]"
 #. TRANSLATORS: The sentence starts with "The menu file %s exists[...]"
@@ -331,7 +331,7 @@ msgid ""
 msgstr ""
 "Cannot copy title_set %d there is only %d title_sets present on this DVD\n"
 
-#: src/dvdbackup.c:1605 src/dvdbackup.c:1875
+#: src/dvdbackup.c:1605 src/dvdbackup.c:1873
 #, c-format
 msgid "Guesswork of main feature film failed.\n"
 msgstr "Guesswork of main feature film failed.\n"
@@ -341,12 +341,12 @@ msgstr "Guesswork of main feature film failed.\n"
 msgid "Mirror of main feature file which is title set %d failed\n"
 msgstr "Mirror of main feature file which is title set %d failed\n"
 
-#: src/dvdbackup.c:1647 src/dvdbackup.c:1810
+#: src/dvdbackup.c:1646 src/dvdbackup.c:1808
 #, c-format
 msgid "Failed to obtain titles information\n"
 msgstr "Failed to obtain titles information\n"
 
-#: src/dvdbackup.c:1658
+#: src/dvdbackup.c:1657
 #, c-format
 msgid ""
 "No title specified for chapter extraction, will try to figure out main "
@@ -355,27 +355,27 @@ msgstr ""
 "No title specified for chapter extraction, will try to figure out main "
 "feature title\n"
 
-#: src/dvdbackup.c:1672
+#: src/dvdbackup.c:1670
 #, c-format
 msgid "Could not open title_set %d IFO file\n"
 msgstr "Could not open title_set %d IFO file\n"
 
-#: src/dvdbackup.c:1682 src/dvdbackup.c:1687
+#: src/dvdbackup.c:1680 src/dvdbackup.c:1685
 #, c-format
 msgid "Truncated the end_chapter; only %d chapters in %d title\n"
 msgstr "Truncated the end_chapter; only %d chapters in %d title\n"
 
-#: src/dvdbackup.c:1738
+#: src/dvdbackup.c:1736
 #, c-format
 msgid "Memory allocation error 1\n"
 msgstr "Memory allocation error 1\n"
 
-#: src/dvdbackup.c:1746
+#: src/dvdbackup.c:1744
 #, c-format
 msgid "Memory allocation error\n"
 msgstr "Memory allocation error\n"
 
-#: src/dvdbackup.c:1888
+#: src/dvdbackup.c:1886
 #, c-format
 msgid ""
 "DVD-Video information of the DVD with title \"%s\"\n"
@@ -384,12 +384,12 @@ msgstr ""
 "DVD-Video information of the DVD with title \"%s\"\n"
 "\n"
 
-#: src/dvdbackup.c:1892
+#: src/dvdbackup.c:1890
 #, c-format
 msgid "File Structure DVD\n"
 msgstr "File Structure DVD\n"
 
-#: src/dvdbackup.c:1917
+#: src/dvdbackup.c:1915
 #, c-format
 msgid ""
 "\n"
@@ -400,48 +400,48 @@ msgstr ""
 "\n"
 "Main feature:\n"
 
-#: src/dvdbackup.c:1918
+#: src/dvdbackup.c:1916
 #, c-format
 msgid "\tTitle set containing the main feature is %d\n"
 msgstr "\tTitle set containing the main feature is %d\n"
 
-#: src/dvdbackup.c:1922
+#: src/dvdbackup.c:1920
 #, c-format
 msgid "\tThe aspect ratio of the main feature is 16:9\n"
 msgstr "\tThe aspect ratio of the main feature is 16:9\n"
 
-#: src/dvdbackup.c:1924
+#: src/dvdbackup.c:1922
 #, c-format
 msgid "\tThe aspect ratio of the main feature is 4:3\n"
 msgstr "\tThe aspect ratio of the main feature is 4:3\n"
 
-#: src/dvdbackup.c:1926
+#: src/dvdbackup.c:1924
 #, c-format
 msgid "\tThe aspect ratio of the main feature is unknown\n"
 msgstr "\tThe aspect ratio of the main feature is unknown\n"
 
-#: src/dvdbackup.c:1929
+#: src/dvdbackup.c:1927
 #, c-format
 msgid "\tThe main feature has %d angle\n"
 msgid_plural "\tThe main feature has %d angles\n"
 msgstr[0] "\tThe main feature has %d angle\n"
 msgstr[1] "\tThe main feature has %d angles\n"
 
-#: src/dvdbackup.c:1932
+#: src/dvdbackup.c:1930
 #, c-format
 msgid "\tThe main feature has %d audio track\n"
 msgid_plural "\tThe main feature has %d audio tracks\n"
 msgstr[0] "\tThe main feature has %d audio track\n"
 msgstr[1] "\tThe main feature has %d audio tracks\n"
 
-#: src/dvdbackup.c:1935
+#: src/dvdbackup.c:1933
 #, c-format
 msgid "\tThe main feature has %d subpicture channel\n"
 msgid_plural "\tThe main feature has %d subpicture channels\n"
 msgstr[0] "\tThe main feature has %d subpicture channel\n"
 msgstr[1] "\tThe main feature has %d subpicture channels\n"
 
-#: src/dvdbackup.c:1951
+#: src/dvdbackup.c:1949
 #, c-format
 msgid "\tThe main feature has a maximum of %d chapter in one of its titles\n"
 msgid_plural ""
@@ -451,7 +451,7 @@ msgstr[0] ""
 msgstr[1] ""
 "\tThe main feature has a maximum of %d chapters in one of its titles\n"
 
-#: src/dvdbackup.c:1954
+#: src/dvdbackup.c:1952
 #, c-format
 msgid ""
 "\tThe main feature has a maximum of %d audio channel in one of its titles\n"
@@ -461,66 +461,66 @@ msgstr[0] ""
 "\tThe main feature has a maximum of %d audio channel in one of its titles\n"
 msgstr[1] ""
 "\tThe main feature has a maximum of %d audio channels in one of its titles\n"
+
+#: src/dvdbackup.c:1959
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Title Sets:"
+msgstr ""
+"\n"
+"\n"
+"Title Sets:"
 
 #: src/dvdbackup.c:1961
 #, c-format
 msgid ""
 "\n"
 "\n"
-"Title Sets:"
-msgstr ""
-"\n"
-"\n"
-"Title Sets:"
-
-#: src/dvdbackup.c:1963
-#, c-format
-msgid ""
-"\n"
-"\n"
 "\tTitle set %d\n"
 msgstr ""
 "\n"
 "\n"
 "\tTitle set %d\n"
 
-#: src/dvdbackup.c:1967
+#: src/dvdbackup.c:1965
 #, c-format
 msgid "\t\tThe aspect ratio of title set %d is 16:9\n"
 msgstr "\t\tThe aspect ratio of title set %d is 16:9\n"
 
-#: src/dvdbackup.c:1969
+#: src/dvdbackup.c:1967
 #, c-format
 msgid "\t\tThe aspect ratio of title set %d is 4:3\n"
 msgstr "\t\tThe aspect ratio of title set %d is 4:3\n"
 
-#: src/dvdbackup.c:1971
+#: src/dvdbackup.c:1969
 #, c-format
 msgid "\t\tThe aspect ratio of title set %d is unknown\n"
 msgstr "\t\tThe aspect ratio of title set %d is unknown\n"
 
-#: src/dvdbackup.c:1973
+#: src/dvdbackup.c:1971
 #, c-format
 msgid "\t\tTitle set %d has %d angle\n"
 msgid_plural "\t\tTitle set %d has %d angles\n"
 msgstr[0] "\t\tTitle set %d has %d angle\n"
 msgstr[1] "\t\tTitle set %d has %d angles\n"
 
-#: src/dvdbackup.c:1976
+#: src/dvdbackup.c:1974
 #, c-format
 msgid "\t\tTitle set %d has %d audio track\n"
 msgid_plural "\t\tTitle set %d has %d audio tracks\n"
 msgstr[0] "\t\tTitle set %d has %d audio track\n"
 msgstr[1] "\t\tTitle set %d has %d audio tracks\n"
 
-#: src/dvdbackup.c:1979
+#: src/dvdbackup.c:1977
 #, c-format
 msgid "\t\tTitle set %d has %d subpicture channel\n"
 msgid_plural "\t\tTitle set %d has %d subpicture channels\n"
 msgstr[0] "\t\tTitle set %d has %d subpicture channel\n"
 msgstr[1] "\t\tTitle set %d has %d subpicture channels\n"
 
-#: src/dvdbackup.c:1992
+#: src/dvdbackup.c:1990
 #, c-format
 msgid ""
 "\n"
@@ -535,19 +535,19 @@ msgstr[1] ""
 "\n"
 "\t\tTitles included in title set %d are\n"
 
-#: src/dvdbackup.c:1998
+#: src/dvdbackup.c:1996
 #, c-format
 msgid "\t\t\tTitle %d:\n"
 msgstr "\t\t\tTitle %d:\n"
 
-#: src/dvdbackup.c:1999
+#: src/dvdbackup.c:1997
 #, c-format
 msgid "\t\t\t\tTitle %d has %d chapter\n"
 msgid_plural "\t\t\t\tTitle %d has %d chapters\n"
 msgstr[0] "\t\t\t\tTitle %d has %d chapter\n"
 msgstr[1] "\t\t\t\tTitle %d has %d chapters\n"
 
-#: src/dvdbackup.c:2002
+#: src/dvdbackup.c:2000
 #, c-format
 msgid "\t\t\t\tTitle %d has %d audio channel\n"
 msgid_plural "\t\t\t\tTitle %d has %d audio channels\n"
@@ -560,8 +560,8 @@ msgid ""
 "Copyright (C) 2002 Olaf Beck <olaf_sc@yahoo.com>\n"
 "Copyright (C) %s Benjamin Drung <benjamin.drung@gmail.com>\n"
 "\n"
-"License GPLv3+: GNU GPL version 3 or later "
-"<http://gnu.org/licenses/gpl.html>\n"
+"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
+"html>\n"
 "This is free software: you are free to change and redistribute it.\n"
 "There is NO WARRANTY, to the extent permitted by law.\n"
 "Homepage: %s\n"
@@ -569,8 +569,8 @@ msgstr ""
 "Copyright (C) 2002 Olaf Beck <olaf_sc@yahoo.com>\n"
 "Copyright (C) %s Benjamin Drung <benjamin.drung@gmail.com>\n"
 "\n"
-"License GPLv3+: GNU GPL version 3 or later "
-"<http://gnu.org/licenses/gpl.html>\n"
+"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
+"html>\n"
 "This is free software: you are free to change and redistribute it.\n"
 "There is NO WARRANTY, to the extent permitted by law.\n"
 "Homepage: %s\n"

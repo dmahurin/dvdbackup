@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dvdbackup\n"
 "Report-Msgid-Bugs-To: dvdbackup-translators@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-09-26 01:20+0200\n"
+"POT-Creation-Date: 2012-06-24 03:25+0200\n"
 "PO-Revision-Date: 2010-12-20 19:29+0000\n"
 "Last-Translator: cenwen <eolinwen@gmail.com>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -19,61 +19,61 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-12-21 13:26+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: src/dvdbackup.c:238
+#: src/dvdbackup.c:239
 #, c-format
 msgid "Do not try to copy chapters from the VMG domain; there are none.\n"
 msgstr ""
 "N'essayez pas de copier des chapitres du domaine VMG, il n'y en a aucun.\n"
 
-#: src/dvdbackup.c:249
+#: src/dvdbackup.c:250
 #, c-format
 msgid "Out of memory copying %s\n"
 msgstr "Manque de mémoire lors de la copie de %s\n"
 
-#: src/dvdbackup.c:259 src/dvdbackup.c:320 src/dvdbackup.c:1019
+#: src/dvdbackup.c:260 src/dvdbackup.c:326 src/dvdbackup.c:1019
 #: src/dvdbackup.c:1101 src/dvdbackup.c:1182 src/dvdbackup.c:1192
 #, c-format
 msgid "Error creating %s\n"
 msgstr "Erreur lors de la création de %s\n"
 
-#: src/dvdbackup.c:270 src/dvdbackup.c:1026
+#: src/dvdbackup.c:271 src/dvdbackup.c:1026
 #, c-format
 msgid "Failed opening TITLE VOB\n"
 msgstr "Impossible d'ouvrir TITLE VOB\n"
 
-#: src/dvdbackup.c:290
+#: src/dvdbackup.c:293
 #, c-format
 msgid "Error reading MENU VOB: %d != %d\n"
 msgstr "Erreur de lecture MENU VOB: %d != %d\n"
 
-#: src/dvdbackup.c:297
+#: src/dvdbackup.c:300
 #, c-format
 msgid "DVDReadBlocks read %d blocks of %d blocks\n"
 msgstr "%d blocs sur %d lus par DVDReadBlocks\n"
 
-#: src/dvdbackup.c:300
+#: src/dvdbackup.c:303
 #, c-format
 msgid "Error writing TITLE VOB\n"
 msgstr "Erreur d'écriture TITRE VOB\n"
 
-#: src/dvdbackup.c:424
+#: src/dvdbackup.c:426
 #, c-format
 msgid "Cannot open VMG info.\n"
 msgstr "Impossible d'ouvrir les INFOS VMG\n"
 
-#: src/dvdbackup.c:438
+#: src/dvdbackup.c:440
 #, c-format
 msgid "Out of memory creating titles info structure\n"
 msgstr ""
 "Manque de mémoire lors de la création de la structure des infos titres\n"
 
-#: src/dvdbackup.c:472
+#: src/dvdbackup.c:474
 #, c-format
 msgid "Out of memory creating arrays for titles info\n"
 msgstr ""
 "Manque de mémoire lors de la création des tableaux pour les infos titres\n"
 
-#: src/dvdbackup.c:608
+#: src/dvdbackup.c:610
 #, c-format
 msgid ""
 "You have encountered a very special DVD; please send a bug report along with "
@@ -342,7 +342,7 @@ msgstr ""
 "Ne peut copier le titre définit %d car il y a seulement %d titres présents "
 "sur ce DVD\n"
 
-#: src/dvdbackup.c:1605 src/dvdbackup.c:1875
+#: src/dvdbackup.c:1605 src/dvdbackup.c:1873
 #, c-format
 msgid "Guesswork of main feature film failed.\n"
 msgstr "Détection des options du film pricipal échoué.\n"
@@ -352,12 +352,12 @@ msgstr "Détection des options du film pricipal échoué.\n"
 msgid "Mirror of main feature file which is title set %d failed\n"
 msgstr "Le fichier mirroir dela vidéo principale du titre réglé %d a échoué\n"
 
-#: src/dvdbackup.c:1647 src/dvdbackup.c:1810
+#: src/dvdbackup.c:1646 src/dvdbackup.c:1808
 #, c-format
 msgid "Failed to obtain titles information\n"
 msgstr "N'a pas réussi à obtenir les informations de titres\n"
 
-#: src/dvdbackup.c:1658
+#: src/dvdbackup.c:1657
 #, c-format
 msgid ""
 "No title specified for chapter extraction, will try to figure out main "
@@ -366,27 +366,27 @@ msgstr ""
 "Pas de titre spécifié pour l'extraction de chapitre, nous allons essyer de "
 "deviser le principal Titre fournis\n"
 
-#: src/dvdbackup.c:1672
+#: src/dvdbackup.c:1670
 #, c-format
 msgid "Could not open title_set %d IFO file\n"
 msgstr "N'a pas réussi à ouvrir le fichier IFO du titre_défini %d\n"
 
-#: src/dvdbackup.c:1682 src/dvdbackup.c:1687
+#: src/dvdbackup.c:1680 src/dvdbackup.c:1685
 #, c-format
 msgid "Truncated the end_chapter; only %d chapters in %d title\n"
 msgstr "Chapitre_final tronqué; seulement %d chapitres dans %d titre\n"
 
-#: src/dvdbackup.c:1738
+#: src/dvdbackup.c:1736
 #, c-format
 msgid "Memory allocation error 1\n"
 msgstr "Erreur d'allocation memoire 1\n"
 
-#: src/dvdbackup.c:1746
+#: src/dvdbackup.c:1744
 #, c-format
 msgid "Memory allocation error\n"
 msgstr "Erreur d'allocation memoire\n"
 
-#: src/dvdbackup.c:1888
+#: src/dvdbackup.c:1886
 #, c-format
 msgid ""
 "DVD-Video information of the DVD with title \"%s\"\n"
@@ -395,12 +395,12 @@ msgstr ""
 "Informations DVD-Video du DVD avec le titre \"%s\"\n"
 "\n"
 
-#: src/dvdbackup.c:1892
+#: src/dvdbackup.c:1890
 #, c-format
 msgid "File Structure DVD\n"
 msgstr "Structure de fichier du DVD\n"
 
-#: src/dvdbackup.c:1917
+#: src/dvdbackup.c:1915
 #, c-format
 msgid ""
 "\n"
@@ -411,48 +411,48 @@ msgstr ""
 "\n"
 "Vidéo principale:\n"
 
-#: src/dvdbackup.c:1918
+#: src/dvdbackup.c:1916
 #, c-format
 msgid "\tTitle set containing the main feature is %d\n"
 msgstr "\tEnsemble titré contenant la vidéo principale est %d\n"
 
-#: src/dvdbackup.c:1922
+#: src/dvdbackup.c:1920
 #, c-format
 msgid "\tThe aspect ratio of the main feature is 16:9\n"
 msgstr "\tLe ration d'aspect de la vidéo principale est 16:9\n"
 
-#: src/dvdbackup.c:1924
+#: src/dvdbackup.c:1922
 #, c-format
 msgid "\tThe aspect ratio of the main feature is 4:3\n"
 msgstr "\tLe ration d'aspect de la vidéo principale est 4:3\n"
 
-#: src/dvdbackup.c:1926
+#: src/dvdbackup.c:1924
 #, c-format
 msgid "\tThe aspect ratio of the main feature is unknown\n"
 msgstr "\tLe ration d'aspect de la vidéo principale est indéterminé\n"
 
-#: src/dvdbackup.c:1929
+#: src/dvdbackup.c:1927
 #, c-format
 msgid "\tThe main feature has %d angle\n"
 msgid_plural "\tThe main feature has %d angles\n"
 msgstr[0] "\tLa vidéo pricipale à %d angle\n"
 msgstr[1] "\tLa vidéo pricipale à %d angles\n"
 
-#: src/dvdbackup.c:1932
+#: src/dvdbackup.c:1930
 #, c-format
 msgid "\tThe main feature has %d audio track\n"
 msgid_plural "\tThe main feature has %d audio tracks\n"
 msgstr[0] "\tLa vidéo pricipale à %d piste audio\n"
 msgstr[1] "\tLa vidéo pricipale à %d pistes audio\n"
 
-#: src/dvdbackup.c:1935
+#: src/dvdbackup.c:1933
 #, c-format
 msgid "\tThe main feature has %d subpicture channel\n"
 msgid_plural "\tThe main feature has %d subpicture channels\n"
 msgstr[0] "\tLa vidéo pricipale à %d canal de sous-images\n"
 msgstr[1] "\tLa vidéo pricipale à %d canaux de sous-images\n"
 
-#: src/dvdbackup.c:1951
+#: src/dvdbackup.c:1949
 #, c-format
 msgid "\tThe main feature has a maximum of %d chapter in one of its titles\n"
 msgid_plural ""
@@ -462,7 +462,7 @@ msgstr[0] ""
 msgstr[1] ""
 "\tLa vidéo pricipale a un maximum de %d chapitres dans un de ses titres\n"
 
-#: src/dvdbackup.c:1954
+#: src/dvdbackup.c:1952
 #, c-format
 msgid ""
 "\tThe main feature has a maximum of %d audio channel in one of its titles\n"
@@ -473,7 +473,7 @@ msgstr[0] ""
 msgstr[1] ""
 "\tLa vidéo pricipale a un maximum de %d canaux audio dans un de ses titres\n"
 
-#: src/dvdbackup.c:1961
+#: src/dvdbackup.c:1959
 #, c-format
 msgid ""
 "\n"
@@ -484,7 +484,7 @@ msgstr ""
 "\n"
 "Ensembles de Titre:"
 
-#: src/dvdbackup.c:1963
+#: src/dvdbackup.c:1961
 #, c-format
 msgid ""
 "\n"
@@ -495,43 +495,43 @@ msgstr ""
 "\n"
 "\tEnsemble de titre %d\n"
 
-#: src/dvdbackup.c:1967
+#: src/dvdbackup.c:1965
 #, c-format
 msgid "\t\tThe aspect ratio of title set %d is 16:9\n"
 msgstr "\t\tLe ratio d'aspect du titre choisi %d est 16:9\n"
 
-#: src/dvdbackup.c:1969
+#: src/dvdbackup.c:1967
 #, c-format
 msgid "\t\tThe aspect ratio of title set %d is 4:3\n"
 msgstr "\t\tLe ratio d'aspect du titre choisi %d est 4:3\n"
 
-#: src/dvdbackup.c:1971
+#: src/dvdbackup.c:1969
 #, c-format
 msgid "\t\tThe aspect ratio of title set %d is unknown\n"
 msgstr "\t\tLe ratio d'aspect du titre choisi %d est indéfini\n"
 
-#: src/dvdbackup.c:1973
+#: src/dvdbackup.c:1971
 #, c-format
 msgid "\t\tTitle set %d has %d angle\n"
 msgid_plural "\t\tTitle set %d has %d angles\n"
 msgstr[0] "\t\tLe titre choisi %d a %d angle\n"
 msgstr[1] "\t\tLe titre choisi %d a %d angles\n"
 
-#: src/dvdbackup.c:1976
+#: src/dvdbackup.c:1974
 #, c-format
 msgid "\t\tTitle set %d has %d audio track\n"
 msgid_plural "\t\tTitle set %d has %d audio tracks\n"
 msgstr[0] "\t\tLe titre choisi %d a %d piste audio\n"
 msgstr[1] "\t\tLe titre choisi %d a %d pistes audio\n"
 
-#: src/dvdbackup.c:1979
+#: src/dvdbackup.c:1977
 #, c-format
 msgid "\t\tTitle set %d has %d subpicture channel\n"
 msgid_plural "\t\tTitle set %d has %d subpicture channels\n"
 msgstr[0] "\t\tLe titre choisi %d a %d canal de sous-images\n"
 msgstr[1] "\t\tLe titre choisi %d a %d canaux de sous-images\n"
 
-#: src/dvdbackup.c:1992
+#: src/dvdbackup.c:1990
 #, c-format
 msgid ""
 "\n"
@@ -546,19 +546,19 @@ msgstr[1] ""
 "\n"
 "\t\tLes titres inclus dans l'ensemble %d sont\n"
 
-#: src/dvdbackup.c:1998
+#: src/dvdbackup.c:1996
 #, c-format
 msgid "\t\t\tTitle %d:\n"
 msgstr "\t\t\tTitre %d:\n"
 
-#: src/dvdbackup.c:1999
+#: src/dvdbackup.c:1997
 #, c-format
 msgid "\t\t\t\tTitle %d has %d chapter\n"
 msgid_plural "\t\t\t\tTitle %d has %d chapters\n"
 msgstr[0] "\t\t\t\tLe titre %d a %d chapitre\n"
 msgstr[1] "\t\t\t\tLe titre %d a %d chapitres\n"
 
-#: src/dvdbackup.c:2002
+#: src/dvdbackup.c:2000
 #, c-format
 msgid "\t\t\t\tTitle %d has %d audio channel\n"
 msgid_plural "\t\t\t\tTitle %d has %d audio channels\n"
