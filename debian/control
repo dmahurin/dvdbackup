@@ -6,8 +6,8 @@ Uploaders: Benjamin Drung <bdrung@debian.org>
 Build-Depends: debhelper (>= 9), dh-autoreconf, libdvdread-dev (>= 4.1.3-4)
 Standards-Version: 3.9.4
 Homepage: http://dvdbackup.sourceforge.net
-Vcs-Git: git://git.debian.org/git/pkg-dvdbackup/dvdbackup.git
-Vcs-Browser: http://git.debian.org/?p=pkg-dvdbackup/dvdbackup.git;a=summary
+Vcs-Git: git://anonscm.debian.org/pkg-dvdbackup/dvdbackup.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-dvdbackup/dvdbackup.git
 
 Package: dvdbackup
 Architecture: any
