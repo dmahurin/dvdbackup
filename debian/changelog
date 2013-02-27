@@ -1,3 +1,11 @@
+dvdbackup (0.4.2-2) unstable; urgency=low
+
+  * Run autoreconf to update autotools helper files.
+  * Bump Standards-Version to 3.9.4 (no changes needed).
+  * Use current canonical URI for VCS-* fields.
+
+ -- Benjamin Drung <bdrung@debian.org>  Wed, 27 Feb 2013 18:16:30 +0100
+
 dvdbackup (0.4.2-1) unstable; urgency=low
 
   * New upstream release.
