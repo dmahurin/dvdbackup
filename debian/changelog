@@ -1,3 +1,10 @@
+dvdbackup (0.4.2-3) unstable; urgency=low
+
+  * ignore-automake-warnings.patch: Do not treat automake warnings as errors.
+    Gettext caused a warning with automake 1.13. (Closes: #713293)
+
+ -- Benjamin Drung <bdrung@debian.org>  Sat, 29 Jun 2013 14:51:38 +0200
+
 dvdbackup (0.4.2-2) unstable; urgency=low
 
   * Run autoreconf to update autotools helper files.
