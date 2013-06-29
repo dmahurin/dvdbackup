@@ -13,7 +13,7 @@ AC_CONFIG_SRCDIR([src/main.c])
 dnl Must come before AM_INIT_AUTOMAKE.
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
-AM_INIT_AUTOMAKE([dist-xz -Wall -Werror])
+AM_INIT_AUTOMAKE([dist-xz -Wall])
 
 AM_GNU_GETTEXT_VERSION([0.17])
 AM_GNU_GETTEXT([external])
