@@ -1,3 +1,10 @@
+dvdbackup (0.4.2-4) unstable; urgency=low
+
+  * remove-path_max-limitation.patch: Remove PATH_MAX limitation to fix build
+    failure on Debian GNU/Hurd.
+
+ -- Benjamin Drung <bdrung@debian.org>  Thu, 04 Jul 2013 14:31:19 +0200
+
 dvdbackup (0.4.2-3) unstable; urgency=low
 
   * ignore-automake-warnings.patch: Do not treat automake warnings as errors.
