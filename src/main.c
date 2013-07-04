@@ -2,7 +2,7 @@
  * dvdbackup - tool to rip DVDs from the command line
  *
  * Copyright (C) 2002  Olaf Beck <olaf_sc@yahoo.com>
- * Copyright (C) 2008-2012  Benjamin Drung <benjamin.drung@gmail.com>
+ * Copyright (C) 2008-2013  Benjamin Drung <benjamin.drung@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -172,7 +172,8 @@ int main(int argc, char* argv[]) {
 	char* targetdir = ".";
 
 	/* Temp filename,dirname */
-	char targetname[PATH_MAX];
+	char *targetname;
+	size_t targetname_length;
 	struct stat fileinfo;
 
 	/* The DVD main structure */
@@ -403,9 +404,15 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
-
-
-	sprintf(targetname,"%s",targetdir);
+	// Reserve space for "<targetdir>/<title_name>/VIDEO_TS" and terminating "\0"
+	targetname_length = strlen(targetdir) + strlen(title_name) + 11;
+	targetname = malloc(targetname_length);
+	if (targetname == NULL) {
+		fprintf(stderr, _("Failed to allocate %zu bytes for a filename.\n"), targetname_length);
+		DVDClose(_dvd);
+		return 1;
+	}
+	snprintf(targetname, targetname_length, "%s", targetdir);
 
 	if (stat(targetname, &fileinfo) == 0) {
 		if (! S_ISDIR(fileinfo.st_mode)) {
@@ -421,7 +428,7 @@ int main(int argc, char* argv[]) {
 	}
 
 
-	sprintf(targetname,"%s/%s",targetdir, title_name);
+	snprintf(targetname, targetname_length, "%s/%s", targetdir, title_name);
 
 	if (stat(targetname, &fileinfo) == 0) {
 		if (! S_ISDIR(fileinfo.st_mode)) {
@@ -436,7 +443,7 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
-	sprintf(targetname,"%s/%s/VIDEO_TS",targetdir, title_name);
+	snprintf(targetname, targetname_length, "%s/%s/VIDEO_TS", targetdir, title_name);
 
 	if (stat(targetname, &fileinfo) == 0) {
 		if (! S_ISDIR(fileinfo.st_mode)) {
@@ -513,7 +520,7 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
-
+	free(targetname);
 	DVDClose(_dvd);
 	exit(return_code);
 }
