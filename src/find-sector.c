@@ -27,6 +27,7 @@ typedef struct remap_s remap_t;
 #include <dvdnav/dvd_types.h>
 #include <dvdnav/decoder.h>
 
+#include <dvdnav/dvdnav.h>
 #include <dvdnav/vm.h>
 
 #include <config.h>
@@ -248,7 +249,11 @@ void create_titleset_range_list(dvd_reader_t *dvd, int titleset, GSList **range_
 
 	memset(&vm, 0, sizeof(vm));
 	vm.dvd = (void *)0xffffffff;
+	#if DVDREAD_VERSION >= 50300
+	vm_reset(&vm, NULL, NULL, NULL);
+	#else
 	vm_reset(&vm, NULL);
+	#endif
 	vm.dvd = 0x0;
 
 	ifo_handle_t *vmg_ifo = ifoOpen( dvd, 0 );
