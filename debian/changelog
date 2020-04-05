@@ -1,3 +1,12 @@
+dvdbackup (0.4.2-4.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * debian/patches/libdvdread6.1.0.patch: Adapt to API changes in libdvdread
+    6.1.0 (Closes: #955652)
+    Thanks to Felix Palmen for the patch.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 05 Apr 2020 17:57:40 +0200
+
 dvdbackup (0.4.2-4) unstable; urgency=low
 
   * remove-path_max-limitation.patch: Remove PATH_MAX limitation to fix build
